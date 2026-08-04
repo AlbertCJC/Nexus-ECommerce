@@ -1,0 +1,89 @@
+# QA Coverage Matrix
+
+## Pages Tested
+| Page | Route | Agent | Tested | Pass | Fail | Blocked | Notes |
+|------|-------|-------|--------|------|------|---------|-------|
+| Home | `/` | User Journey | ☐ | | | | |
+| Products | `/products` | Product Catalog | ☐ | | | | |
+| Product Detail | `/products/:id` | Product Catalog | ☐ | | | | |
+| Cart | `/cart` | Shopping Cart | ☐ | | | | |
+| Checkout | `/checkout` | Checkout & Payment | ☐ | | | | |
+| Order Confirmation | `/order/:id/confirmation` | User Journey | ☐ | | | | |
+| Order History | `/orders` | User Journey | ☐ | | | | |
+| Profile | `/profile` | Auth Agent | ☐ | | | | |
+| Admin Login | `/admin/login` | Auth Agent | ☐ | | | | |
+| Admin Dashboard | `/admin/dashboard` | Admin Panel | ☐ | | | | |
+| Admin Products | `/admin/products` | Admin Panel | ☐ | | | | |
+| Admin Categories | `/admin/categories` | Admin Panel | ☐ | | | | |
+| Admin Brands | `/admin/brands` | Admin Panel | ☐ | | | | |
+| Admin Orders | `/admin/orders` | Admin Panel | ☐ | | | | |
+| Admin Order Detail | `/admin/orders/:id` | Admin Panel | ☐ | | | | |
+| Admin Customers | `/admin/customers` | Admin Panel | ☐ | | | | |
+
+## Components Tested (25+)
+| Component | Category | Agent | Tested | Pass | Fail | Blocked |
+|-----------|----------|-------|--------|------|------|---------|
+| Button | UI | Functional | ☐ | | | |
+| Input | UI | Functional | ☐ | | | |
+| Select | UI | Functional | ☐ | | | |
+| Checkbox | UI | Functional | ☐ | | | |
+| Modal | UI | Functional | ☐ | | | |
+| Toast | UI | Functional | ☐ | | | |
+| Card | UI | Functional | ☐ | | | |
+| Table | UI | Functional | ☐ | | | |
+| Badge | UI | Functional | ☐ | | | |
+| Spinner | UI | Functional | ☐ | | | |
+| AuthModal | UI | Auth | ☐ | | | |
+| Navbar | Layout | UI/UX | ☐ | | | |
+| Footer | Layout | UI/UX | ☐ | | | |
+| CustomerLayout | Layout | UI/UX | ☐ | | | |
+| AdminLayout | Layout | UI/UX | ☐ | | | |
+| AdminSidebar | Layout | UI/UX | ☐ | | | |
+| ProductCard | Products | Product Catalog | ☐ | | | |
+| ProductGrid | Products | Product Catalog | ☐ | | | |
+| ProductFilters | Products | Product Catalog | ☐ | | | |
+| RelatedProducts | Products | Product Catalog | ☐ | | | |
+| CartItem | Cart | Shopping Cart | ☐ | | | |
+| CartSummary | Cart | Shopping Cart | ☐ | | | |
+| StatsCard | Admin | Admin Panel | ☐ | | | |
+| SalesChart | Charts | Performance | ☐ | | | |
+
+## Workflows Tested
+| Workflow | Agent | Tested | Pass | Fail | Blocked |
+|----------|-------|--------|------|------|---------|
+| Customer Signup → Login → Browse → Cart → Checkout → Order | User Journey | ☐ | | | |
+| Guest → Add to Cart → Login → Cart Persisted | Shopping Cart | ☐ | | | |
+| Admin Login → Dashboard → Manage Products | Admin Panel | ☐ | | | |
+| Order Lifecycle: Pending → Confirmed → Shipped → Completed | Admin Panel | ☐ | | | |
+| Password Reset Flow | Auth | ☐ | | | |
+
+## API/Queries Tested
+| Hook/Query | Agent | Tested | Pass | Fail | Blocked |
+|------------|-------|--------|------|------|---------|
+| useProducts | API Verification | ☐ | | | |
+| useProduct | API Verification | ☐ | | | |
+| useCategories | API Verification | ☐ | | | |
+| useBrands | API Verification | ☐ | | | |
+| useOrders | API Verification | ☐ | | | |
+| useOrder | API Verification | ☐ | | | |
+| useCart | API Verification | ☐ | | | |
+| useProfile | API Verification | ☐ | | | |
+| useAdminStats | API Verification | ☐ | | | |
+| useAdminCustomers | API Verification | ☐ | | | |
+| useAddToCart | API Verification | ☐ | | | |
+| useUpdateCartQuantity | API Verification | ☐ | | | |
+| useRemoveFromCart | API Verification | ☐ | | | |
+| useClearCart | API Verification | ☐ | | | |
+| useCreateOrder | API Verification | ☐ | | | |
+| useUpdateOrderStatus | API Verification | ☐ | | | |
+| useCreateProduct | API Verification | ☐ | | | |
+| useUpdateProduct | API Verification | ☐ | | | |
+| useDeleteProduct | API Verification | ☐ | | | |
+| useCreateCategory | API Verification | ☐ | | | |
+| useUpdateCategory | API Verification | ☐ | | | |
+| useDeleteCategory | API Verification | ☐ | | | |
+| useCreateBrand | API Verification | ☐ | | | |
+| useUpdateBrand | API Verification | ☐ | | | |
+| useDeleteBrand | API Verification | ☐ | | | |
+| useUpdateProfile | API Verification | ☐ | | | |
+| useUploadImage | API Verification | ☐ | | | |
