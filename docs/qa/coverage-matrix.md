@@ -5,13 +5,13 @@
 |------|-------|-------|--------|------|------|---------|-------|
 | Home | `/` | User Journey | ☐ | | | | |
 | Products | `/products` | Product Catalog | ☐ | | | | |
-| Product Detail | `/products/:id` | Product Catalog | ☐ | | | | |
+| Product Detail | `/products/:id` | Product Catalog | ☐ | | | | | | |
 | Cart | `/cart` | Shopping Cart | ☐ | | | | |
 | Checkout | `/checkout` | Checkout & Payment | ☐ | | | | |
 | Order Confirmation | `/order/:id/confirmation` | User Journey | ☐ | | | | |
 | Order History | `/orders` | User Journey | ☐ | | | | |
-| Profile | `/profile` | Auth Agent | ☐ | | | | |
-| Admin Login | `/admin/login` | Auth Agent | ☐ | | | | |
+| Profile | `/profile` | Auth Agent | ✅ | 1 | 0 | 0 | Protected route, accessible after login |
+| Admin Login | `/admin/login` | Auth Agent | ✅ | 1 | 0 | 0 | Admin credentials work, redirects to dashboard |
 | Admin Dashboard | `/admin/dashboard` | Admin Panel | ☐ | | | | |
 | Admin Products | `/admin/products` | Admin Panel | ☐ | | | | |
 | Admin Categories | `/admin/categories` | Admin Panel | ☐ | | | | |
@@ -33,7 +33,7 @@
 | Table | UI | Functional | ☐ | | | |
 | Badge | UI | Functional | ☐ | | | |
 | Spinner | UI | Functional | ☐ | | | |
-| AuthModal | UI | Auth | ☐ | | | |
+| AuthModal | UI | Auth | ✅ | 1 | 0 | 0 |
 | Navbar | Layout | UI/UX | ☐ | | | |
 | Footer | Layout | UI/UX | ☐ | | | |
 | CustomerLayout | Layout | UI/UX | ☐ | | | |
@@ -55,7 +55,13 @@
 | Guest → Add to Cart → Login → Cart Persisted | Shopping Cart | ☐ | | | |
 | Admin Login → Dashboard → Manage Products | Admin Panel | ☐ | | | |
 | Order Lifecycle: Pending → Confirmed → Shipped → Completed | Admin Panel | ☐ | | | |
-| Password Reset Flow | Auth | ☐ | | | |
+| Password Reset Flow | Auth | ✅ | 1 | 0 | 0 |
+| Customer Signup Flow | Auth | ✅ | 1 | 0 | 0 |
+| Customer Login/Logout Flow | Auth | ✅ | 1 | 0 | 0 |
+| Session Persistence Flow | Auth | ✅ | 1 | 0 | 0 |
+| Admin Role Validation | Auth | ✅ | 1 | 0 | 0 |
+| Authorization Boundaries | Auth | ✅ | 1 | 0 | 0 |
+| OAuth Login | Auth | ☐ | | | 1 |
 
 ## API/Queries Tested
 | Hook/Query | Agent | Tested | Pass | Fail | Blocked |

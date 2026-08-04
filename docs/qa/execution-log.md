@@ -10,7 +10,7 @@
 | Agent | Status | Start Time | End Time | Issues Found |
 |-------|--------|------------|----------|--------------|
 | QA Lead | In Progress | 2026-08-04 | - | - |
-| Auth Agent | Pending | - | - | - |
+| Auth Agent | Complete | 2026-08-04 | 2026-08-04 | 4 |
 | User Journey Agent | Pending | - | - | - |
 | Shopping Cart Agent | Pending | - | - | - |
 | Checkout & Payment Agent | Pending | - | - | - |
@@ -29,3 +29,7 @@
 | ID | Agent | Severity | Title | Status |
 |----|-------|----------|-------|--------|
 | QA-001 | | | | |
+| AUTH-001 | Auth Agent | Critical | Admin RLS policies don't work (JWT role claim always 'authenticated') | Open |
+| AUTH-002 | Auth Agent | Medium | Email confirmation required for signup (blocks immediate login) | Open |
+| AUTH-003 | Auth Agent | Low | Password reset rate limited (429 on rapid requests) | Open |
+| AUTH-004 | Auth Agent | Info | OAuth not configured (Google, GitHub all disabled) | Blocked |
