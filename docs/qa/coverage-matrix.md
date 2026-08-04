@@ -3,14 +3,14 @@
 ## Pages Tested
 | Page | Route | Agent | Tested | Pass | Fail | Blocked | Notes |
 |------|-------|-------|--------|------|------|---------|-------|
-| Home | `/` | User Journey | ☐ | | | | |
-| Products | `/products` | Product Catalog | ☐ | | | | |
-| Product Detail | `/products/:id` | Product Catalog | ☐ | | | | | | |
-| Cart | `/cart` | Shopping Cart | ☐ | | | | |
-| Checkout | `/checkout` | Checkout & Payment | ☐ | | | | |
-| Order Confirmation | `/order/:id/confirmation` | User Journey | ☐ | | | | |
-| Order History | `/orders` | User Journey | ☐ | | | | |
-| Profile | `/profile` | Auth Agent | ✅ | 1 | 0 | 0 | Protected route, accessible after login |
+| Home | `/` | User Journey | ✅ | 1 | 0 | 0 | Hero, featured products, brand carousel load |
+| Products | `/products` | User Journey | ✅ | 1 | 0 | 0 | Search, filter, sort work; ProductFilters has bug (UJ-008) |
+| Product Detail | `/products/:id` | User Journey | ✅ | 1 | 1 | 0 | Images, desc, price OK; Guest can't add to cart (UJ-002) |
+| Cart | `/cart` | User Journey | ✅ | 1 | 1 | 0 | Qty update, subtotal work; guest cart merge missing (UJ-004) |
+| Checkout | `/checkout` | User Journey | ✅ | 0 | 1 | 0 | Form validation OK; guest redirect broken (UJ-003) |
+| Order Confirmation | `/order/:id/confirmation` | User Journey | ✅ | 1 | 0 | 0 | Order details, items, totals display correctly |
+| Order History | `/orders` | User Journey | ❌ | 0 | 1 | 1 | **Crashes** - uses non-existent AppContext data (UJ-001) |
+| Profile | `/profile` | User Journey | ✅ | 1 | 1 | 0 | Edit profile works; password change missing (UJ-006) |
 | Admin Login | `/admin/login` | Auth Agent | ✅ | 1 | 0 | 0 | Admin credentials work, redirects to dashboard |
 | Admin Dashboard | `/admin/dashboard` | Admin Panel | ☐ | | | | |
 | Admin Products | `/admin/products` | Admin Panel | ☐ | | | | |
@@ -34,14 +34,14 @@
 | Badge | UI | Functional | ☐ | | | |
 | Spinner | UI | Functional | ☐ | | | |
 | AuthModal | UI | Auth | ✅ | 1 | 0 | 0 |
-| Navbar | Layout | UI/UX | ☐ | | | |
+| Navbar | Layout | UI/UX | ✅ | 1 | 0 | 0 | Navigation, user menu, cart count work |
 | Footer | Layout | UI/UX | ☐ | | | |
 | CustomerLayout | Layout | UI/UX | ☐ | | | |
 | AdminLayout | Layout | UI/UX | ☐ | | | |
 | AdminSidebar | Layout | UI/UX | ☐ | | | |
 | ProductCard | Products | Product Catalog | ☐ | | | |
 | ProductGrid | Products | Product Catalog | ☐ | | | |
-| ProductFilters | Products | Product Catalog | ☐ | | | |
+| ProductFilters | Products | Product Catalog | ✅ | 0 | 1 | 0 | **Broken** - reads categories/brands from wrong context (UJ-008) |
 | RelatedProducts | Products | Product Catalog | ☐ | | | |
 | CartItem | Cart | Shopping Cart | ☐ | | | |
 | CartSummary | Cart | Shopping Cart | ☐ | | | |
@@ -51,8 +51,8 @@
 ## Workflows Tested
 | Workflow | Agent | Tested | Pass | Fail | Blocked |
 |----------|-------|--------|------|------|---------|
-| Customer Signup → Login → Browse → Cart → Checkout → Order | User Journey | ☐ | | | |
-| Guest → Add to Cart → Login → Cart Persisted | Shopping Cart | ☐ | | | |
+| Customer Signup → Login → Browse → Cart → Checkout → Order | User Journey | ✅ | 0 | 1 | 1 | Guest checkout broken (UJ-002, UJ-003) |
+| Guest → Add to Cart → Login → Cart Persisted | Shopping Cart | ✅ | 0 | 1 | 0 | No merge logic (UJ-004) |
 | Admin Login → Dashboard → Manage Products | Admin Panel | ☐ | | | |
 | Order Lifecycle: Pending → Confirmed → Shipped → Completed | Admin Panel | ☐ | | | |
 | Password Reset Flow | Auth | ✅ | 1 | 0 | 0 |

@@ -11,7 +11,7 @@
 |-------|--------|------------|----------|--------------|
 | QA Lead | In Progress | 2026-08-04 | - | - |
 | Auth Agent | Complete | 2026-08-04 | 2026-08-04 | 4 |
-| User Journey Agent | Pending | - | - | - |
+| User Journey Agent | Complete | 2026-08-04 | 2026-08-04 | 8 |
 | Shopping Cart Agent | Pending | - | - | - |
 | Checkout & Payment Agent | Pending | - | - | - |
 | Product Catalog Agent | Pending | - | - | - |
@@ -33,3 +33,11 @@
 | AUTH-002 | Auth Agent | Medium | Email confirmation required for signup (blocks immediate login) | Open |
 | AUTH-003 | Auth Agent | Low | Password reset rate limited (429 on rapid requests) | Open |
 | AUTH-004 | Auth Agent | Info | OAuth not configured (Google, GitHub all disabled) | Blocked |
+| UJ-001 | User Journey | Critical | OrderHistory crashes - uses non-existent AppContext data | Open |
+| UJ-002 | User Journey | High | Guest users cannot add products to cart | Open |
+| UJ-003 | User Journey | High | Checkout redirects to non-existent `/auth` route for guests | Open |
+| UJ-004 | User Journey | Medium | No guest cart merge on login | Open |
+| UJ-005 | User Journey | Low | Newsletter signup form missing from Home page | Open |
+| UJ-006 | User Journey | Low | Profile page lacks password change feature | Open |
+| UJ-007 | User Journey | Low | OrderHistory missing "Buy Again" functionality | Open |
+| UJ-008 | User Journey | Medium | ProductFilters component broken - reads categories/brands from wrong context | Open |
