@@ -7,7 +7,7 @@
 | Products | `/products` | User Journey | ✅ | 1 | 0 | 0 | Search, filter, sort work; ProductFilters has bug (UJ-008) |
 | Product Detail | `/products/:id` | User Journey | ✅ | 1 | 1 | 0 | Images, desc, price OK; Guest can't add to cart (UJ-002) |
 | Cart | `/cart` | User Journey | ✅ | 1 | 1 | 0 | Qty update, subtotal work; guest cart merge missing (UJ-004) |
-| Checkout | `/checkout` | User Journey | ✅ | 0 | 1 | 0 | Form validation OK; guest redirect broken (UJ-003) |
+| Checkout | `/checkout` | Checkout & Payment | ✅ | 6 | 3 | 0 | Profile prefill, payment methods, totals, duplicate prevention work; guest redirect broken (UJ-003/CHK-002), payment validation default (CHK-001), test data issue (CHK-003) |
 | Order Confirmation | `/order/:id/confirmation` | User Journey | ✅ | 1 | 0 | 0 | Order details, items, totals display correctly |
 | Order History | `/orders` | User Journey | ❌ | 0 | 1 | 1 | **Crashes** - uses non-existent AppContext data (UJ-001) |
 | Profile | `/profile` | User Journey | ✅ | 1 | 1 | 0 | Edit profile works; password change missing (UJ-006) |
