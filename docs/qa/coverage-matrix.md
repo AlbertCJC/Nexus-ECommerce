@@ -43,8 +43,8 @@
 | ProductGrid | Products | Product Catalog | ☐ | | | |
 | ProductFilters | Products | Product Catalog | ✅ | 0 | 1 | 0 | **Broken** - reads categories/brands from wrong context (UJ-008) |
 | RelatedProducts | Products | Product Catalog | ☐ | | | |
-| CartItem | Cart | Shopping Cart | ☐ | | | |
-| CartSummary | Cart | Shopping Cart | ☐ | | | |
+| CartItem | Cart | Shopping Cart | ✅ | 1 | 0 | 0 | Qty controls, stock cap, remove work |
+| CartSummary | Cart | Shopping Cart | ✅ | 1 | 0 | 0 | Subtotal, shipping, tax, total correct |
 | StatsCard | Admin | Admin Panel | ☐ | | | |
 | SalesChart | Charts | Performance | ☐ | | | |
 
