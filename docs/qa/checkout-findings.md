@@ -13,8 +13,9 @@
 | Totals accuracy - verify calculations | **FAIL** | Medium | Test data exceeded ₱100 free shipping threshold; shipping shows "Free" not ₱9.99 |
 | Duplicate submission prevention - button loading state | **PASS** | - | Loading spinner shows on first click, prevents double-submit |
 | Cart UI shows items before order | **PASS** | - | Cart page correctly displays items, quantities, and prices |
+| Cart Cleared After Order | **PASS** | - | Order placement clears Supabase cart_items via `useCreateOrder` mutation; `/cart` shows empty state; Navbar badge = 0 |
 
-**Overall: 6/9 tests pass, 3 failures (2 related to known issues UJ-003, 1 test data issue)**
+**Overall: 7/9 tests pass, 2 failures (1 related to known issue UJ-003, 1 test data issue)**
 
 ---
 
