@@ -57,6 +57,17 @@
 | Loading States / Skeletons | Performance | Performance Agent | ✅ | 2 | 6 | 0 | Full-page spinners only; no skeletons/Suspense |
 | Image Optimization | Performance | Performance Agent | ✅ | 2 | 4 | 0 | Lazy loading yes; WebP/no srcset/dimensions no |
 
+## Security Components Tested
+| Component | Category | Agent | Tested | Pass | Fail | Blocked | Notes |
+|-----------|----------|-------|--------|------|------|---------|-------|
+| Auth Security | Security | Security Agent | ✅ | 1 | 0 | 0 | Supabase auth; JWT in localStorage; auto-refresh |
+| RLS Policies | Security | Security Agent | ❌ | 0 | 1 | 0 | Admin writes blocked (AUTH-001 / SEC-001) |
+| XSS Prevention | Security | Security Agent | ✅ | 1 | 0 | 0 | React auto-escaping; no dangerouslySetInnerHTML |
+| SQL Injection | Security | Security Agent | ✅ | 1 | 0 | 0 | Parameterized queries via Supabase client |
+| Data Exposure | Security | Security Agent | ✅ | 1 | 0 | 0 | Tokens in Auth header only; no PII in console |
+| CSRF Protection | Security | Security Agent | ✅ | 1 | 0 | 0 | Bearer token auth; not cookie-based |
+| File Upload | Security | Security Agent | ✅ | 1 | 0 | 0 | URL inputs only; no direct upload |
+
 ## Workflows Tested
 | Workflow | Agent | Tested | Pass | Fail | Blocked |
 |----------|-------|--------|------|------|---------|

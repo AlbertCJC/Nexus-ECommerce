@@ -19,7 +19,7 @@
 | UI/UX Agent | **Complete** | 2026-08-05 | 2026-08-05 | **10 (UI-001 to UI-010)** |
 | Functional Testing Agent | **Complete** | 2026-08-05 | 2026-08-05 | **10 (FUNC-001 to FUNC-010)** |
 | Performance Agent | **Complete** | 2026-08-05 | 2026-08-05 | **15 (PERF-001 to PERF-015)** |
-| Security Agent | Pending | - | - | - |
+| Security Agent | **Complete** | 2026-08-05 | 2026-08-05 | **10 (SEC-001 to SEC-010)** |
 | API Verification Agent | Pending | - | - | - |
 | Browser Compatibility Agent | Pending | - | - | - |
 | Regression Agent | Pending | - | - | - |
@@ -78,3 +78,13 @@
 | PERF-013 | Performance | Info | ProductCard Brand Logo - Loads per card | Open |
 | PERF-014 | Performance | Info | Lazy Loading on Above-Fold - Featured products | Open |
 | PERF-015 | Performance | Info | useCategories/useBrands Everywhere - Fetched on every page | Open |
+| SEC-001 | Security | Critical | Admin RLS policies don't work - JWT role claim always 'authenticated' (AUTH-001) | Open |
+| SEC-002 | Security | High | No rate limiting on auth endpoints (AUTH-003) | Open |
+| SEC-003 | Security | Medium | Email confirmation required blocks immediate login (AUTH-002) | Open |
+| SEC-004 | Security | Medium | JWT stored in localStorage (XSS risk) | Open |
+| SEC-005 | Security | Medium | No Content Security Policy header | Open |
+| SEC-006 | Security | Low | Order ID exposed in URL `/order/:id/confirmation` | Open |
+| SEC-007 | Security | Low | Admin profile no name/phone metadata prefill (CHK-004) | Open |
+| SEC-008 | Security | Low | OAuth not configured (Google, GitHub disabled) (AUTH-004) | Blocked |
+| SEC-009 | Security | Info | No security headers (X-Frame-Options, X-Content-Type-Options) | Open |
+| SEC-010 | Security | Info | Console.log statements in production code | Open |
