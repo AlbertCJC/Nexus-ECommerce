@@ -3,50 +3,50 @@
 ## Pages Tested
 | Page | Route | Agent | Tested | Pass | Fail | Blocked | Notes |
 |------|-------|-------|--------|------|------|---------|-------|
-| Home | `/` | User Journey | ✅ | 1 | 0 | 0 | Hero, featured products, brand carousel load |
-| Products | `/products` | Product Catalog | ✅ | 1 | 0 | 0 | Search, filter, sort, URL sync, pagination work; 25 products load |
-| Product Detail | `/products/:id` | Product Catalog | ✅ | 1 | 0 | 0 | Images, thumbnails, desc, price, related products work |
-| Cart | `/cart` | User Journey | ✅ | 1 | 1 | 0 | Qty update, subtotal work; guest cart merge missing (UJ-004) |
-| Checkout | `/checkout` | Checkout & Payment | ✅ | 6 | 3 | 0 | Profile prefill, payment methods, totals, duplicate prevention work; guest redirect broken (UJ-003/CHK-002), payment validation default (CHK-001), test data issue (CHK-003) |
-| Order Confirmation | `/order/:id/confirmation` | User Journey | ✅ | 1 | 0 | 0 | Order details, items, totals display correctly |
-| Order History | `/orders` | User Journey | ❌ | 0 | 1 | 1 | **Crashes** - uses non-existent AppContext data (UJ-001) |
-| Profile | `/profile` | User Journey | ✅ | 1 | 1 | 0 | Edit profile works; password change missing (UJ-006) |
-| Admin Login | `/admin/login` | Auth Agent | ✅ | 1 | 0 | 0 | Admin credentials work, redirects to dashboard |
-| Admin Dashboard | `/admin/dashboard` | Admin Panel | ✅ | 1 | 0 | 0 | 6 stat cards, sales chart, recent orders table render |
-| Admin Products | `/admin/products` | Admin Panel | ✅ | 2 | 0 | 0 | List with search/filter/pagination; add modal opens |
-| Admin Categories | `/admin/categories` | Admin Panel | ✅ | 2 | 0 | 0 | 7 categories listed; add modal; referential integrity |
-| Admin Brands | `/admin/brands` | Admin Panel | ✅ | 2 | 0 | 0 | 8 brands listed; add modal; referential integrity |
-| Admin Orders | `/admin/orders` | Admin Panel | ✅ | 2 | 0 | 0 | List with status filter; detail view works |
-| Admin Order Detail | `/admin/orders/:id` | Admin Panel | ✅ | 1 | 0 | 0 | Order items, customer info, shipping, status dropdown |
-| Admin Customers | `/admin/customers` | Admin Panel | ✅ | 1 | 0 | 0 | List with aggregates (orders, total spent) |
+| Home | `/` | User Journey / UI/UX | ✅ | 2 | 0 | 0 | Hero, featured products, brand carousel, responsive, visual, a11y, animations |
+| Products | `/products` | Product Catalog / UI/UX | ✅ | 2 | 0 | 0 | Search, filter, sort, URL sync, pagination; grid 1→2→3→4 cols responsive |
+| Product Detail | `/products/:id` | Product Catalog / UI/UX | ✅ | 2 | 0 | 0 | Images, thumbnails, desc, price, related; qty controls stack on mobile |
+| Cart | `/cart` | User Journey / UI/UX | ✅ | 1 | 1 | 0 | Qty update, subtotal work; guest cart merge missing (UJ-004); responsive stack↔side-by-side |
+| Checkout | `/checkout` | Checkout & Payment / UI/UX | ✅ | 6 | 3 | 0 | Profile prefill, payment methods, totals; guest redirect broken (UJ-003/CHK-002); form stacks, summary sticky |
+| Order Confirmation | `/order/:id/confirmation` | User Journey / UI/UX | ✅ | 2 | 0 | 0 | Order details, items, totals; grid stacks on mobile |
+| Order History | `/orders` | User Journey | ❌ | 0 | 1 | 1 | **Crashes** - uses non-existent AppContext data (UJ-001) - **UI/UX BLOCKED** |
+| Profile | `/profile` | User Journey / UI/UX | ✅ | 2 | 0 | 0 | Edit profile works; responsive form grids; password change missing (UJ-006) |
+| Admin Login | `/admin/login` | Auth Agent / UI/UX | ✅ | 2 | 0 | 0 | Admin credentials work; centered card responsive |
+| Admin Dashboard | `/admin/dashboard` | Admin Panel / UI/UX | ✅ | 2 | 0 | 0 | 6 stat cards (1→2→3→6 cols), sales chart, recent orders; responsive tables |
+| Admin Products | `/admin/products` | Admin Panel / UI/UX | ✅ | 2 | 0 | 0 | List with search/filter/pagination; modal opens; table horizontal scroll mobile |
+| Admin Categories | `/admin/categories` | Admin Panel / UI/UX | ✅ | 2 | 0 | 0 | 7 categories; add modal; referential integrity; table horizontal scroll |
+| Admin Brands | `/admin/brands` | Admin Panel / UI/UX | ✅ | 2 | 0 | 0 | 8 brands; add modal; referential integrity; table horizontal scroll |
+| Admin Orders | `/admin/orders` | Admin Panel / UI/UX | ✅ | 2 | 0 | 0 | List with status filter; detail view; table horizontal scroll |
+| Admin Order Detail | `/admin/orders/:id` | Admin Panel / UI/UX | ✅ | 2 | 0 | 0 | Order items, customer info, shipping, status dropdown; grid stacks |
+| Admin Customers | `/admin/customers` | Admin Panel / UI/UX | ✅ | 2 | 0 | 0 | List with aggregates; table horizontal scroll |
 
 ## Components Tested (25+)
 | Component | Category | Agent | Tested | Pass | Fail | Blocked |
 |-----------|----------|-------|--------|------|------|---------|
-| Button | UI | Functional | ☐ | | | |
-| Input | UI | Functional | ☐ | | | |
-| Select | UI | Functional | ☐ | | | |
-| Checkbox | UI | Functional | ☐ | | | |
-| Modal | UI | Functional | ☐ | | | |
-| Toast | UI | Functional | ☐ | | | |
-| Card | UI | Functional | ☐ | | | |
-| Table | UI | Functional | ☐ | | | |
-| Badge | UI | Functional | ☐ | | | |
-| Spinner | UI | Functional | ☐ | | | |
-| AuthModal | UI | Auth | ✅ | 1 | 0 | 0 |
-| Navbar | Layout | UI/UX | ✅ | 1 | 0 | 0 | Navigation, user menu, cart count work |
-| Footer | Layout | UI/UX | ☐ | | | |
-| CustomerLayout | Layout | UI/UX | ☐ | | | |
-| AdminLayout | Layout | UI/UX | ✅ | 1 | 0 | 0 | Header, sidebar, outlet render correctly |
-| AdminSidebar | Layout | UI/UX | ✅ | 1 | 0 | 0 | Navigation, mobile toggle, active state work |
-| ProductCard | Products | Product Catalog | ✅ | 1 | 1 | 0 | Image, name, category, price work; brand shows "Unknown" (CAT-001) |
-| ProductGrid | Products | Product Catalog | ✅ | 1 | 0 | 0 | Renders product cards correctly |
-| ProductFilters | Products | Product Catalog | ✅ | 1 | 0 | 0 | Search, category, brand, sort, clear filters all work |
-| RelatedProducts | Products | Product Catalog | ✅ | 1 | 0 | 0 | Shows 4 related products from same category |
-| CartItem | Cart | Shopping Cart | ✅ | 1 | 0 | 0 | Qty controls, stock cap, remove work |
-| CartSummary | Cart | Shopping Cart | ✅ | 1 | 0 | 0 | Subtotal, shipping, tax, total correct |
-| StatsCard | Admin | Admin Panel | ✅ | 1 | 0 | 0 | 6 dashboard stat cards render correctly |
-| SalesChart | Charts | Performance | ✅ | 1 | 0 | 0 | Recharts area chart with sample data renders |
+| Button | UI | UI/UX | ✅ | 1 | 0 | 0 | All variants, sizes, loading, focus states |
+| Input | UI | UI/UX | ✅ | 1 | 0 | 0 | Label association, error states, focus, aria-invalid |
+| Select | UI | UI/UX | ✅ | 1 | 0 | 0 | Label association, error states, focus, aria-invalid |
+| Checkbox | UI | UI/UX | ✅ | 1 | 0 | 0 | Accent color, focus ring, checked state |
+| Modal | UI | UI/UX | ✅ | 1 | 0 | 0 | Overlay, focus trap (overlay click), aria-label, reduced motion |
+| Toast | UI | UI/UX | ✅ | 1 | 0 | 0 | role="alert", variants, slide-in, auto-dismiss |
+| Card | UI | UI/UX | ✅ | 1 | 1 | 0 | Hover inconsistency with ProductCard (UI-002) |
+| Table | UI | UI/UX | ✅ | 1 | 0 | 0 | Horizontal scroll mobile, sticky headers |
+| Badge | UI | UI/UX | ✅ | 1 | 0 | 0 | All variants consistent |
+| Spinner | UI | UI/UX | ✅ | 1 | 0 | 0 | Sizes, animate-spin, skeleton variant |
+| AuthModal | UI | Auth / UI/UX | ✅ | 1 | 0 | 0 | Form validation, focus management, aria labels |
+| Navbar | Layout | UI/UX | ✅ | 1 | 0 | 0 | Navigation, user menu, cart count, mobile hamburger |
+| Footer | Layout | UI/UX | ✅ | 1 | 0 | 0 | Links, social icons with aria-label, responsive grid |
+| CustomerLayout | Layout | UI/UX | ✅ | 1 | 0 | 0 | Scroll to top, outlet, toast container |
+| AdminLayout | Layout | UI/UX | ✅ | 1 | 0 | 0 | Header, sidebar toggle, outlet, scroll to top |
+| AdminSidebar | Layout | UI/UX | ✅ | 1 | 0 | 0 | Navigation, mobile slide-in, active state, aria-label |
+| ProductCard | Products | Product Catalog / UI/UX | ✅ | 1 | 1 | 0 | Image, name, category, price, brand, qty, add to cart; hover diff (UI-002), brand "Unknown" (CAT-001) |
+| ProductGrid | Products | Product Catalog / UI/UX | ✅ | 1 | 0 | 0 | Grid 1→2→3→4 cols, empty state |
+| ProductFilters | Products | Product Catalog / UI/UX | ✅ | 1 | 0 | 0 | Search, category, brand, sort, clear; sr-only label |
+| RelatedProducts | Products | Product Catalog / UI/UX | ✅ | 1 | 0 | 0 | 4 related products, grid responsive |
+| CartItem | Cart | Shopping Cart / UI/UX | ✅ | 1 | 0 | 0 | Qty controls, stock cap, remove; aria labels |
+| CartSummary | Cart | Shopping Cart / UI/UX | ✅ | 1 | 0 | 0 | Subtotal, shipping, tax, total; sticky on desktop |
+| StatsCard | Admin | Admin Panel / UI/UX | ✅ | 1 | 0 | 0 | 6 dashboard stat cards render correctly |
+| SalesChart | Charts | Performance / UI/UX | ✅ | 1 | 0 | 0 | Recharts area chart with sample data renders |
 
 ## Workflows Tested
 | Workflow | Agent | Tested | Pass | Fail | Blocked |
