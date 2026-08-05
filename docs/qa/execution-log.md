@@ -15,7 +15,7 @@
 | Shopping Cart Agent | Complete | 2026-08-04 | 2026-08-04 | 2 |
 | Checkout & Payment Agent | Complete | 2026-08-05 | 2026-08-05 | 4 (CHK-001 to CHK-004) |
 | Product Catalog Agent | Complete | 2026-08-05 | 2026-08-05 | 4 (CAT-001 to CAT-004) |
-| Admin Panel Agent | Pending | - | - | - |
+| Admin Panel Agent | Complete | 2026-08-05 | 2026-08-05 | 3 (ADM-001 to ADM-003 fixed) |
 | UI/UX Agent | Pending | - | - | - |
 | Functional Testing Agent | Pending | - | - | - |
 | Performance Agent | Pending | - | - | - |
@@ -32,6 +32,9 @@
 | CHK-002 | Checkout & Payment | High | Guest checkout redirects to non-existent `/auth` route (UJ-003) | Open |
 | CHK-003 | Checkout & Payment | Medium | Test data exceeded free shipping threshold; shipping shows "Free" not ₱9.99 | Open |
 | CHK-004 | Checkout & Payment | Info | Admin user profile has no name/phone metadata; only email prefilled | Open |
+| ADM-001 | Admin Panel | High | Admin login race condition - isAdmin checked before profile loaded | Fixed |
+| ADM-002 | Admin Panel | Medium | Product counts show 0 - useProducts status='all' filter bug | Fixed |
+| ADM-003 | Admin Panel | Medium | Mobile sidebar not hidden by default on mobile | Fixed |
 | AUTH-001 | Auth Agent | Critical | Admin RLS policies don't work (JWT role claim always 'authenticated') | Open |
 | AUTH-002 | Auth Agent | Medium | Email confirmation required for signup (blocks immediate login) | Open |
 | AUTH-003 | Auth Agent | Low | Password reset rate limited (429 on rapid requests) | Open |
