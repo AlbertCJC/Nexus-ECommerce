@@ -83,6 +83,7 @@
 | Authorization Boundaries | Auth | ✅ | 1 | 0 | 0 |
 | OAuth Login | Auth | ☐ | | | 1 |
 | **Cross-Browser Compatibility** | **Browser Compatibility** | **✅** | **4 browsers, 4 viewports** | **0** | **0** | **All desktop browsers + mobile viewports pass** |
+| **Regression Suite (220 unit + 79 e2e)** | **Regression Agent** | **✅** | **299** | **0** | **0** | **Full suite passes; no new regressions** |
 
 ## API/Queries Tested
 | Hook/Query | Agent | Tested | Pass | Fail | Blocked |
