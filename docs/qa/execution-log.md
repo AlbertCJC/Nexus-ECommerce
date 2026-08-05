@@ -20,8 +20,8 @@
 | Functional Testing Agent | **Complete** | 2026-08-05 | 2026-08-05 | **10 (FUNC-001 to FUNC-010)** |
 | Performance Agent | **Complete** | 2026-08-05 | 2026-08-05 | **15 (PERF-001 to PERF-015)** |
 | Security Agent | **Complete** | 2026-08-05 | 2026-08-05 | **10 (SEC-001 to SEC-010)** |
-| API Verification Agent | Pending | - | - | - |
-| Browser Compatibility Agent | Pending | - | - | - |
+| API Verification Agent | Complete | 2026-08-05 | 2026-08-05 | 10 (API-001 to API-010) |
+| **Browser Compatibility Agent** | **Complete** | 2026-08-05 | 2026-08-05 | **4 (BC-001 to BC-004)** |
 | Regression Agent | Pending | - | - | - |
 | Edge Case Agent | Pending | - | - | - |
 
@@ -88,3 +88,7 @@
 | SEC-008 | Security | Low | OAuth not configured (Google, GitHub disabled) (AUTH-004) | Blocked |
 | SEC-009 | Security | Info | No security headers (X-Frame-Options, X-Content-Type-Options) | Open |
 | SEC-010 | Security | Info | Console.log statements in production code | Open |
+| **BC-001** | **Browser Compatibility** | **Medium** | **32 touch targets < 44px on mobile viewports (iPhone SE, iPhone 12 Pro)** | **Open** |
+| **BC-002** | **Browser Compatibility** | **Info** | **Firefox: Cloudflare cookie warnings on Supabase images (benign)** | **Open** |
+| **BC-003** | **Browser Compatibility** | **Info** | **WebKit headless: Touch events not detected (limitation, not bug)** | **Open** |
+| **BC-004** | **Browser Compatibility** | **Info** | **Safari: backdrop-filter supported and working** | **Open** |
