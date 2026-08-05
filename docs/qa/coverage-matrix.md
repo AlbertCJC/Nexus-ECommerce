@@ -23,30 +23,30 @@
 ## Components Tested (25+)
 | Component | Category | Agent | Tested | Pass | Fail | Blocked |
 |-----------|----------|-------|--------|------|------|---------|
-| Button | UI | UI/UX | ✅ | 1 | 0 | 0 | All variants, sizes, loading, focus states |
-| Input | UI | UI/UX | ✅ | 1 | 0 | 0 | Label association, error states, focus, aria-invalid |
-| Select | UI | UI/UX | ✅ | 1 | 0 | 0 | Label association, error states, focus, aria-invalid |
-| Checkbox | UI | UI/UX | ✅ | 1 | 0 | 0 | Accent color, focus ring, checked state |
-| Modal | UI | UI/UX | ✅ | 1 | 0 | 0 | Overlay, focus trap (overlay click), aria-label, reduced motion |
-| Toast | UI | UI/UX | ✅ | 1 | 0 | 0 | role="alert", variants, slide-in, auto-dismiss |
-| Card | UI | UI/UX | ✅ | 1 | 1 | 0 | Hover inconsistency with ProductCard (UI-002) |
-| Table | UI | UI/UX | ✅ | 1 | 0 | 0 | Horizontal scroll mobile, sticky headers |
-| Badge | UI | UI/UX | ✅ | 1 | 0 | 0 | All variants consistent |
-| Spinner | UI | UI/UX | ✅ | 1 | 0 | 0 | Sizes, animate-spin, skeleton variant |
-| AuthModal | UI | Auth / UI/UX | ✅ | 1 | 0 | 0 | Form validation, focus management, aria labels |
-| Navbar | Layout | UI/UX | ✅ | 1 | 0 | 0 | Navigation, user menu, cart count, mobile hamburger |
-| Footer | Layout | UI/UX | ✅ | 1 | 0 | 0 | Links, social icons with aria-label, responsive grid |
-| CustomerLayout | Layout | UI/UX | ✅ | 1 | 0 | 0 | Scroll to top, outlet, toast container |
-| AdminLayout | Layout | UI/UX | ✅ | 1 | 0 | 0 | Header, sidebar toggle, outlet, scroll to top |
-| AdminSidebar | Layout | UI/UX | ✅ | 1 | 0 | 0 | Navigation, mobile slide-in, active state, aria-label |
-| ProductCard | Products | Product Catalog / UI/UX | ✅ | 1 | 1 | 0 | Image, name, category, price, brand, qty, add to cart; hover diff (UI-002), brand "Unknown" (CAT-001) |
-| ProductGrid | Products | Product Catalog / UI/UX | ✅ | 1 | 0 | 0 | Grid 1→2→3→4 cols, empty state |
-| ProductFilters | Products | Product Catalog / UI/UX | ✅ | 1 | 0 | 0 | Search, category, brand, sort, clear; sr-only label |
-| RelatedProducts | Products | Product Catalog / UI/UX | ✅ | 1 | 0 | 0 | 4 related products, grid responsive |
-| CartItem | Cart | Shopping Cart / UI/UX | ✅ | 1 | 0 | 0 | Qty controls, stock cap, remove; aria labels |
-| CartSummary | Cart | Shopping Cart / UI/UX | ✅ | 1 | 0 | 0 | Subtotal, shipping, tax, total; sticky on desktop |
-| StatsCard | Admin | Admin Panel / UI/UX | ✅ | 1 | 0 | 0 | 6 dashboard stat cards render correctly |
-| SalesChart | Charts | Performance / UI/UX | ✅ | 1 | 0 | 0 | Recharts area chart with sample data renders |
+| Button | UI | Functional / UI/UX | ✅ | 2 | 0 | 0 | All variants, sizes, loading, focus states |
+| Input | UI | Functional / UI/UX | ✅ | 2 | 0 | 0 | Label association, error states, focus, aria-invalid |
+| Select | UI | Functional / UI/UX | ✅ | 2 | 0 | 0 | Label association, error states, focus, aria-invalid |
+| Checkbox | UI | Functional / UI/UX | ✅ | 2 | 0 | 0 | Accent color, focus ring, checked state |
+| Modal | UI | Functional / UI/UX | ✅ | 2 | 0 | 0 | Overlay, focus trap (overlay click), aria-label, reduced motion |
+| Toast | UI | Functional / UI/UX | ✅ | 2 | 0 | 0 | role="alert", variants, slide-in, auto-dismiss |
+| Card | UI | Functional / UI/UX | ✅ | 2 | 1 | 0 | Hover inconsistency with ProductCard (UI-002) |
+| Table | UI | Functional / UI/UX | ✅ | 2 | 0 | 0 | Horizontal scroll mobile, sticky headers |
+| Badge | UI | Functional / UI/UX | ✅ | 2 | 0 | 0 | All variants consistent |
+| Spinner | UI | Functional / UI/UX | ✅ | 2 | 0 | 0 | Sizes, animate-spin, skeleton variant |
+| AuthModal | UI | Auth / Functional / UI/UX | ✅ | 3 | 0 | 0 | Form validation, focus management, aria labels |
+| Navbar | Layout | UI/UX / Functional | ✅ | 2 | 0 | 0 | Navigation, user menu, cart count, mobile hamburger |
+| Footer | Layout | UI/UX / Functional | ✅ | 2 | 0 | 0 | Links, social icons with aria-label, responsive grid |
+| CustomerLayout | Layout | UI/UX / Functional | ✅ | 2 | 0 | 0 | Scroll to top, outlet, toast container |
+| AdminLayout | Layout | UI/UX / Functional | ✅ | 2 | 0 | 0 | Header, sidebar toggle, outlet, scroll to top |
+| AdminSidebar | Layout | UI/UX / Functional | ✅ | 2 | 0 | 0 | Navigation, mobile slide-in, active state, aria-label |
+| ProductCard | Products | Product Catalog / UI/UX / Functional | ✅ | 3 | 1 | 0 | Image, name, category, price, brand, qty, add to cart; hover diff (UI-002), brand "Unknown" (CAT-001) |
+| ProductGrid | Products | Product Catalog / UI/UX / Functional | ✅ | 3 | 0 | 0 | Grid 1→2→3→4 cols, empty state |
+| ProductFilters | Products | Product Catalog / UI/UX / Functional | ✅ | 3 | 0 | 0 | Search, category, brand, sort, clear; sr-only label |
+| RelatedProducts | Products | Product Catalog / UI/UX / Functional | ✅ | 3 | 0 | 0 | 4 related products, grid responsive |
+| CartItem | Cart | Shopping Cart / UI/UX / Functional | ✅ | 3 | 0 | 0 | Qty controls, stock cap, remove; aria labels |
+| CartSummary | Cart | Shopping Cart / UI/UX / Functional | ✅ | 3 | 0 | 0 | Subtotal, shipping, tax, total; sticky on desktop |
+| StatsCard | Admin | Admin Panel / UI/UX / Functional | ✅ | 3 | 0 | 0 | 6 dashboard stat cards render correctly |
+| SalesChart | Charts | Performance / UI/UX / Functional | ✅ | 3 | 0 | 0 | Recharts area chart with sample data renders |
 
 ## Workflows Tested
 | Workflow | Agent | Tested | Pass | Fail | Blocked |

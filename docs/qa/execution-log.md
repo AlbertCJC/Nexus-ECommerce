@@ -17,7 +17,7 @@
 | Product Catalog Agent | Complete | 2026-08-05 | 2026-08-05 | 4 (CAT-001 to CAT-004) |
 | Admin Panel Agent | Complete | 2026-08-05 | 2026-08-05 | 3 (ADM-001 to ADM-003 fixed) |
 | UI/UX Agent | **Complete** | 2026-08-05 | 2026-08-05 | **10 (UI-001 to UI-010)** |
-| Functional Testing Agent | Pending | - | - | - |
+| Functional Testing Agent | **Complete** | 2026-08-05 | 2026-08-05 | **10 (FUNC-001 to FUNC-010)** |
 | Performance Agent | Pending | - | - | - |
 | Security Agent | Pending | - | - | - |
 | API Verification Agent | Pending | - | - | - |
@@ -53,3 +53,13 @@
 | CAT-002 | Product Catalog | Medium | Category/Brand filter timing issues in tests | Open |
 | CAT-003 | Product Catalog | Medium | URL sync and clear filters timeout in tests | Open |
 | CAT-004 | Product Catalog | High | Admin login flow timeout for authenticated add-to-cart tests | Open |
+| FUNC-001 | Functional Testing | High | Guest checkout redirects to non-existent `/auth` route (UJ-003) | Open |
+| FUNC-002 | Functional Testing | Low | Newsletter signup form missing from Home page (UJ-005) | Open |
+| FUNC-003 | Functional Testing | Medium | Product detail tabs not implemented | Open |
+| FUNC-004 | Functional Testing | Low | Quantity buttons lack explicit focus ring (UI-010) | Open |
+| FUNC-005 | Functional Testing | Low | Escape key doesn't close mobile sidebar | Open |
+| FUNC-006 | Functional Testing | Low | Product image gallery lacks keyboard navigation | Open |
+| FUNC-007 | Functional Testing | Medium | Admin delete confirmation lacks focus trap | Open |
+| FUNC-008 | Functional Testing | Medium | Search lacks ARIA live region for results announcement | Open |
+| FUNC-009 | Functional Testing | Low | Cart badge missing pulse animation on add | Open |
+| FUNC-010 | Functional Testing | Info | Footer social links open in same tab | Open |
