@@ -14,7 +14,7 @@
 | User Journey Agent | Complete | 2026-08-04 | 2026-08-04 | 8 |
 | Shopping Cart Agent | Complete | 2026-08-04 | 2026-08-04 | 2 |
 | Checkout & Payment Agent | Complete | 2026-08-05 | 2026-08-05 | 4 (CHK-001 to CHK-004) |
-| Product Catalog Agent | Pending | - | - | - |
+| Product Catalog Agent | Complete | 2026-08-05 | 2026-08-05 | 4 (CAT-001 to CAT-004) |
 | Admin Panel Agent | Pending | - | - | - |
 | UI/UX Agent | Pending | - | - | - |
 | Functional Testing Agent | Pending | - | - | - |
@@ -43,6 +43,10 @@
 | UJ-005 | User Journey | Low | Newsletter signup form missing from Home page | Open |
 | UJ-006 | User Journey | Low | Profile page lacks password change feature | Open |
 | UJ-007 | User Journey | Low | OrderHistory missing "Buy Again" functionality | Open |
-| UJ-008 | User Journey | Medium | ProductFilters component broken - reads categories/brands from wrong context | Open |
+| UJ-008 | User Journey | Medium | ProductFilters component broken - reads categories/brands from wrong context | Fixed |
 | CART-001 | Shopping Cart | Critical | Guest users cannot add to cart - forced to login | Open |
 | CART-002 | Shopping Cart | High | No guest cart merge on login | Open |
+| CAT-001 | Product Catalog | Medium | ProductCard brand displays "Unknown" - brand_id mapping issue | Open |
+| CAT-002 | Product Catalog | Medium | Category/Brand filter timing issues in tests | Open |
+| CAT-003 | Product Catalog | Medium | URL sync and clear filters timeout in tests | Open |
+| CAT-004 | Product Catalog | High | Admin login flow timeout for authenticated add-to-cart tests | Open |

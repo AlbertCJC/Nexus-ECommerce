@@ -4,8 +4,8 @@
 | Page | Route | Agent | Tested | Pass | Fail | Blocked | Notes |
 |------|-------|-------|--------|------|------|---------|-------|
 | Home | `/` | User Journey | ✅ | 1 | 0 | 0 | Hero, featured products, brand carousel load |
-| Products | `/products` | User Journey | ✅ | 1 | 0 | 0 | Search, filter, sort work; ProductFilters has bug (UJ-008) |
-| Product Detail | `/products/:id` | User Journey | ✅ | 1 | 1 | 0 | Images, desc, price OK; Guest can't add to cart (UJ-002) |
+| Products | `/products` | Product Catalog | ✅ | 1 | 0 | 0 | Search, filter, sort, URL sync, pagination work; 25 products load |
+| Product Detail | `/products/:id` | Product Catalog | ✅ | 1 | 0 | 0 | Images, thumbnails, desc, price, related products work |
 | Cart | `/cart` | User Journey | ✅ | 1 | 1 | 0 | Qty update, subtotal work; guest cart merge missing (UJ-004) |
 | Checkout | `/checkout` | Checkout & Payment | ✅ | 6 | 3 | 0 | Profile prefill, payment methods, totals, duplicate prevention work; guest redirect broken (UJ-003/CHK-002), payment validation default (CHK-001), test data issue (CHK-003) |
 | Order Confirmation | `/order/:id/confirmation` | User Journey | ✅ | 1 | 0 | 0 | Order details, items, totals display correctly |
@@ -39,10 +39,10 @@
 | CustomerLayout | Layout | UI/UX | ☐ | | | |
 | AdminLayout | Layout | UI/UX | ☐ | | | |
 | AdminSidebar | Layout | UI/UX | ☐ | | | |
-| ProductCard | Products | Product Catalog | ☐ | | | |
-| ProductGrid | Products | Product Catalog | ☐ | | | |
-| ProductFilters | Products | Product Catalog | ✅ | 0 | 1 | 0 | **Broken** - reads categories/brands from wrong context (UJ-008) |
-| RelatedProducts | Products | Product Catalog | ☐ | | | |
+| ProductCard | Products | Product Catalog | ✅ | 1 | 1 | 0 | Image, name, category, price work; brand shows "Unknown" (CAT-001) |
+| ProductGrid | Products | Product Catalog | ✅ | 1 | 0 | 0 | Renders product cards correctly |
+| ProductFilters | Products | Product Catalog | ✅ | 1 | 0 | 0 | Search, category, brand, sort, clear filters all work |
+| RelatedProducts | Products | Product Catalog | ✅ | 1 | 0 | 0 | Shows 4 related products from same category |
 | CartItem | Cart | Shopping Cart | ✅ | 1 | 0 | 0 | Qty controls, stock cap, remove work |
 | CartSummary | Cart | Shopping Cart | ✅ | 1 | 0 | 0 | Subtotal, shipping, tax, total correct |
 | StatsCard | Admin | Admin Panel | ☐ | | | |
@@ -66,10 +66,10 @@
 ## API/Queries Tested
 | Hook/Query | Agent | Tested | Pass | Fail | Blocked |
 |------------|-------|--------|------|------|---------|
-| useProducts | API Verification | ☐ | | | |
-| useProduct | API Verification | ☐ | | | |
-| useCategories | API Verification | ☐ | | | |
-| useBrands | API Verification | ☐ | | | |
+| useProducts | Product Catalog | ✅ | 1 | 0 | 0 | Fetches products with filters, search, sort |
+| useProduct | Product Catalog | ✅ | 1 | 0 | 0 | Fetches single product by ID |
+| useCategories | Product Catalog | ✅ | 1 | 0 | 0 | Fetches all categories |
+| useBrands | Product Catalog | ✅ | 1 | 0 | 0 | Fetches all brands |
 | useOrders | API Verification | ☐ | | | |
 | useOrder | API Verification | ☐ | | | |
 | useCart | API Verification | ☐ | | | |
