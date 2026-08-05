@@ -23,7 +23,7 @@
 | API Verification Agent | Complete | 2026-08-05 | 2026-08-05 | 10 (API-001 to API-010) |
 | **Browser Compatibility Agent** | **Complete** | 2026-08-05 | 2026-08-05 | **4 (BC-001 to BC-004)** |
 | Regression Agent | **Complete** | 2026-08-05 | 2026-08-05 | **6 (REG-001 to REG-006)** |
-| Edge Case Agent | Pending | - | - | - |
+| Edge Case Agent | Complete | 2026-08-05 | 2026-08-05 | 9 (EDGE-001 to EDGE-009) |
 
 ## Issue Registry
 | ID | Agent | Severity | Title | Status |
@@ -98,3 +98,12 @@
 | **REG-004** | **Regression** | **Info** | **Playwright: 47 tests skipped (browser-specific - expected behavior)** | **N/A** |
 | **REG-005** | **Regression** | **Info** | **Firefox: Cloudflare cookie warnings on Supabase images (Supabase CDN, not app)** | **Open** |
 | **REG-006** | **Regression** | **Info** | **WebKit headless: Touch events not detected (Playwright limitation, not bug)** | **N/A** |
+| **EDGE-001** | **Edge Case** | **High** | **No duplicate submission prevention on rapid Place Order clicks** | **Open** |
+| **EDGE-002** | **Edge Case** | **Medium** | **Payment method validation missing when all fields cleared** | **Open** |
+| **EDGE-003** | **Edge Case** | **Low** | **Negative quantity accepted in database** | **Open** |
+| **EDGE-004** | **Edge Case** | **Low** | **Decimal quantity input accepted in number field** | **Open** |
+| **EDGE-005** | **Edge Case** | **Medium** | **No offline support / PWA features** | **Open** |
+| **EDGE-006** | **Edge Case** | **Info** | **No skeleton loading states during slow network (PERF-004)** | **Open** |
+| **EDGE-007** | **Edge Case** | **Info** | **Cart qty minus button disabled at 1 (by design)** | **Open** |
+| **EDGE-008** | **Edge Case** | **Info** | **Search returns empty for empty string** | **Open** |
+| **EDGE-009** | **Edge Case** | **Low** | **Form data partially lost on refresh mid-checkout** | **Open** |

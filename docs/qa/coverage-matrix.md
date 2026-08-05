@@ -84,6 +84,7 @@
 | OAuth Login | Auth | ☐ | | | 1 |
 | **Cross-Browser Compatibility** | **Browser Compatibility** | **✅** | **4 browsers, 4 viewports** | **0** | **0** | **All desktop browsers + mobile viewports pass** |
 | **Regression Suite (220 unit + 79 e2e)** | **Regression Agent** | **✅** | **299** | **0** | **0** | **Full suite passes; no new regressions** |
+| **Edge Case Testing** | **Edge Case Agent** | **✅** | **29 tests (7 categories)** | **20** | **9** | **0** | **Invalid inputs, empty states, boundaries, rapid actions, browser events, network, offline** |
 
 ## API/Queries Tested
 | Hook/Query | Agent | Tested | Pass | Fail | Blocked |
