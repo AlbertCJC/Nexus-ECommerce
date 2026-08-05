@@ -18,7 +18,7 @@
 | Admin Panel Agent | Complete | 2026-08-05 | 2026-08-05 | 3 (ADM-001 to ADM-003 fixed) |
 | UI/UX Agent | **Complete** | 2026-08-05 | 2026-08-05 | **10 (UI-001 to UI-010)** |
 | Functional Testing Agent | **Complete** | 2026-08-05 | 2026-08-05 | **10 (FUNC-001 to FUNC-010)** |
-| Performance Agent | Pending | - | - | - |
+| Performance Agent | **Complete** | 2026-08-05 | 2026-08-05 | **15 (PERF-001 to PERF-015)** |
 | Security Agent | Pending | - | - | - |
 | API Verification Agent | Pending | - | - | - |
 | Browser Compatibility Agent | Pending | - | - | - |
@@ -63,3 +63,18 @@
 | FUNC-008 | Functional Testing | Medium | Search lacks ARIA live region for results announcement | Open |
 | FUNC-009 | Functional Testing | Low | Cart badge missing pulse animation on add | Open |
 | FUNC-010 | Functional Testing | Info | Footer social links open in same tab | Open |
+| PERF-001 | Performance | High | No Code Splitting - 1.1 MB single JS bundle | Open |
+| PERF-002 | Performance | High | Admin Stats N+1 Queries - 5 separate count queries | Open |
+| PERF-003 | Performance | Medium | Admin Orders Heavy Query - Fetches all orders + items + products | Open |
+| PERF-004 | Performance | Medium | No Skeleton Loading - Full-page spinners only | Open |
+| PERF-005 | Performance | Medium | Images Not WebP - No format optimization | Open |
+| PERF-006 | Performance | Medium | No Responsive Images - Same image for all sizes | Open |
+| PERF-007 | Performance | Medium | Missing Width/Height on Images - CLS risk | Open |
+| PERF-008 | Performance | Low | No React Query Stale Data - No placeholderData | Open |
+| PERF-009 | Performance | Low | Checkout Form Heavy - Fetches all products + cart + profile | Open |
+| PERF-010 | Performance | Low | Admin Dashboard Chart Data - Hardcoded zeros | Open |
+| PERF-011 | Performance | Low | Bundle Analysis Not Automated - No CI tracking | Open |
+| PERF-012 | Performance | Low | No Performance Budgets - No Lighthouse CI | Open |
+| PERF-013 | Performance | Info | ProductCard Brand Logo - Loads per card | Open |
+| PERF-014 | Performance | Info | Lazy Loading on Above-Fold - Featured products | Open |
+| PERF-015 | Performance | Info | useCategories/useBrands Everywhere - Fetched on every page | Open |

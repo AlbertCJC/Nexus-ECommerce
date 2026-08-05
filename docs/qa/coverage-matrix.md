@@ -48,6 +48,15 @@
 | StatsCard | Admin | Admin Panel / UI/UX / Functional | ✅ | 3 | 0 | 0 | 6 dashboard stat cards render correctly |
 | SalesChart | Charts | Performance / UI/UX / Functional | ✅ | 3 | 0 | 0 | Recharts area chart with sample data renders |
 
+## Performance Components Tested
+| Component | Category | Agent | Tested | Pass | Fail | Blocked | Notes |
+|-----------|----------|-------|--------|------|------|---------|-------|
+| Bundle Analysis | Performance | Performance Agent | ✅ | 1 | 0 | 0 | 1.1 MB JS bundle; no code splitting; vendor chunks missing |
+| Page Load Metrics (10 pages) | Performance | Performance Agent | ✅ | 7 | 3 | 0 | FCP/LCP/TTI estimated via code analysis |
+| API Latency (Queries/Mutations) | Performance | Performance Agent | ✅ | 6 | 2 | 0 | useAdminStats N+1; useOrders heavy query |
+| Loading States / Skeletons | Performance | Performance Agent | ✅ | 2 | 6 | 0 | Full-page spinners only; no skeletons/Suspense |
+| Image Optimization | Performance | Performance Agent | ✅ | 2 | 4 | 0 | Lazy loading yes; WebP/no srcset/dimensions no |
+
 ## Workflows Tested
 | Workflow | Agent | Tested | Pass | Fail | Blocked |
 |----------|-------|--------|------|------|---------|
