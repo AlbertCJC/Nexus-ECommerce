@@ -111,7 +111,6 @@ export function ProductCard({ product, categoryName, brands = [], compact = fals
             <div className="flex items-center gap-2 mt-1">
               <span className={`badge ${stockInfo.class}`}>{stockInfo.text}</span>
               {categoryName && <span className="text-xs text-[rgb(var(--text-muted))]">{categoryName}</span>}
-              {renderBrand()}
             </div>
           </div>
           <div className="flex gap-2">

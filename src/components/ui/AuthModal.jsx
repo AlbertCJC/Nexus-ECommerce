@@ -299,13 +299,6 @@ export function AuthModal({ isOpen, onClose, initialMode = 'login' }) {
             </>
           )}
         </div>
-
-        {/* Demo credentials hint */}
-        <div className="mt-6 p-3 bg-[rgb(var(--bg-elevated))] rounded-lg border border-[rgb(var(--border-subtle))]">
-          <p className="text-xs text-[rgb(var(--text-muted))] text-center">
-            <strong>Demo:</strong> Register a new account, or use admin credentials for admin access.
-          </p>
-        </div>
       </div>
     </div>
   )
