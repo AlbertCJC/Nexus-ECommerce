@@ -111,31 +111,6 @@ export function AuthModal({ isOpen, onClose, initialMode = 'login' }) {
     }
   }
 
-  const handleAdminLogin = async (e) => {
-    e.preventDefault()
-    if (!validateForm()) return
-    setIsLoading(true)
-    try {
-      // Admin login is just a regular login - role comes from user_profiles
-      const result = await signIn(formData.email, formData.password)
-      if (result.error) {
-        addToast({ type: 'error', message: result.error.message })
-      } else {
-        onClose()
-        addToast({ type: 'success', message: 'Welcome back, Admin!' })
-
-        // Handle post-login redirect for admin
-        const redirectTo = sessionStorage.getItem('postLoginRedirect')
-        if (redirectTo) {
-          sessionStorage.removeItem('postLoginRedirect')
-          navigate(redirectTo)
-        }
-      }
-    } finally {
-      setIsLoading(false)
-    }
-  }
-
   if (!isOpen) return null
 
   return (
@@ -154,13 +129,7 @@ export function AuthModal({ isOpen, onClose, initialMode = 'login' }) {
           </button>
         </div>
 
-        <form onSubmit={mode === 'admin' ? handleAdminLogin : mode === 'forgot-password' ? handleForgotPassword : handleSubmit} className="space-y-4">
-          {/* Admin mode indicator */}
-          {mode === 'admin' && (
-            <div className="p-3 bg-[rgb(var(--accent-warning))/0.1] border border-[rgb(var(--accent-warning))/0.3] rounded-lg text-sm text-[rgb(var(--accent-warning))]">
-              <strong>Admin Login</strong> - Sign in with admin account
-            </div>
-          )}
+        <form onSubmit={mode === 'forgot-password' ? handleForgotPassword : handleSubmit} className="space-y-4">
 
           {mode === 'forgot-password' && (
             <p className="text-sm text-[rgb(var(--text-secondary))] text-center mb-2">
@@ -327,32 +296,6 @@ export function AuthModal({ isOpen, onClose, initialMode = 'login' }) {
                   </button>
                 </p>
               )}
-              <p className="mt-3 text-xs text-[rgb(var(--text-muted))]">
-                {mode === 'admin' ? (
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setMode('login')
-                      setErrors({})
-                    }}
-                    className="text-[rgb(var(--accent-primary))] hover:underline"
-                  >
-                    Switch to Customer Login
-                  </button>
-                ) : (
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setMode('admin')
-                      setErrors({})
-                      setFormData({ firstName: '', lastName: '', email: '', password: '', confirmPassword: '' })
-                    }}
-                    className="text-[rgb(var(--text-muted))] hover:text-[rgb(var(--accent-secondary))] underline"
-                  >
-                    Admin Login
-                  </button>
-                )}
-              </p>
             </>
           )}
         </div>
