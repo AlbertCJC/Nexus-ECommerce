@@ -3,7 +3,7 @@ import { useAuth } from '../../context/AuthContext'
 import { useAppContext } from '../../context/AppContext'
 import { useState, useEffect, useRef } from 'react'
 import { AuthModal } from '../ui/AuthModal'
-import { ArrowRightOnRectangleIcon, UserCircleIcon, ShoppingBagIcon, Cog6ToothIcon } from '@heroicons/react/24/outline'
+import { ArrowRightOnRectangleIcon, UserCircleIcon, ShoppingBagIcon, Cog6ToothIcon, ComputerDesktopIcon } from '@heroicons/react/24/outline'
 import { useCart, useBrands, useCategories } from '../../hooks'
 
 export function Navbar() {
@@ -55,6 +55,8 @@ export function Navbar() {
     { path: '/', label: 'Home' },
     { path: '/products', label: 'Products' },
   ]
+
+  const isHomepage = location.pathname === '/'
 
   const handleLogout = async (e) => {
     e?.stopPropagation()
@@ -223,18 +225,31 @@ export function Navbar() {
               </div>
             ) : (
               <div className="flex items-center gap-2">
-                <button
-                  onClick={() => openAuthModal('login')}
-                  className="btn-ghost text-sm hidden sm:block"
-                >
-                  Sign In
-                </button>
-                <button
-                  onClick={() => openAuthModal('register')}
-                  className="btn-primary text-sm"
-                >
-                  Sign Up
-                </button>
+                {isHomepage ? (
+                  <Link
+                    to="/admin/login"
+                    className="btn-ghost text-sm hidden sm:block flex items-center gap-2"
+                    aria-label="Admin Portal"
+                  >
+                    <ComputerDesktopIcon className="w-4 h-4" />
+                    Admin Portal
+                  </Link>
+                ) : (
+                  <>
+                    <button
+                      onClick={() => openAuthModal('login')}
+                      className="btn-ghost text-sm hidden sm:block"
+                    >
+                      Sign In
+                    </button>
+                    <button
+                      onClick={() => openAuthModal('register')}
+                      className="btn-primary text-sm"
+                    >
+                      Sign Up
+                    </button>
+                  </>
+                )}
               </div>
             )}
             <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden p-2 text-[rgb(var(--text-secondary))]" aria-expanded={mobileMenuOpen} aria-controls="mobile-menu" aria-label="Toggle menu">
@@ -291,24 +306,38 @@ export function Navbar() {
                   </div>
                 ) : (
                   <div className="flex flex-col gap-2">
-                    <button
-                      onClick={() => {
-                        openAuthModal('login')
-                        setMobileMenuOpen(false)
-                      }}
-                      className="btn-ghost text-sm text-left"
-                    >
-                      Sign In
-                    </button>
-                    <button
-                      onClick={() => {
-                        openAuthModal('register')
-                        setMobileMenuOpen(false)
-                      }}
-                      className="btn-primary text-sm text-left"
-                    >
-                      Sign Up
-                    </button>
+                    {isHomepage ? (
+                      <Link
+                        to="/admin/login"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="btn-ghost text-sm text-left flex items-center gap-2"
+                        aria-label="Admin Portal"
+                      >
+                        <ComputerDesktopIcon className="w-4 h-4" />
+                        Admin Portal
+                      </Link>
+                    ) : (
+                      <>
+                        <button
+                          onClick={() => {
+                            openAuthModal('login')
+                            setMobileMenuOpen(false)
+                          }}
+                          className="btn-ghost text-sm text-left"
+                        >
+                          Sign In
+                        </button>
+                        <button
+                          onClick={() => {
+                            openAuthModal('register')
+                            setMobileMenuOpen(false)
+                          }}
+                          className="btn-primary text-sm text-left"
+                        >
+                          Sign Up
+                        </button>
+                      </>
+                    )}
                   </div>
                 )}
               </div>
