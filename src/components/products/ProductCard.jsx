@@ -22,8 +22,8 @@ export function ProductCard({ product, categoryName, brands = [], compact = fals
   const canAddToCart = product.status === 'active' && product.stock > 0
   const quantityInCart = cartItem?.quantity || 0
   const availableStock = product.stock - quantityInCart
-  const brand = brands.find(b => b.id === product.brandId)
-  const brandName = brand ? brand.name : getBrandName(brands, product.brandId)
+  const brand = brands.find(b => b.id === product.brand_id)
+  const brandName = brand ? brand.name : getBrandName(brands, product.brand_id)
 
   const handleAddToCart = async (e) => {
     e.preventDefault()
@@ -83,6 +83,7 @@ export function ProductCard({ product, categoryName, brands = [], compact = fals
           <p className="text-sm text-[rgb(var(--accent-primary))] font-semibold">{formatCurrency(product.price_cents)}</p>
           <div className="flex items-center gap-2 mt-1">
             <span className={`badge ${stockInfo.class}`}>{stockInfo.text}</span>
+            {categoryName && <span className="text-xs text-[rgb(var(--text-muted))]">{categoryName}</span>}
             {renderBrand()}
           </div>
         </div>
@@ -109,6 +110,7 @@ export function ProductCard({ product, categoryName, brands = [], compact = fals
             <p className="text-xl font-bold text-[rgb(var(--accent-primary))]">{formatCurrency(product.price_cents)}</p>
             <div className="flex items-center gap-2 mt-1">
               <p className={`text-xs ${stockInfo.class.replace('bg-', 'text-').replace('100', '700')}`}>{stockInfo.text}</p>
+              {categoryName && <span className="text-xs text-[rgb(var(--text-muted))]">{categoryName}</span>}
               {renderBrand()}
             </div>
           </div>

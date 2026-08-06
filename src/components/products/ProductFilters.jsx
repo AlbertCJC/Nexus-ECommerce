@@ -87,7 +87,7 @@ export function ProductFilters({ onFilterChange, categories = [], brands = [], p
         <div className="space-y-2 max-h-60 overflow-y-auto">
           {brands.slice(0, expandedBrands ? brands.length : 6).map(brand => (
             <label key={brand.id} className="flex items-center gap-2 cursor-pointer">
-              <Checkbox checked={brandParams.includes(brand.id)} onChange={() => handleBrandChange(brand.id)} />
+              <Checkbox value={brand.id} checked={brandParams.includes(brand.id)} onChange={() => handleBrandChange(brand.id)} />
               <span className="text-sm text-[rgb(var(--text-secondary))]">{brand.name}</span>
               <span className="text-xs text-[rgb(var(--text-muted))] ml-auto">({brandCounts[brand.id] || 0})</span>
             </label>

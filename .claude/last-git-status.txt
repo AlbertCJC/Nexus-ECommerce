@@ -1,19 +1,7 @@
  M .claude/last-git-status.txt
  M .claude/session-log.txt
- M .obsidian/workspace.json
- M package-lock.json
- M package.json
- M src/components/ui/AuthModal.jsx
- M src/context/AppContext.jsx
- M src/hooks/mutations/useMutations.js
- M src/pages/admin/AdminCategories.jsx
- M src/pages/admin/AdminProducts.jsx
- M src/routes/AppRoutes.jsx
- M supabase/migrations/20260806002418_add_order_items_insert_policy.sql
-?? e2e-tests/admin-delete.spec.ts
-?? e2e-tests/forgot-password.spec.ts
-?? scripts/fix-rls.js
-?? src/pages/auth/LoginPage.jsx
-?? src/pages/auth/ResetPassword.jsx
-?? supabase/migrations/20260806120212_fix_rls_policies.sql
-?? supabase/migrations/20260806_fix_soft_delete.sql
+ M e2e-tests/catalog.spec.ts
+ M src/components/products/ProductCard.jsx
+ M src/components/products/ProductFilters.jsx
+ M src/components/products/ProductGrid.jsx
+ M src/components/ui/Checkbox.jsx

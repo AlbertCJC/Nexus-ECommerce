@@ -16,7 +16,7 @@ export function ProductGrid({ products, categories, brands = [], title, emptyMes
       {title && <h2 className="text-xl font-semibold text-[rgb(var(--text-primary))] mb-4">{title}</h2>}
       <div className={`grid gap-4 sm:gap-6 ${compact ? 'grid-cols-1' : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'}`}>
         {products.map(product => {
-          const category = categories.find(c => c.id === product.categoryId)
+          const category = categories.find(c => c.id === product.category_id)
           return <ProductCard key={product.id} product={product} categoryName={category?.name} brands={brands} compact={compact} />
         })}
       </div>
