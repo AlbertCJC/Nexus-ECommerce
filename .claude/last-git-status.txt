@@ -1,108 +1,19 @@
+ M .claude/last-git-status.txt
  M .claude/session-log.txt
- M .gitignore
- M .obsidian/graph.json
  M .obsidian/workspace.json
- M README.md
- M docs/qa/cart-findings.md
- M e2e-tests/admin-panel.spec.ts
  M package-lock.json
  M package.json
- M playwright.config.ts
- M src/components/admin/StatsCard.jsx
- M src/components/cart/CartItem.jsx
- M src/components/cart/CartSummary.jsx
- M src/components/charts/SalesChart.jsx
- M src/components/layout/AdminSidebar.jsx
- M src/components/layout/CustomerLayout.jsx
- M src/components/layout/Footer.jsx
- M src/components/layout/Navbar.jsx
- M src/components/products/ProductCard.jsx
- M src/components/products/ProductFilters.jsx
- M src/components/products/ProductGrid.jsx
- M src/components/products/RelatedProducts.jsx
- M src/components/ui/Badge.jsx
- M src/components/ui/Button.jsx
- M src/components/ui/Card.jsx
- M src/components/ui/Input.jsx
- M src/components/ui/Modal.jsx
- M src/components/ui/Select.jsx
- M src/components/ui/Spinner.jsx
- M src/components/ui/Table.jsx
- M src/components/ui/Toast.jsx
- M src/components/ui/ToastContainer.jsx
+ M src/components/ui/AuthModal.jsx
  M src/context/AppContext.jsx
- M src/data/seedData.js
- M src/hooks/queries/useAdmin.js
- M src/hooks/queries/useOrders.js
- M src/hooks/queries/useProducts.js
- M src/hooks/queries/useProfile.js
- M src/hooks/useLocalStorage.js
- M src/integration/accessibility.test.jsx
- M src/integration/cart-flow.test.jsx
- M src/main.jsx
+ M src/hooks/mutations/useMutations.js
  M src/pages/admin/AdminCategories.jsx
- M src/pages/admin/AdminCustomers.jsx
- M src/pages/admin/AdminDashboard.jsx
- M src/pages/admin/AdminLogin.jsx
- M src/pages/admin/AdminOrderDetail.jsx
- M src/pages/admin/AdminOrders.jsx
  M src/pages/admin/AdminProducts.jsx
- M src/pages/customer/Cart.jsx
- M src/pages/customer/Checkout.jsx
- M src/pages/customer/Home.jsx
- M src/pages/customer/OrderConfirmation.jsx
- M src/pages/customer/ProductDetail.jsx
- M src/pages/customer/Products.jsx
- M src/routes/AdminProtectedRoute.jsx
  M src/routes/AppRoutes.jsx
- M src/styles/index.css
- M src/test/api-verification.test.jsx
- M src/utils/formatters.js
- M src/utils/helpers.js
- M src/utils/validation.js
-?? .env.example
-?? docs/qa/api-findings.md
-?? e2e-tests/catalog.spec.ts
-?? e2e-tests/checkout-admin.spec.ts
-?? e2e-tests/checkout-direct.spec.ts
-?? e2e-tests/checkout-final.spec.ts
-?? e2e-tests/checkout.spec.ts
-?? e2e-tests/e2e.spec.ts
-?? e2e-tests/test-admin-login.spec.ts
-?? e2e-tests/test-cart-cleared.spec.ts
-?? e2e-tests/test-guest-cart.spec.ts
-?? e2e-tests/test-logout.spec.ts
-?? public/
-?? scripts/
-?? src/components/ui/AuthModal.jsx
-?? src/components/ui/Checkbox.jsx
-?? src/components/ui/TableModal.test.jsx
-?? src/components/ui/UIComponents.test.jsx
-?? src/context/AuthContext.jsx
-?? src/context/QueryProvider.jsx
-?? src/hooks/hooks.test.js
-?? src/hooks/mutations/
-?? src/lib/
-?? src/pages/admin/AdminBrands.jsx
-?? src/pages/auth/
-?? src/pages/customer/OrderHistory.jsx
-?? src/pages/customer/Profile.jsx
-?? src/routes/CustomerProtectedRoute.jsx
-?? src/test/actual-hook.test.js
-?? src/test/debounced-timer.test.js
-?? src/test/minimal-hook.test.js
-?? src/test/minimal-hook2.test.js
-?? src/test/minimal-hook3.test.js
-?? src/test/minimal-hook4.test.js
-?? src/test/setup.jsx
-?? src/test/sync-debug.test.js
-?? src/test/timers.test.js
-?? src/utils/auth.js
-?? src/utils/formatters.test.js
-?? src/utils/helpers.test.js
-?? src/utils/rateLimit.ts
-?? src/utils/types.ts
-?? src/utils/validation.test.js
-?? supabase/
-?? tests/
-?? vercel.json
+ M supabase/migrations/20260806002418_add_order_items_insert_policy.sql
+?? e2e-tests/admin-delete.spec.ts
+?? e2e-tests/forgot-password.spec.ts
+?? scripts/fix-rls.js
+?? src/pages/auth/LoginPage.jsx
+?? src/pages/auth/ResetPassword.jsx
+?? supabase/migrations/20260806120212_fix_rls_policies.sql
+?? supabase/migrations/20260806_fix_soft_delete.sql

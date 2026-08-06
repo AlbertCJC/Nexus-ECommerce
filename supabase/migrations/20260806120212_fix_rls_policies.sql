@@ -34,6 +34,8 @@ create policy "admin brands update" on brands for update using (
 drop policy if exists "admin products update" on products;
 create policy "admin products update" on products for update using (
   auth.jwt() -> 'user_metadata' ->> 'role' = 'admin'
+) with check (
+  auth.jwt() -> 'user_metadata' ->> 'role' = 'admin'
 );
 
 -- Drop and recreate DELETE policy for categories

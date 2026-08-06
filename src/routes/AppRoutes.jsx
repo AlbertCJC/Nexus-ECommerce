@@ -26,6 +26,7 @@ const Profile = lazy(() => import('../pages/customer/Profile'))
 
 // Auth pages - lazy loaded
 const AuthCallback = lazy(() => import('../pages/auth/AuthCallback'))
+const ResetPassword = lazy(() => import('../pages/auth/ResetPassword'))
 
 // Admin pages - lazy loaded
 const AdminLogin = lazy(() => import('../pages/admin/AdminLogin'))
@@ -49,6 +50,9 @@ export function AppRoutes() {
 
         {/* Auth callback for email verification */}
         <Route path="auth/callback" element={<AuthCallback />} />
+
+        {/* Password reset */}
+        <Route path="auth/reset-password" element={<ResetPassword />} />
 
         {/* Public Customer Routes (Cart & Checkout accessible to guests - localStorage based) */}
         <Route path="cart" element={<Cart />} />

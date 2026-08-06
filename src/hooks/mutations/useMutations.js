@@ -254,7 +254,7 @@ export function useCreateProduct() {
       return data
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: productQueryKeys.products() })
+      queryClient.invalidateQueries({ queryKey: ['products'] })
       queryClient.invalidateQueries({ queryKey: adminQueryKeys.adminStats() })
     },
     onError: (error) => ensurePermissionError(error),
@@ -279,7 +279,7 @@ export function useUpdateProduct() {
       return data
     },
     onSuccess: (_, vars) => {
-      queryClient.invalidateQueries({ queryKey: productQueryKeys.products() })
+      queryClient.invalidateQueries({ queryKey: ['products'] })
       queryClient.invalidateQueries({ queryKey: productQueryKeys.product(vars.id) })
       queryClient.invalidateQueries({ queryKey: adminQueryKeys.adminStats() })
     },
@@ -292,35 +292,29 @@ export function useDeleteProduct() {
 
   return useMutation({
     mutationFn: async (id) => {
-      // Check if products are referenced in order_items (preserve order history)
-      const { count: orderCount } = await supabase
-        .from('order_items')
-        .select('id', { count: 'exact', head: true })
-        .eq('product_id', id)
-
-      if (orderCount && orderCount > 0) {
-        throw new Error('Cannot delete product with existing orders. Consider marking as inactive instead.')
-      }
-
-      // Check if products are in carts (can be removed from carts)
-      const { count: cartCount } = await supabase
-        .from('cart_items')
-        .select('id', { count: 'exact', head: true })
-        .eq('product_id', id)
-
-      // Note: We allow deletion even with cart items - they'll be removed from carts
-      // Could add warning instead if preferred
-
+      // Soft delete: mark as inactive instead of hard delete (preserves order history AND keeps product row in admin panel)
       const { error } = await supabase
         .from('products')
-        .delete()
+        .update({ status: 'inactive' })
         .eq('id', id)
 
       if (error) throw error
+
+      // Cascade delete cart_items for this product (prevent ghost items in carts)
+      const { error: cartError } = await supabase
+        .from('cart_items')
+        .delete()
+        .eq('product_id', id)
+
+      if (cartError) throw cartError
+
+      return { softDeleted: true }
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: productQueryKeys.products() })
+      // Invalidate all product queries regardless of filters
+      queryClient.invalidateQueries({ queryKey: ['products'] })
       queryClient.invalidateQueries({ queryKey: adminQueryKeys.adminStats() })
+      queryClient.invalidateQueries({ queryKey: cartQueryKeys.cart() })
     },
     onError: (error) => ensurePermissionError(error),
   })

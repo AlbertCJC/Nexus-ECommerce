@@ -5,7 +5,7 @@ import { useAuth } from '../../context/AuthContext'
 import { addToast } from '../../context/AppContext'
 
 export function AuthModal({ isOpen, onClose, initialMode = 'login' }) {
-  const { signUp, signIn, signOut } = useAuth()
+  const { signUp, signIn, signOut, resetPassword } = useAuth()
   const navigate = useNavigate()
   const [mode, setMode] = useState(initialMode)
   const [formData, setFormData] = useState({
@@ -37,12 +37,42 @@ export function AuthModal({ isOpen, onClose, initialMode = 'login' }) {
       if (!formData.password) newErrors.password = 'Password is required'
       else if (formData.password.length < 6) newErrors.password = 'Password must be at least 6 characters'
       if (formData.password !== formData.confirmPassword) newErrors.confirmPassword = 'Passwords do not match'
+    } else if (mode === 'forgot-password') {
+      if (!formData.email.trim()) newErrors.email = 'Email is required'
+      else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = 'Invalid email format'
     } else {
       if (!formData.email.trim()) newErrors.email = 'Email is required'
       if (!formData.password) newErrors.password = 'Password is required'
     }
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0
+  }
+
+  const handleForgotPassword = async (e) => {
+    e.preventDefault()
+    if (!validateForm()) return
+
+    setIsLoading(true)
+    try {
+      console.log('AuthModal: calling resetPassword for', formData.email)
+      const result = await resetPassword(formData.email)
+      console.log('AuthModal: resetPassword result:', result)
+      if (result.error) {
+        console.log('AuthModal: resetPassword error:', result.error.message)
+        addToast({ type: 'error', message: result.error.message })
+      } else {
+        console.log('AuthModal: resetPassword success')
+        addToast({ type: 'success', message: 'Password reset link sent! Check your email.' })
+        setMode('login')
+        setFormData({ firstName: '', lastName: '', email: '', password: '', confirmPassword: '' })
+        setErrors({})
+      }
+    } catch (err) {
+      console.error('AuthModal: resetPassword exception:', err)
+      addToast({ type: 'error', message: err.message || 'Failed to send reset link' })
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   const handleSubmit = async (e) => {
@@ -113,7 +143,7 @@ export function AuthModal({ isOpen, onClose, initialMode = 'login' }) {
       <div className="modal-content w-full max-w-md max-h-[90vh] overflow-y-auto p-8">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-bold bg-gradient-to-r from-[rgb(var(--accent-primary))] to-[rgb(var(--accent-secondary))] bg-clip-text text-transparent">
-            {mode === 'login' ? 'Welcome Back' : 'Create Account'}
+            {mode === 'login' ? 'Welcome Back' : mode === 'register' ? 'Create Account' : 'Reset Password'}
           </h2>
           <button
             onClick={onClose}
@@ -124,12 +154,18 @@ export function AuthModal({ isOpen, onClose, initialMode = 'login' }) {
           </button>
         </div>
 
-        <form onSubmit={mode === 'admin' ? handleAdminLogin : handleSubmit} className="space-y-4">
+        <form onSubmit={mode === 'admin' ? handleAdminLogin : mode === 'forgot-password' ? handleForgotPassword : handleSubmit} className="space-y-4">
           {/* Admin mode indicator */}
           {mode === 'admin' && (
             <div className="p-3 bg-[rgb(var(--accent-warning))/0.1] border border-[rgb(var(--accent-warning))/0.3] rounded-lg text-sm text-[rgb(var(--accent-warning))]">
               <strong>Admin Login</strong> - Sign in with admin account
             </div>
+          )}
+
+          {mode === 'forgot-password' && (
+            <p className="text-sm text-[rgb(var(--text-secondary))] text-center mb-2">
+              Enter your email address and we'll send you a link to reset your password.
+            </p>
           )}
 
           {mode === 'register' && (
@@ -187,24 +223,28 @@ export function AuthModal({ isOpen, onClose, initialMode = 'login' }) {
             {errors.email && <p className="text-xs text-[rgb(var(--accent-danger))] mt-1">{errors.email}</p>}
           </div>
 
-          <div>
-            <label htmlFor="password" className="label">Password</label>
-            <div className="relative">
-              <LockClosedIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[rgb(var(--text-muted))]" />
-              <input
-                id="password"
-                type="password"
-                className={`input pl-10 ${errors.password ? 'border-[rgb(var(--accent-danger))]' : ''}`}
-                placeholder="••••••••"
-                value={formData.password}
-                onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                disabled={isLoading}
-                autoComplete={mode === 'login' ? 'current-password' : 'new-password'}
-              />
+          {/* Password field - hidden for forgot-password mode */}
+          {mode !== 'forgot-password' && (
+            <div>
+              <label htmlFor="password" className="label">Password</label>
+              <div className="relative">
+                <LockClosedIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[rgb(var(--text-muted))]" />
+                <input
+                  id="password"
+                  type="password"
+                  className={`input pl-10 ${errors.password ? 'border-[rgb(var(--accent-danger))]' : ''}`}
+                  placeholder="••••••••"
+                  value={formData.password}
+                  onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                  disabled={isLoading}
+                  autoComplete={mode === 'login' ? 'current-password' : 'new-password'}
+                />
+              </div>
+              {errors.password && <p className="text-xs text-[rgb(var(--accent-danger))] mt-1">{errors.password}</p>}
             </div>
-            {errors.password && <p className="text-xs text-[rgb(var(--accent-danger))] mt-1">{errors.password}</p>}
-          </div>
+          )}
 
+          {/* Confirm Password - only for register mode */}
           {mode === 'register' && (
             <div>
               <label htmlFor="confirmPassword" className="label">Confirm Password</label>
@@ -236,54 +276,85 @@ export function AuthModal({ isOpen, onClose, initialMode = 'login' }) {
                   <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                 </svg>
-                {mode === 'login' ? 'Signing in...' : 'Creating account...'}
+                {mode === 'forgot-password' ? 'Sending...' : mode === 'login' ? 'Signing in...' : 'Creating account...'}
               </span>
             ) : (
-              mode === 'login' ? 'Sign In' : 'Create Account'
+              mode === 'forgot-password' ? 'Send Reset Link' : mode === 'login' ? 'Sign In' : 'Create Account'
             )}
           </button>
         </form>
 
         <div className="mt-6 text-center">
-          <p className="text-sm text-[rgb(var(--text-secondary))]">
-            {mode === 'login' ? "Don't have an account? " : 'Already have an account? '}
+          {mode === 'forgot-password' ? (
             <button
               type="button"
               onClick={() => {
-                setMode(mode === 'login' ? 'register' : 'login')
+                setMode('login')
                 setErrors({})
+                setFormData({ firstName: '', lastName: '', email: '', password: '', confirmPassword: '' })
               }}
               className="text-[rgb(var(--accent-primary))] hover:underline font-medium"
             >
-              {mode === 'login' ? 'Sign Up' : 'Sign In'}
+              Back to Login
             </button>
-          </p>
-          <p className="mt-3 text-xs text-[rgb(var(--text-muted))]">
-            {mode === 'admin' ? (
-              <button
-                type="button"
-                onClick={() => {
-                  setMode('login')
-                  setErrors({})
-                }}
-                className="text-[rgb(var(--accent-primary))] hover:underline"
-              >
-                Switch to Customer Login
-              </button>
-            ) : (
-              <button
-                type="button"
-                onClick={() => {
-                  setMode('admin')
-                  setErrors({})
-                  setFormData({ firstName: '', lastName: '', email: '', password: '', confirmPassword: '' })
-                }}
-                className="text-[rgb(var(--text-muted))] hover:text-[rgb(var(--accent-secondary))] underline"
-              >
-                Admin Login
-              </button>
-            )}
-          </p>
+          ) : (
+            <>
+              <p className="text-sm text-[rgb(var(--text-secondary))]">
+                {mode === 'login' ? "Don't have an account? " : 'Already have an account? '}
+                <button
+                  type="button"
+                  onClick={() => {
+                    setMode(mode === 'login' ? 'register' : 'login')
+                    setErrors({})
+                  }}
+                  className="text-[rgb(var(--accent-primary))] hover:underline font-medium"
+                >
+                  {mode === 'login' ? 'Sign Up' : 'Sign In'}
+                </button>
+              </p>
+              {mode === 'login' && (
+                <p className="mt-3 text-sm text-[rgb(var(--text-secondary))]">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setMode('forgot-password')
+                      setErrors({})
+                      setFormData({ firstName: '', lastName: '', email: '', password: '', confirmPassword: '' })
+                    }}
+                    className="text-[rgb(var(--accent-primary))] hover:underline"
+                  >
+                    Forgot Password?
+                  </button>
+                </p>
+              )}
+              <p className="mt-3 text-xs text-[rgb(var(--text-muted))]">
+                {mode === 'admin' ? (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setMode('login')
+                      setErrors({})
+                    }}
+                    className="text-[rgb(var(--accent-primary))] hover:underline"
+                  >
+                    Switch to Customer Login
+                  </button>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setMode('admin')
+                      setErrors({})
+                      setFormData({ firstName: '', lastName: '', email: '', password: '', confirmPassword: '' })
+                    }}
+                    className="text-[rgb(var(--text-muted))] hover:text-[rgb(var(--accent-secondary))] underline"
+                  >
+                    Admin Login
+                  </button>
+                )}
+              </p>
+            </>
+          )}
         </div>
 
         {/* Demo credentials hint */}

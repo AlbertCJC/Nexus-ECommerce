@@ -4,6 +4,12 @@ import { generateId } from '../utils/helpers'
 
 const AppContext = createContext(null)
 
+// Standalone toast functions for components that import directly
+let _dispatch = null
+export function setDispatch(dispatch) { _dispatch = dispatch }
+export function addToast(toast) { if (_dispatch) _dispatch({ type: 'ADD_TOAST', payload: toast }) }
+export function removeToast(id) { if (_dispatch) _dispatch({ type: 'REMOVE_TOAST', payload: id }) }
+
 // Simplified state - only UI state and guest cart
 const initialState = {
   cart: [], // Guest cart only
@@ -51,6 +57,11 @@ export function AppProvider({ children }) {
     cart
   })
 
+  // Initialize standalone toast functions
+  useEffect(() => {
+    setDispatch(dispatch)
+  }, [dispatch])
+
   // Sync state to localStorage (debounced)
   useEffect(() => { setCartLS(state.cart) }, [state.cart, setCartLS])
 
@@ -86,9 +97,3 @@ export function useAppContext() {
   if (!context) throw new Error('useAppContext must be used within AppProvider')
   return context
 }
-
-// Standalone toast functions for components that import directly
-let _dispatch = null
-export function setDispatch(dispatch) { _dispatch = dispatch }
-export function addToast(toast) { if (_dispatch) _dispatch({ type: 'ADD_TOAST', payload: toast }) }
-export function removeToast(id) { if (_dispatch) _dispatch({ type: 'REMOVE_TOAST', payload: id }) }

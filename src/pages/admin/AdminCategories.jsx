@@ -8,6 +8,7 @@ import Button from '../../components/ui/Button'
 import Input from '../../components/ui/Input'
 import { useState, useMemo } from 'react'
 import { useCategories, useProducts, useCreateCategory, useUpdateCategory, useDeleteCategory, useInvalidateQueries } from '../../hooks'
+import { useAppContext } from '../../context/AppContext'
 
 export default function AdminCategories() {
   const { data: categories = [], isLoading } = useCategories()
@@ -17,6 +18,7 @@ export default function AdminCategories() {
   const updateCategoryMutation = useUpdateCategory()
   const deleteCategoryMutation = useDeleteCategory()
   const { invalidateCategories } = useInvalidateQueries()
+  const { addToast } = useAppContext()
 
   const [modalOpen, setModalOpen] = useState(false)
   const [editingCategory, setEditingCategory] = useState(null)
@@ -49,14 +51,16 @@ export default function AdminCategories() {
     try {
       if (editingCategory) {
         await updateCategoryMutation.mutateAsync({ ...data, id: editingCategory.id })
+        addToast({ type: 'success', message: 'Category updated successfully' })
       } else {
         await createCategoryMutation.mutateAsync(data)
+        addToast({ type: 'success', message: 'Category created successfully' })
       }
       invalidateCategories()
       setModalOpen(false)
     } catch (error) {
       console.error('Category save failed:', error)
-      alert('Failed to save category: ' + error.message)
+      addToast({ type: 'error', message: 'Failed to save category: ' + error.message })
     }
   }
 
@@ -67,9 +71,10 @@ export default function AdminCategories() {
         await deleteCategoryMutation.mutateAsync(deleteConfirm.id)
         invalidateCategories()
         setDeleteConfirm(null)
+        addToast({ type: 'success', message: 'Category deleted successfully' })
       } catch (error) {
         console.error('Delete failed:', error)
-        alert('Failed to delete category: ' + error.message)
+        addToast({ type: 'error', message: 'Failed to delete category: ' + error.message })
       }
     }
   }

@@ -11,6 +11,7 @@ import Input from '../../components/ui/Input'
 import Select from '../../components/ui/Select'
 import { useState, useMemo } from 'react'
 import { useProducts, useCategories, useBrands, useCreateProduct, useUpdateProduct, useDeleteProduct, useUploadImage, useInvalidateQueries } from '../../hooks'
+import { useAppContext } from '../../context/AppContext'
 
 export default function AdminProducts() {
   const { data: products = [], isLoading: productsLoading } = useProducts({ status: 'all' })
@@ -22,6 +23,7 @@ export default function AdminProducts() {
   const deleteProductMutation = useDeleteProduct()
   const uploadImageMutation = useUploadImage()
   const { invalidateProducts } = useInvalidateQueries()
+  const { addToast } = useAppContext()
 
   const [search, setSearch] = useState('')
   const [categoryFilter, setCategoryFilter] = useState('')
@@ -83,7 +85,7 @@ export default function AdminProducts() {
       setImagePreview(url)
     } catch (error) {
       console.error('Image upload failed:', error)
-      alert('Failed to upload image')
+      addToast({ type: 'error', message: 'Failed to upload image' })
     } finally {
       setImageUploading(false)
     }
@@ -97,14 +99,16 @@ export default function AdminProducts() {
 
       if (editingProduct) {
         await updateProductMutation.mutateAsync({ ...payload, id: editingProduct.id })
+        addToast({ type: 'success', message: 'Product updated successfully' })
       } else {
         await createProductMutation.mutateAsync(payload)
+        addToast({ type: 'success', message: 'Product created successfully' })
       }
       invalidateProducts()
       setModalOpen(false)
     } catch (error) {
       console.error('Product save failed:', error)
-      alert('Failed to save product: ' + error.message)
+      addToast({ type: 'error', message: 'Failed to save product: ' + error.message })
     }
   }
 
@@ -115,9 +119,10 @@ export default function AdminProducts() {
         await deleteProductMutation.mutateAsync(deleteConfirm.id)
         invalidateProducts()
         setDeleteConfirm(null)
+        addToast({ type: 'success', message: 'Product deleted successfully' })
       } catch (error) {
         console.error('Delete failed:', error)
-        alert('Failed to delete product: ' + error.message)
+        addToast({ type: 'error', message: 'Failed to delete product: ' + error.message })
       }
     }
   }
@@ -129,7 +134,21 @@ export default function AdminProducts() {
     { key: 'brand_id', header: 'Brand', render: (v) => getBrandName(brands, v) },
     { key: 'price_cents', header: 'Price', render: (v) => formatCurrency(v / 100) },
     { key: 'stock', header: 'Stock' },
-    { key: 'status', header: 'Status', render: (v) => { const s = formatProductStatus(v); return <Badge variant={s.class.replace('bg-','').replace('100','')}>{s.text}</Badge> } },
+    { key: 'status', header: 'Status', render: (v) => {
+        const statusVariants = {
+          active: 'success',
+          inactive: 'neutral',
+          out_of_stock: 'danger'
+        }
+        const statusLabels = {
+          active: 'Active',
+          inactive: 'Inactive',
+          out_of_stock: 'Out of Stock'
+        }
+        const variant = statusVariants[v] || 'neutral'
+        const label = statusLabels[v] || v
+        return <Badge variant={variant}>{label}</Badge>
+      } },
     { key: 'actions', header: 'Actions', render: (_, row) => (
       <div className="flex items-center gap-2">
         <button onClick={() => openEditModal(row)} className="p-1.5 text-[rgb(var(--text-muted))] hover:text-[rgb(var(--accent-primary))]" aria-label="Edit"><svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg></button>
