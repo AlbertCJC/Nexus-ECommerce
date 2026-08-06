@@ -1,7 +1,3 @@
  M .claude/last-git-status.txt
  M .claude/session-log.txt
- M e2e-tests/catalog.spec.ts
- M src/components/products/ProductCard.jsx
- M src/components/products/ProductFilters.jsx
- M src/components/products/ProductGrid.jsx
- M src/components/ui/Checkbox.jsx
+?? scripts/cleanup-test-data.js

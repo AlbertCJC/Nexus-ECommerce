@@ -109,7 +109,7 @@ export function ProductCard({ product, categoryName, brands = [], compact = fals
           <div>
             <p className="text-xl font-bold text-[rgb(var(--accent-primary))]">{formatCurrency(product.price_cents)}</p>
             <div className="flex items-center gap-2 mt-1">
-              <p className={`text-xs ${stockInfo.class.replace('bg-', 'text-').replace('100', '700')}`}>{stockInfo.text}</p>
+              <span className={`badge ${stockInfo.class}`}>{stockInfo.text}</span>
               {categoryName && <span className="text-xs text-[rgb(var(--text-muted))]">{categoryName}</span>}
               {renderBrand()}
             </div>

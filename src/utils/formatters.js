@@ -19,18 +19,18 @@ export const formatRelativeTime = (date) => {
 }
 
 export const formatStock = (stock) => {
-  if (stock <= 0) return { text: 'Out of Stock', class: 'bg-red-100 text-red-700' }
-  if (stock <= 10) return { text: `Only ${stock} left`, class: 'bg-amber-100 text-amber-700' }
-  return { text: 'In Stock', class: 'bg-green-100 text-green-700' }
+  if (stock <= 0) return { text: 'Out of Stock', class: 'badge-danger' }
+  if (stock <= 10) return { text: `Only ${stock} left`, class: 'badge-warning' }
+  return { text: 'In Stock', class: 'badge-success' }
 }
 
 export const formatProductStatus = (status) => {
   const statuses = {
-    active: { text: 'Active', class: 'bg-green-100 text-green-700' },
-    inactive: { text: 'Inactive', class: 'bg-slate-100 text-slate-700' },
-    out_of_stock: { text: 'Out of Stock', class: 'bg-red-100 text-red-700' }
+    active: { text: 'Active', class: 'badge-success' },
+    inactive: { text: 'Inactive', class: 'badge-neutral' },
+    out_of_stock: { text: 'Out of Stock', class: 'badge-danger' }
   }
-  return statuses[status] || { text: status, class: 'bg-slate-100 text-slate-700' }
+  return statuses[status] || { text: status, class: 'badge-neutral' }
 }
 
 export const formatOrderStatus = (status) => {
