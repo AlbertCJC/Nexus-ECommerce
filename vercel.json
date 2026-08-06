@@ -67,8 +67,8 @@
     }
   ],
   "env": {
-    "VITE_SUPABASE_URL": "@supabase-url",
-    "VITE_SUPABASE_ANON_KEY": "@supabase-anon-key",
-    "VITE_SUPABASE_FUNCTIONS_URL": "@supabase-functions-url"
+    "VITE_SUPABASE_URL": "",
+    "VITE_SUPABASE_ANON_KEY": "",
+    "VITE_SUPABASE_FUNCTIONS_URL": ""
   }
 }
