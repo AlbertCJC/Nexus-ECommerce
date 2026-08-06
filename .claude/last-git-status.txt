@@ -1,3 +1,4 @@
  M .claude/last-git-status.txt
  M .claude/session-log.txt
-?? scripts/cleanup-test-data.js
+ M src/components/layout/Navbar.jsx
+ M src/components/products/ProductCard.jsx

@@ -19,6 +19,7 @@ export function Navbar() {
   const [categoryMenuOpen, setCategoryMenuOpen] = useState(false)
   const [userMenuOpen, setUserMenuOpen] = useState(false)
   const userMenuRef = useRef(null)
+  const headerRef = useRef(null)
   const categoryMenuRef = useRef(null)
   const brandMenuRef = useRef(null)
   const categoryLeaveTimer = useRef(null)
@@ -143,21 +144,21 @@ export function Navbar() {
             )}
           </div>
           <div className="flex items-center gap-4">
-            {(!isAuthenticated || isAuthenticated && !isAdmin) && !cartLoading && (
-              <Link to="/cart" className="relative p-2 text-[rgb(var(--text-secondary))] hover:text-[rgb(var(--accent-primary))] transition-colors" aria-label={`Shopping cart, ${cartCount} items`}>
+            {/* Cart button - show for guests and regular users (not admin dashboard) */}
+            {!isAdmin && (
+              <Link to="/cart" className="relative flex items-center justify-center p-2 rounded-xl text-[rgb(var(--text-secondary))] hover:text-[rgb(var(--accent-primary))] hover:bg-[rgb(var(--bg-hover))] transition-colors" aria-label={`Shopping cart, ${cartCount} items`}>
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>
-                {cartCount > 0 && <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-[rgb(var(--accent-primary))] text-xs text-slate-900">{cartCount}</span>}
+                {cartCount > 0 && !cartLoading && <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-[rgb(var(--accent-primary))] text-xs font-bold text-slate-900">{cartCount}</span>}
               </Link>
             )}
             {isAuthenticated ? (
-              <div className="flex items-center gap-3 relative">
+              <div className="flex items-center gap-3 relative" ref={userMenuRef}>
                 <button
                   onClick={() => setUserMenuOpen(!userMenuOpen)}
                   className="relative flex items-center gap-2 p-1 rounded-xl hover:bg-[rgb(var(--bg-hover))] transition-colors"
                   aria-label="User account"
                   aria-expanded={userMenuOpen}
                   aria-haspopup="true"
-                  ref={userMenuRef}
                 >
                   <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[rgb(var(--accent-primary))] to-[rgb(var(--accent-secondary))] flex items-center justify-center">
                     <span className="text-sm font-bold text-white">

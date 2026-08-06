@@ -92,19 +92,20 @@ export function ProductCard({ product, categoryName, brands = [], compact = fals
   }
 
   return (
-    <Card className="flex flex-col h-full" hover>
+    <Card className="flex flex-col h-full group" hover>
       <Link to={`/products/${product.id}`} className="block aspect-square relative overflow-hidden">
-        <img src={product.image_url} alt={product.name} className="w-full h-full object-cover transition-transform duration-300 hover:scale-105" loading="lazy" onError={(e) => { e.currentTarget.src = '/images/placeholder-product.svg'; e.currentTarget.onerror = null; }} />
+        <img src={product.image_url} alt={product.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onError={(e) => { e.currentTarget.src = '/images/placeholder-product.svg'; e.currentTarget.onerror = null; }} />
         {product.status !== 'active' && <div className="absolute inset-0 bg-black/50 flex items-center justify-center"><span className="bg-[rgb(var(--bg-elevated))/0.9] px-3 py-1 rounded text-sm font-medium text-[rgb(var(--text-muted))]">{statusInfo.text}</span></div>}
         {product.stock === 0 && product.status === 'active' && <div className="absolute inset-0 bg-black/50 flex items-center justify-center"><span className="bg-[rgb(var(--bg-elevated))/0.9] px-3 py-1 rounded text-sm font-medium text-[rgb(var(--accent-danger))]">Out of Stock</span></div>}
-        <div className="absolute top-2 left-2">{renderBrand()}</div>
+        <div className="absolute top-4 left-4 z-10 group-hover:scale-105 transition-transform duration-300">{renderBrand()}</div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </Link>
       <div className="p-4 flex flex-col flex-1">
         <div className="flex items-start justify-between gap-2 mb-2">
-          <h3 className="font-semibold text-[rgb(var(--text-primary))] line-clamp-1 flex-1">{product.name}</h3>
+          <h3 className="font-semibold text-[rgb(var(--text-primary))] line-clamp-1 flex-1 group-hover:line-clamp-none group-hover:max-h-[3rem] transition-all duration-300">{product.name}</h3>
           <span className={`badge ${statusInfo.class} flex-shrink-0`}>{statusInfo.text}</span>
         </div>
-        <p className="text-sm text-[rgb(var(--text-muted))] line-clamp-2 mb-3 flex-1">{product.description}</p>
+        <p className="text-sm text-[rgb(var(--text-muted))] line-clamp-2 mb-3 flex-1 group-hover:line-clamp-none group-hover:max-h-[6rem] transition-all duration-300 overflow-hidden">{product.description}</p>
         <div className="flex items-center justify-between">
           <div>
             <p className="text-xl font-bold text-[rgb(var(--accent-primary))]">{formatCurrency(product.price_cents)}</p>
