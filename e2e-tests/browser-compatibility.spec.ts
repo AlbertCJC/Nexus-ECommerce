@@ -19,7 +19,7 @@ for (const page of PAGES_TO_TEST) {
     });
 
     await browserPage.goto(page.path, { waitUntil: 'networkidle' });
-    await expect(browserPage).toHaveTitle(/CodeCraft|NEXUS|Gaming|E-commerce/i);
+    await expect(browserPage).toHaveTitle(/NEXUS|Gaming|E-commerce/i);
 
     // Filter out known benign errors
     const criticalErrors = consoleErrors.filter(err =>
