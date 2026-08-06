@@ -52,9 +52,15 @@ export function useOrder(id) {
         .eq('id', id)
         .single()
 
-      if (error) throw error
+      if (error) {
+        if (error.code === 'PGRST116' || error.message?.includes('0 rows')) {
+          return null
+        }
+        throw error
+      }
       return data
     },
     enabled: !!id,
+    throwOnError: false,
   })
 }

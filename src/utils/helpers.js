@@ -2,14 +2,15 @@ import { v4 as uuidv4 } from 'uuid'
 
 export const generateId = (prefix = '') => `${prefix}${uuidv4().slice(0, 8)}`
 
-export const filterProducts = (products, { search = '', categoryId = '', status = '' }) => {
+export const filterProducts = (products, { search = '', categoryId = '', brandIds = [], status = '' }) => {
   return products.filter(p => {
     const matchesSearch = !search ||
       p.name.toLowerCase().includes(search.toLowerCase()) ||
       p.description?.toLowerCase().includes(search.toLowerCase())
     const matchesCategory = !categoryId || p.categoryId === categoryId
+    const matchesBrand = brandIds.length === 0 || brandIds.includes(p.brandId)
     const matchesStatus = !status || p.status === status
-    return matchesSearch && matchesCategory && matchesStatus
+    return matchesSearch && matchesCategory && matchesBrand && matchesStatus
   })
 }
 
@@ -28,6 +29,11 @@ export const sortProducts = (products, sortBy) => {
 export const getCategoryName = (categories, categoryId) => {
   const cat = categories.find(c => c.id === categoryId)
   return cat?.name || 'Unknown'
+}
+
+export const getBrandName = (brands, brandId) => {
+  const brand = brands.find(b => b.id === brandId)
+  return brand?.name || 'Unknown'
 }
 
 export const calculateOrderTotal = (items) => {

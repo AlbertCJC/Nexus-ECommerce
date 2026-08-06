@@ -1,13 +1,13 @@
 export function Card({ children, className = '', hover }) {
   return (
-    <div className={`bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden ${hover ? 'hover:shadow-md transition-shadow' : ''} ${className}`}>
+    <div className={`card ${hover ? 'transition-smooth' : ''} ${className}`}>
       {children}
     </div>
   )
 }
 
 export function CardHeader({ children, className = '' }) {
-  return <div className={`px-6 py-4 border-b border-slate-200 ${className}`}>{children}</div>
+  return <div className={`px-6 py-4 border-b border-[rgb(var(--border-subtle))] ${className}`}>{children}</div>
 }
 
 export function CardBody({ children, className = '' }) {
@@ -15,5 +15,5 @@ export function CardBody({ children, className = '' }) {
 }
 
 export function CardFooter({ children, className = '' }) {
-  return <div className={`px-6 py-4 border-t border-slate-200 bg-slate-50 ${className}`}>{children}</div>
+  return <div className={`px-6 py-4 border-t border-[rgb(var(--border-subtle))] bg-[rgb(var(--bg-base))] ${className}`}>{children}</div>
 }

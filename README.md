@@ -1,3 +1,4 @@
+
 # CodeCraft Store - E-Commerce Web App
 
 A fully responsive e-commerce application built with React + Vite, featuring a customer-facing storefront and an admin dashboard with shared state via LocalStorage.
@@ -41,6 +42,7 @@ Access the admin dashboard at `/admin/login` or click "Dashboard" in the navbar 
 | Icons | Heroicons (inline SVG) |
 | Date | date-fns |
 | IDs | uuid |
+
 
 ## 📁 Project Structure
 

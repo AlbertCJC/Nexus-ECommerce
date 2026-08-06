@@ -279,12 +279,12 @@ test.describe('Admin Panel Testing', () => {
     await expect(sidebar).toHaveClass(/-translate-x-full/, { timeout: 2000 });
   });
 
-  test('Admin Navigation - Back to NEXUS Link', async ({ page }) => {
+  test('Admin Navigation - Sign Out Button', async ({ page }) => {
     await page.goto('http://localhost:3000/admin/dashboard');
     await page.waitForLoadState('networkidle');
 
-    // Click "Back to NEXUS" link in sidebar
-    await page.click('a:has-text("Back to NEXUS")');
+    // Click "Sign Out" button in sidebar
+    await page.click('button:has-text("Sign Out")');
     await page.waitForLoadState('networkidle');
     await expect(page).toHaveURL('http://localhost:3000/');
   });

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" fill="none">
+  <rect width="120" height="40" rx="4" fill="url(#g)"/>
+  <text x="60" y="26" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">MSI</text>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="120" y2="40">
+      <stop offset="0%" stopColor="#06b6d4"/>
+      <stop offset="100%" stopColor="#a855f7"/>
+    </linearGradient>
+  </defs>
+</svg>

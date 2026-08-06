@@ -1,72 +1,341 @@
 import { generateId } from '../utils/helpers'
 
+export const seedBrands = [
+  { id: 'brand-razer', name: 'Razer', logo: 'https://dlqjmtnwcekcndpchxgr.supabase.co/storage/v1/object/public/brand-logos/razer.webp', description: 'Premium gaming peripherals & laptops' },
+  { id: 'brand-logitech', name: 'Logitech G', logo: 'https://dlqjmtnwcekcndpchxgr.supabase.co/storage/v1/object/public/brand-logos/logitech-g.webp', description: 'Professional gaming gear' },
+  { id: 'brand-asus', name: 'ASUS ROG', logo: 'https://dlqjmtnwcekcndpchxgr.supabase.co/storage/v1/object/public/brand-logos/asus-rog.webp', description: 'Republic of Gamers hardware' },
+  { id: 'brand-corsair', name: 'Corsair', logo: 'https://dlqjmtnwcekcndpchxgr.supabase.co/storage/v1/object/public/brand-logos/corsair.webp', description: 'High-performance PC components' },
+  { id: 'brand-steelseries', name: 'SteelSeries', logo: 'https://dlqjmtnwcekcndpchxgr.supabase.co/storage/v1/object/public/brand-logos/steelseries.webp', description: 'Esports-grade peripherals' },
+  { id: 'brand-hyperx', name: 'HyperX', logo: 'https://dlqjmtnwcekcndpchxgr.supabase.co/storage/v1/object/public/brand-logos/hyperx.webp', description: 'Gaming headsets & accessories' },
+  { id: 'brand-msi', name: 'MSI', logo: 'https://dlqjmtnwcekcndpchxgr.supabase.co/storage/v1/object/public/brand-logos/msi.webp', description: 'Gaming laptops, motherboards & graphics cards' },
+  { id: 'brand-gigabyte', name: 'GIGABYTE', logo: 'https://dlqjmtnwcekcndpchxgr.supabase.co/storage/v1/object/public/brand-logos/gigabyte.webp', description: 'Motherboards, graphics cards & laptops' },
+  { id: 'brand-coolermaster', name: 'Cooler Master', logo: 'https://dlqjmtnwcekcndpchxgr.supabase.co/storage/v1/object/public/brand-logos/cooler-master.webp', description: 'PC cooling, cases & peripherals' }
+]
+
 export const seedCategories = [
-  { id: 'cat-1', name: 'Electronics', description: 'Gadgets, devices, and tech accessories' },
-  { id: 'cat-2', name: 'Clothing', description: 'Apparel, footwear, and fashion accessories' },
-  { id: 'cat-3', name: 'Books', description: 'Physical books, e-books, and educational materials' },
-  { id: 'cat-4', name: 'Home & Garden', description: 'Home improvement, decor, and garden supplies' }
+  { id: 'cat-mice', name: 'Gaming Mice', description: 'High-precision gaming mice for every grip style' },
+  { id: 'cat-keyboards', name: 'Gaming Keyboards', description: 'Mechanical & optical keyboards with RGB' },
+  { id: 'cat-headsets', name: 'Gaming Headsets', description: 'Immersive audio with crystal-clear mics' },
+  { id: 'cat-monitors', name: 'Gaming Monitors', description: 'High refresh rate, low latency displays' },
+  { id: 'cat-laptops', name: 'Laptops & PCs', description: 'Gaming laptops and pre-built systems' },
+  { id: 'cat-components', name: 'Components', description: 'GPUs, RAM, SSDs, PSUs & cooling' },
+  { id: 'cat-accessories', name: 'Accessories', description: 'Mousepads, cables, stands & more' }
 ]
 
 export const seedProducts = [
-  // Electronics
-  { id: 'prod-1', name: 'Wireless Bluetooth Headphones', image: 'https://picsum.photos/seed/prod-1/400/400.jpg', categoryId: 'cat-1', description: 'Premium noise-cancelling headphones with 30-hour battery life.', price: 149.99, stock: 45, status: 'active', createdAt: '2024-01-15T10:00:00Z' },
-  { id: 'prod-2', name: 'Smart Watch Series 5', image: 'https://picsum.photos/seed/prod-2/400/400.jpg', categoryId: 'cat-1', description: 'Fitness tracking, heart rate monitoring, and cellular connectivity.', price: 399.99, stock: 20, status: 'active', createdAt: '2024-01-20T10:00:00Z' },
-  { id: 'prod-3', name: 'Portable Bluetooth Speaker', image: 'https://picsum.photos/seed/prod-3/400/400.jpg', categoryId: 'cat-1', description: 'Waterproof speaker with 360-degree sound and 12-hour playtime.', price: 79.99, stock: 0, status: 'out_of_stock', createdAt: '2024-02-01T10:00:00Z' },
-
-  // Clothing
-  { id: 'prod-4', name: 'Classic Cotton T-Shirt', image: 'https://picsum.photos/seed/prod-4/400/400.jpg', categoryId: 'cat-2', description: '100% organic cotton, pre-shrunk, available in multiple colors.', price: 24.99, stock: 100, status: 'active', createdAt: '2024-01-10T10:00:00Z' },
-  { id: 'prod-5', name: 'Slim Fit Denim Jeans', image: 'https://picsum.photos/seed/prod-5/400/400.jpg', categoryId: 'cat-2', description: 'Stretch denim with modern slim fit, classic 5-pocket styling.', price: 59.99, stock: 60, status: 'active', createdAt: '2024-01-25T10:00:00Z' },
-  { id: 'prod-6', name: 'Lightweight Hoodie', image: 'https://picsum.photos/seed/prod-6/400/400.jpg', categoryId: 'cat-2', description: 'French terry fabric, relaxed fit, kangaroo pocket.', price: 44.99, stock: 30, status: 'inactive', createdAt: '2024-02-05T10:00:00Z' },
-
-  // Books
-  { id: 'prod-7', name: 'The Pragmatic Programmer', image: 'https://picsum.photos/seed/prod-7/400/400.jpg', categoryId: 'cat-3', description: 'Classic guide to software craftsmanship, 20th Anniversary Edition.', price: 42.99, stock: 25, status: 'active', createdAt: '2024-01-05T10:00:00Z' },
-  { id: 'prod-8', name: 'Clean Code', image: 'https://picsum.photos/seed/prod-8/400/400.jpg', categoryId: 'cat-3', description: 'A handbook of agile software craftsmanship by Robert C. Martin.', price: 38.99, stock: 15, status: 'active', createdAt: '2024-01-12T10:00:00Z' },
-  { id: 'prod-9', name: 'Design Patterns', image: 'https://picsum.photos/seed/prod-9/400/400.jpg', categoryId: 'cat-3', description: 'Elements of reusable object-oriented software (Gang of Four).', price: 49.99, stock: 10, status: 'active', createdAt: '2024-02-10T10:00:00Z' },
-
-  // Home & Garden
-  { id: 'prod-10', name: 'Ceramic Plant Pot Set', image: 'https://picsum.photos/seed/prod-10/400/400.jpg', categoryId: 'cat-4', description: 'Set of 3 minimalist ceramic pots with drainage holes.', price: 34.99, stock: 40, status: 'active', createdAt: '2024-01-18T10:00:00Z' },
-  { id: 'prod-11', name: 'LED Desk Lamp', image: 'https://picsum.photos/seed/prod-11/400/400.jpg', categoryId: 'cat-4', description: 'Adjustable brightness, color temperature, USB charging port.', price: 54.99, stock: 22, status: 'active', createdAt: '2024-01-28T10:00:00Z' },
-  { id: 'prod-12', name: 'Throw Blanket', image: 'https://picsum.photos/seed/prod-12/400/400.jpg', categoryId: 'cat-4', description: 'Ultra-soft microfiber blanket, 50x60 inches, machine washable.', price: 29.99, stock: 50, status: 'active', createdAt: '2024-02-12T10:00:00Z' }
-]
-
-export const seedOrders = [
+  // Gaming Mice
   {
-    id: 'ord-1',
-    customer: { name: 'John Smith', email: 'john@example.com', phone: '+1-555-0123', address: { street: '123 Main St', city: 'New York', state: 'NY', zip: '10001', country: 'USA' } },
-    items: [
-      { productId: 'prod-1', name: 'Wireless Bluetooth Headphones', price: 149.99, quantity: 1, image: 'https://picsum.photos/seed/prod-1/400/400.jpg' },
-      { productId: 'prod-4', name: 'Classic Cotton T-Shirt', price: 24.99, quantity: 2, image: 'https://picsum.photos/seed/prod-4/400/400.jpg' }
-    ],
-    subtotal: 199.97,
-    shipping: 0,
-    tax: 19.99,
-    total: 219.96,
-    paymentMethod: 'cod',
-    status: 'completed',
-    notes: 'Leave at door if no answer',
-    createdAt: '2024-02-15T14:30:00Z'
+    id: 'prod-1',
+    name: 'Razer DeathAdder V3 Pro',
+    image: 'https://dlqjmtnwcekcndpchxgr.supabase.co/storage/v1/object/public/product-images/prod-1.webp',
+    categoryId: 'cat-mice',
+    brandId: 'brand-razer',
+    description: 'Ultra-lightweight 63g ergonomic gaming mouse with Focus Pro 30K Optical Sensor, Optical Mouse Switches Gen-3, and up to 90 hours battery life.',
+    price: 9490,
+    stock: 25,
+    status: 'active',
+    createdAt: '2024-01-15T10:00:00Z'
   },
   {
-    id: 'ord-2',
-    customer: { name: 'Sarah Johnson', email: 'sarah@example.com', phone: '+1-555-0456', address: { street: '456 Oak Ave', city: 'Los Angeles', state: 'CA', zip: '90001', country: 'USA' } },
-    items: [
-      { productId: 'prod-7', name: 'The Pragmatic Programmer', price: 42.99, quantity: 1, image: 'https://picsum.photos/seed/prod-7/400/400.jpg' },
-      { productId: 'prod-10', name: 'Ceramic Plant Pot Set', price: 34.99, quantity: 1, image: 'https://picsum.photos/seed/prod-10/400/400.jpg' }
-    ],
-    subtotal: 77.98,
-    shipping: 9.99,
-    tax: 7.80,
-    total: 95.77,
-    paymentMethod: 'ewallet',
-    status: 'pending',
-    notes: '',
-    createdAt: '2024-02-20T09:15:00Z'
+    id: 'prod-2',
+    name: 'Razer Viper V3 Pro',
+    image: 'https://dlqjmtnwcekcndpchxgr.supabase.co/storage/v1/object/public/product-images/prod-2.webp',
+    categoryId: 'cat-mice',
+    brandId: 'brand-razer',
+    description: 'Symmetrical ultra-lightweight 54g esports gaming mouse with Focus Pro 35K Optical Sensor, Optical Mouse Switches Gen-3, and 95 hours battery.',
+    price: 9490,
+    stock: 18,
+    status: 'active',
+    createdAt: '2024-03-01T10:00:00Z'
+  },
+  {
+    id: 'prod-3',
+    name: 'Logitech G Pro X Superlight 2',
+    image: 'https://dlqjmtnwcekcndpchxgr.supabase.co/storage/v1/object/public/product-images/prod-3.webp',
+    categoryId: 'cat-mice',
+    brandId: 'brand-logitech',
+    description: 'Sub-60g wireless gaming mouse with HERO 2 sensor (32K DPI), LIGHTFORCE hybrid switches, and 95 hour battery life.',
+    price: 8990,
+    stock: 30,
+    status: 'active',
+    createdAt: '2024-05-10T10:00:00Z'
+  },
+  {
+    id: 'prod-4',
+    name: 'Logitech G502 X PLUS',
+    image: 'https://dlqjmtnwcekcndpchxgr.supabase.co/storage/v1/object/public/product-images/prod-4.webp',
+    categoryId: 'cat-mice',
+    brandId: 'brand-logitech',
+    description: 'Iconic shape evolved with LIGHTFORCE hybrid switches, HERO 25K sensor, 13 programmable controls, and LIGHTSYNC RGB.',
+    price: 7490,
+    stock: 25,
+    status: 'active',
+    createdAt: '2024-04-15T10:00:00Z'
+  },
+  {
+    id: 'prod-5',
+    name: 'ASUS ROG Keris II Ace',
+    image: 'https://dlqjmtnwcekcndpchxgr.supabase.co/storage/v1/object/public/product-images/prod-5.webp',
+    categoryId: 'cat-mice',
+    brandId: 'brand-asus',
+    description: '54g ultralight wireless gaming mouse with ROG AimPoint 42K sensor, optical micro switches, and 100 hour battery.',
+    price: 6990,
+    stock: 20,
+    status: 'active',
+    createdAt: '2024-06-01T10:00:00Z'
+  },
+  {
+    id: 'prod-6',
+    name: 'SteelSeries Aerox 9 Wireless',
+    image: 'https://dlqjmtnwcekcndpchxgr.supabase.co/storage/v1/object/public/product-images/prod-6.webp',
+    categoryId: 'cat-mice',
+    brandId: 'brand-steelseries',
+    description: 'Multi-genre MMO mouse with 18 programmable TrueMove Air sensor (18K CPI), 180-hour battery, and AquaBarrier protection.',
+    price: 7990,
+    stock: 15,
+    status: 'active',
+    createdAt: '2024-03-20T10:00:00Z'
+  },
+  {
+    id: 'prod-7',
+    name: 'Cooler Master MM720',
+    image: 'https://dlqjmtnwcekcndpchxgr.supabase.co/storage/v1/object/public/product-images/prod-7.webp',
+    categoryId: 'cat-mice',
+    brandId: 'brand-coolermaster',
+    description: 'Ultra-light 49g honeycomb shell mouse with PixArt 16K sensor, PTFE feet, and Ultraweave cable.',
+    price: 2990,
+    stock: 40,
+    status: 'active',
+    createdAt: '2024-02-10T10:00:00Z'
+  },
+  // Gaming Keyboards
+  {
+    id: 'prod-8',
+    name: 'Razer BlackWidow V4 Pro',
+    image: 'https://dlqjmtnwcekcndpchxgr.supabase.co/storage/v1/object/public/product-images/prod-8.webp',
+    categoryId: 'cat-keyboards',
+    brandId: 'brand-razer',
+    description: 'Full-size mechanical gaming keyboard with Razer Green Switches, per-key RGB, command dial, 8 programmable macro keys, and magnetic wrist rest.',
+    price: 12990,
+    stock: 15,
+    status: 'active',
+    createdAt: '2024-01-20T10:00:00Z'
+  },
+  {
+    id: 'prod-9',
+    name: 'Razer Huntsman V3 Pro TKL',
+    image: 'https://dlqjmtnwcekcndpchxgr.supabase.co/storage/v1/object/public/product-images/prod-9.webp',
+    categoryId: 'cat-keyboards',
+    brandId: 'brand-razer',
+    description: 'Tenkeyless analog optical gaming keyboard with Razer Analog Optical Switches Gen-2, 8000Hz polling rate, and doubleshot PBT keycaps.',
+    price: 11490,
+    stock: 20,
+    status: 'active',
+    createdAt: '2024-02-15T10:00:00Z'
+  },
+  {
+    id: 'prod-10',
+    name: 'Logitech G Pro X TKL LIGHTSPEED',
+    image: 'https://dlqjmtnwcekcndpchxgr.supabase.co/storage/v1/object/public/product-images/prod-10.webp',
+    categoryId: 'cat-keyboards',
+    brandId: 'brand-logitech',
+    description: 'Tenkeyless pro gaming keyboard with GX optical switches, LIGHTSPEED wireless, 8000Hz polling, and PBT keycaps.',
+    price: 9990,
+    stock: 18,
+    status: 'active',
+    createdAt: '2024-05-20T10:00:00Z'
+  },
+  {
+    id: 'prod-11',
+    name: 'ASUS ROG Azoth',
+    image: 'https://dlqjmtnwcekcndpchxgr.supabase.co/storage/v1/object/public/product-images/prod-11.webp',
+    categoryId: 'cat-keyboards',
+    brandId: 'brand-asus',
+    description: '75% DIY wireless keyboard with gasket mount, ROG NX switches, OLED display, and 3-mode connectivity.',
+    price: 13990,
+    stock: 12,
+    status: 'active',
+    createdAt: '2024-06-10T10:00:00Z'
+  },
+  {
+    id: 'prod-12',
+    name: 'Corsair K70 RGB PRO',
+    image: 'https://dlqjmtnwcekcndpchxgr.supabase.co/storage/v1/object/public/product-images/prod-12.webp',
+    categoryId: 'cat-keyboards',
+    brandId: 'brand-corsair',
+    description: 'Full-size mechanical keyboard with CHERRY MX switches, 8000Hz polling, PBT doubleshot keycaps, and aluminum frame.',
+    price: 8990,
+    stock: 22,
+    status: 'active',
+    createdAt: '2024-04-20T10:00:00Z'
+  },
+  {
+    id: 'prod-13',
+    name: 'SteelSeries Apex Pro TKL (2023)',
+    image: 'https://dlqjmtnwcekcndpchxgr.supabase.co/storage/v1/object/public/product-images/prod-13.webp',
+    categoryId: 'cat-keyboards',
+    brandId: 'brand-steelseries',
+    description: 'Tenkeyless with OmniPoint 2.0 adjustable actuation, OLED smart display, and premium aluminum alloy frame.',
+    price: 11990,
+    stock: 16,
+    status: 'active',
+    createdAt: '2024-03-15T10:00:00Z'
+  },
+  // Gaming Headsets
+  {
+    id: 'prod-14',
+    name: 'Razer Kraken V4 Pro',
+    image: 'https://dlqjmtnwcekcndpchxgr.supabase.co/storage/v1/object/public/product-images/prod-14.webp',
+    categoryId: 'cat-headsets',
+    brandId: 'brand-razer',
+    description: 'Wireless gaming headset with OLED control hub, Razer TriForce Bio-cellulose 50mm drivers, HyperClear Super Wideband Mic, and 70-hour battery.',
+    price: 19990,
+    stock: 10,
+    status: 'active',
+    createdAt: '2024-02-01T10:00:00Z'
+  },
+  {
+    id: 'prod-15',
+    name: 'Logitech G Pro X 2 LIGHTSPEED',
+    image: 'https://dlqjmtnwcekcndpchxgr.supabase.co/storage/v1/object/public/product-images/prod-15.webp',
+    categoryId: 'cat-headsets',
+    brandId: 'brand-logitech',
+    description: 'Pro-grade wireless headset with 50mm Graphene drivers, DTS Headphone:X 2.0, Blue VO!CE mic, and 50-hour battery.',
+    price: 14990,
+    stock: 14,
+    status: 'active',
+    createdAt: '2024-05-15T10:00:00Z'
+  },
+  {
+    id: 'prod-16',
+    name: 'ASUS ROG Delta S Wireless',
+    image: 'https://dlqjmtnwcekcndpchxgr.supabase.co/storage/v1/object/public/product-images/prod-16.webp',
+    categoryId: 'cat-headsets',
+    brandId: 'brand-asus',
+    description: 'Dual-mode wireless headset with MQA audio, ESS 9281 QUAD DAC, AI noise-canceling mic, and 25-hour battery.',
+    price: 11990,
+    stock: 16,
+    status: 'active',
+    createdAt: '2024-06-05T10:00:00Z'
+  },
+  {
+    id: 'prod-17',
+    name: 'HyperX Cloud III Wireless',
+    image: 'https://dlqjmtnwcekcndpchxgr.supabase.co/storage/v1/object/public/product-images/prod-17.webp',
+    categoryId: 'cat-headsets',
+    brandId: 'brand-hyperx',
+    description: 'Wireless gaming headset with 53mm drivers, DTS Headphone:X, 120-hour battery, and memory foam ear cushions.',
+    price: 8990,
+    stock: 25,
+    status: 'active',
+    createdAt: '2024-04-01T10:00:00Z'
+  },
+  {
+    id: 'prod-18',
+    name: 'SteelSeries Arctis Nova Pro Wireless',
+    image: 'https://dlqjmtnwcekcndpchxgr.supabase.co/storage/v1/object/public/product-images/prod-18.webp',
+    categoryId: 'cat-headsets',
+    brandId: 'brand-steelseries',
+    description: 'Premium wireless with 360° spatial audio, active noise cancellation, dual battery system, and GameDAC Gen 2.',
+    price: 21990,
+    stock: 8,
+    status: 'active',
+    createdAt: '2024-03-25T10:00:00Z'
+  },
+  // Gaming Monitors
+  {
+    id: 'prod-19',
+    name: 'ASUS ROG Swift PG27AQDP',
+    image: 'https://dlqjmtnwcekcndpchxgr.supabase.co/storage/v1/object/public/product-images/prod-19.webp',
+    categoryId: 'cat-monitors',
+    brandId: 'brand-asus',
+    description: '27" 1440p 480Hz OLED gaming monitor with 0.03ms response, G-SYNC, 99% DCI-P3, and custom heatsink.',
+    price: 49990,
+    stock: 5,
+    status: 'active',
+    createdAt: '2024-07-01T10:00:00Z'
+  },
+  {
+    id: 'prod-20',
+    name: 'MSI MPG 271QRX QD-OLED',
+    image: 'https://dlqjmtnwcekcndpchxgr.supabase.co/storage/v1/object/public/product-images/prod-20.webp',
+    categoryId: 'cat-monitors',
+    brandId: 'brand-msi',
+    description: '27" 1440p 360Hz QD-OLED with 0.03ms GTG, VESA DisplayHDR True Black 400, and KVM switch.',
+    price: 44990,
+    stock: 6,
+    status: 'active',
+    createdAt: '2024-06-15T10:00:00Z'
+  },
+  {
+    id: 'prod-21',
+    name: 'GIGABYTE AORUS FO27Q3',
+    image: 'https://dlqjmtnwcekcndpchxgr.supabase.co/storage/v1/object/public/product-images/prod-21.webp',
+    categoryId: 'cat-monitors',
+    brandId: 'brand-gigabyte',
+    description: '27" 1440p 360Hz QD-OLED with tactical features, 0.03ms response, and 98.5% DCI-P3.',
+    price: 39990,
+    stock: 7,
+    status: 'active',
+    createdAt: '2024-06-20T10:00:00Z'
+  },
+  // Components
+  {
+    id: 'prod-22',
+    name: 'Corsair VENGEANCE RGB DDR5 32GB (2x16GB) 6000MHz',
+    image: 'https://dlqjmtnwcekcndpchxgr.supabase.co/storage/v1/object/public/product-images/prod-22.webp',
+    categoryId: 'cat-components',
+    brandId: 'brand-corsair',
+    description: 'High-performance DDR5 memory with dynamic 10-zone RGB, Intel XMP 3.0, and aluminum heatspreader.',
+    price: 8990,
+    stock: 35,
+    status: 'active',
+    createdAt: '2024-04-25T10:00:00Z'
+  },
+  {
+    id: 'prod-23',
+    name: 'MSI GeForce RTX 4070 Ti SUPER 16G GAMING X SLIM',
+    image: 'https://dlqjmtnwcekcndpchxgr.supabase.co/storage/v1/object/public/product-images/prod-23.webp',
+    categoryId: 'cat-components',
+    brandId: 'brand-msi',
+    description: 'NVIDIA Ada Lovelace GPU with 16GB GDDR6X, TRI FROZR 3 cooling, 2.5-slot design, and DLSS 3.5 support.',
+    price: 59990,
+    stock: 4,
+    status: 'active',
+    createdAt: '2024-07-10T10:00:00Z'
+  },
+  {
+    id: 'prod-24',
+    name: 'GIGABYTE AORUS Gen5 10000 2TB SSD',
+    image: 'https://dlqjmtnwcekcndpchxgr.supabase.co/storage/v1/object/public/product-images/prod-24.webp',
+    categoryId: 'cat-components',
+    brandId: 'brand-gigabyte',
+    description: 'PCIe 5.0 NVMe SSD with 10,000 MB/s read, 9,500 MB/s write, graphene-aluminum heatsink, and 5-year warranty.',
+    price: 12990,
+    stock: 12,
+    status: 'active',
+    createdAt: '2024-05-25T10:00:00Z'
+  },
+  // Accessories
+  {
+    id: 'prod-25',
+    name: 'Razer Strider Large Chroma',
+    image: 'https://dlqjmtnwcekcndpchxgr.supabase.co/storage/v1/object/public/product-images/prod-25.webp',
+    categoryId: 'cat-accessories',
+    brandId: 'brand-razer',
+    description: 'Large hybrid mouse mat with Chroma RGB (19 zones), micro-texture surface, non-slip base, and magnetic cable catch.',
+    price: 3490,
+    stock: 30,
+    status: 'active',
+    createdAt: '2024-03-30T10:00:00Z'
   }
 ]
 
-export const seedCustomers = [
-  { id: 'cust-1', name: 'John Smith', email: 'john@example.com', phone: '+1-555-0123', address: { street: '123 Main St', city: 'New York', state: 'NY', zip: '10001', country: 'USA' }, orderCount: 1, totalSpent: 219.96, status: 'active' },
-  { id: 'cust-2', name: 'Sarah Johnson', email: 'sarah@example.com', phone: '+1-555-0456', address: { street: '456 Oak Ave', city: 'Los Angeles', state: 'CA', zip: '90001', country: 'USA' }, orderCount: 1, totalSpent: 95.77, status: 'active' }
-]
+export const seedOrders = []
 
-export const ADMIN_CREDENTIALS = { email: 'admin@example.com', password: 'admin123' }
+export const seedCustomers = []
+
+// Admin credentials moved to environment variables for security
+// See .env.example for configuration
+// VITE_ADMIN_EMAIL=admin@example.com
+// VITE_ADMIN_PASSWORD_HASH=<bcrypt/PBKDF2 hash>

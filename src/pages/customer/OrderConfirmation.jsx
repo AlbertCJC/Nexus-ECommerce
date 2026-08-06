@@ -5,7 +5,7 @@ import { formatOrderNumber } from '../../utils/helpers'
 import { useOrder } from '../../hooks'
 import { Spinner } from '../../components/ui/Spinner'
 
-export function OrderConfirmation() {
+export default function OrderConfirmation() {
   const { session } = useAuth()
   const { id } = useParams()
   const userId = session?.user?.id

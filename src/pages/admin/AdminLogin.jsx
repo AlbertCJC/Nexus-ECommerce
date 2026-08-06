@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react'
 import Button from '../../components/ui/Button'
 import Input from '../../components/ui/Input'
 
-export function AdminLogin() {
+export default function AdminLogin() {
   const { signIn, isAdmin, loading: authLoading, refreshProfile } = useAuth()
   const navigate = useNavigate()
   const [loading, setLoading] = useState(false)

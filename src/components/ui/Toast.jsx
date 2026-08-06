@@ -6,10 +6,10 @@ export function Toast({ toast, onClose }) {
     info: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
   }
   const colors = {
-    success: 'bg-green-50 border-green-200 text-green-800',
-    error: 'bg-red-50 border-red-200 text-red-800',
-    warning: 'bg-amber-50 border-amber-200 text-amber-800',
-    info: 'bg-blue-50 border-blue-200 text-blue-800'
+    success: 'bg-[rgb(var(--accent-success))/0.1] border-[rgb(var(--accent-success))/0.3] text-[rgb(var(--accent-success))]',
+    error: 'bg-[rgb(var(--accent-danger))/0.1] border-[rgb(var(--accent-danger))/0.3] text-[rgb(var(--accent-danger))]',
+    warning: 'bg-[rgb(var(--accent-warning))/0.1] border-[rgb(var(--accent-warning))/0.3] text-[rgb(var(--accent-warning))]',
+    info: 'bg-[rgb(var(--accent-primary))/0.1] border-[rgb(var(--accent-primary))/0.3] text-[rgb(var(--accent-primary))]'
   }
   const Icon = icons[toast.type] || icons.info
   return (

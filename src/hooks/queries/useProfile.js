@@ -17,9 +17,15 @@ export function useProfile(userId) {
         .eq('id', userId)
         .single()
 
-      if (error) throw error
+      if (error) {
+        if (error.code === 'PGRST116' || error.message?.includes('0 rows')) {
+          return null
+        }
+        throw error
+      }
       return data
     },
     enabled: !!userId,
+    throwOnError: false,
   })
 }

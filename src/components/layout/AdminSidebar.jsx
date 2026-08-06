@@ -1,4 +1,6 @@
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { useAuth } from '../../context/AuthContext'
+import { ArrowRightOnRectangleIcon } from '@heroicons/react/24/outline'
 
 const navItems = [
   { path: '/admin/dashboard', label: 'Dashboard', icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg> },
@@ -11,6 +13,13 @@ const navItems = [
 
 export function AdminSidebar({ onClose, isOpen }) {
   const location = useLocation()
+  const navigate = useNavigate()
+  const { signOut } = useAuth()
+  const handleLogout = async () => {
+    await signOut()
+    onClose()
+    navigate('/', { replace: true })
+  }
   return (
     <aside className={`fixed inset-y-0 left-0 z-40 w-64 bg-[rgb(var(--bg-card))] border-r border-[rgb(var(--border-subtle))] transform transition-transform duration-200 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`} aria-label="Admin navigation">
       <div className="flex h-16 items-center justify-between px-6 border-b border-[rgb(var(--border-subtle))]">
@@ -26,10 +35,13 @@ export function AdminSidebar({ onClose, isOpen }) {
             {item.label}
           </Link>
         ))}
-        <Link to="/" className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-[rgb(var(--text-secondary))] hover:bg-[rgb(var(--bg-hover))] hover:text-[rgb(var(--text-primary))] transition-colors">
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-          Back to NEXUS
-        </Link>
+        <button
+          onClick={handleLogout}
+          className="btn-danger w-full justify-start px-3 py-2.5 text-sm gap-3"
+        >
+          <ArrowRightOnRectangleIcon className="w-5 h-5" />
+          Sign Out
+        </button>
       </nav>
     </aside>
   )
