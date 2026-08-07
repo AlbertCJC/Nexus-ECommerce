@@ -23,6 +23,15 @@ export default function Products() {
     sortBy: sort,
   })
 
+  // Handle search param update with debounce to avoid URL updates on every keystroke
+  const handleSearchChange = (value) => {
+    const params = new URLSearchParams(searchParams)
+    if (value) params.set('search', value)
+    else params.delete('search')
+    params.delete('page')
+    setSearchParams(params)
+  }
+
   const { data: categories = [], isLoading: categoriesLoading } = useCategories()
   const { data: brands = [], isLoading: brandsLoading } = useBrands()
 
@@ -56,7 +65,14 @@ export default function Products() {
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
                 </button>
               </div>
-              <ProductFilters onFilterChange={setSearchParams} categories={categories} brands={brands} products={products} />
+              <ProductFilters
+              onFilterChange={setSearchParams}
+              onSearchChange={handleSearchChange}
+              searchValue={search}
+              categories={categories}
+              brands={brands}
+              products={products}
+            />
             </div>
           </aside>
 

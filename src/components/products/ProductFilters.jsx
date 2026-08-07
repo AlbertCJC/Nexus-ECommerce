@@ -1,17 +1,29 @@
-import { useSearchParams } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 import { useDebounce } from '../../hooks/useDebounce'
+import { useSearchParams } from 'react-router-dom'
 import Select from '../ui/Select'
 import Checkbox from '../ui/Checkbox'
-import { useState } from 'react'
 
-export function ProductFilters({ onFilterChange, categories = [], brands = [], products = [] }) {
-  const [searchParams, setSearchParams] = useSearchParams()
-  const search = searchParams.get('search') || ''
+export function ProductFilters({ onFilterChange, onSearchChange, searchValue = '', categories = [], brands = [], products = [] }) {
+  const [searchParams] = useSearchParams()
+  const [localSearch, setLocalSearch] = useState(searchValue)
   const category = searchParams.get('category') || ''
   const brandParams = searchParams.getAll('brand')
   const sort = searchParams.get('sort') || 'newest'
-  const debouncedSearch = useDebounce(search, 300)
+  const debouncedSearch = useDebounce(localSearch, 300)
   const [expandedBrands, setExpandedBrands] = useState(false)
+
+  // Sync local search with prop
+  useEffect(() => {
+    setLocalSearch(searchValue)
+  }, [searchValue])
+
+  // Update URL on debounced search change (avoids page refresh on every keystroke)
+  useEffect(() => {
+    if (debouncedSearch !== searchValue) {
+      onSearchChange(debouncedSearch)
+    }
+  }, [debouncedSearch, searchValue, onSearchChange])
 
   // Calculate product counts per brand
   const brandCounts = products.reduce((acc, p) => {
@@ -19,13 +31,19 @@ export function ProductFilters({ onFilterChange, categories = [], brands = [], p
     return acc
   }, {})
 
-  const handleSearchChange = (e) => {
+  const handleSearchInputChange = (e) => {
     const value = e.target.value
-    const params = new URLSearchParams(searchParams)
-    if (value) params.set('search', value)
-    else params.delete('search')
-    params.delete('page')
-    setSearchParams(params)
+    setLocalSearch(value)
+  }
+
+  const handleSearchBlur = () => {
+    onSearchChange(debouncedSearch || localSearch)
+  }
+
+  const handleSearchKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      onSearchChange(localSearch)
+    }
   }
 
   const handleCategoryChange = (e) => {
@@ -34,7 +52,7 @@ export function ProductFilters({ onFilterChange, categories = [], brands = [], p
     if (value) params.set('category', value)
     else params.delete('category')
     params.delete('page')
-    setSearchParams(params)
+    onFilterChange(params)
   }
 
   const handleBrandChange = (brandId) => {
@@ -46,24 +64,20 @@ export function ProductFilters({ onFilterChange, categories = [], brands = [], p
       params.append('brand', brandId)
     }
     params.delete('page')
-    setSearchParams(params)
+    onFilterChange(params)
   }
 
   const handleSortChange = (e) => {
     const params = new URLSearchParams(searchParams)
     params.set('sort', e.target.value)
     params.delete('page')
-    setSearchParams(params)
+    onFilterChange(params)
   }
 
   const hasFilters = debouncedSearch || category || brandParams.length > 0
   const clearFilters = () => {
-    const params = new URLSearchParams(searchParams)
-    params.delete('search')
-    params.delete('category')
-    params.delete('brand')
-    params.delete('page')
-    setSearchParams(params)
+    const params = new URLSearchParams()
+    onFilterChange(params)
   }
 
   return (
@@ -72,7 +86,16 @@ export function ProductFilters({ onFilterChange, categories = [], brands = [], p
         <label htmlFor="search" className="sr-only">Search products</label>
         <div className="relative">
           <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[rgb(var(--text-muted))]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-          <input type="text" id="search" value={search} onChange={handleSearchChange} placeholder="Search products..." className="input pl-10" />
+          <input
+            type="text"
+            id="search"
+            value={localSearch}
+            onChange={handleSearchInputChange}
+            onBlur={handleSearchBlur}
+            onKeyDown={handleSearchKeyDown}
+            placeholder="Search products..."
+            className="input pl-10"
+          />
         </div>
       </div>
       <Select label="Category" id="category" options={[{ value: '', label: 'All Categories' }, ...categories.map(c => ({ value: c.id, label: c.name }))]} value={category} onChange={handleCategoryChange} placeholder="All Categories" />

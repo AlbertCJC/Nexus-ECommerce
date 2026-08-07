@@ -1,26 +1,2 @@
  M .claude/last-git-status.txt
  M .claude/session-log.txt
- M package-lock.json
- M package.json
- M scripts/seed-database.js
- M src/components/layout/Navbar.jsx
- M src/components/products/ProductCard.jsx
- M src/context/AuthContext.jsx
- M src/data/seedData.js
- M src/hooks/mutations/useMutations.js
- M src/hooks/queries/useProducts.js
- M src/pages/admin/AdminCategories.jsx
- M src/pages/admin/AdminProducts.jsx
- M src/pages/customer/Checkout.jsx
- M src/pages/customer/Home.jsx
- M src/pages/customer/ProductDetail.jsx
- M src/utils/formatters.test.js
- M src/utils/types.ts
- M src/utils/validation.js
-?? src/utils/categoryIcons.js
-?? supabase/fix-create-order-rpc.sql
-?? supabase/migrations/20260807000000_add_category_icon_key.sql
-?? supabase/migrations/20260808000000_create_order_rpc.sql
-?? supabase/migrations/20260808000001_merge_guest_cart_rpc.sql
-?? supabase/migrations/20260808000002_search_trgm_index.sql
-?? test-migrations.mjs
