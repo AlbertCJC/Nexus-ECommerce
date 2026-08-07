@@ -7,8 +7,9 @@ import { getBrandName } from '../../utils/helpers'
 import { Card } from '../ui/Card'
 import Button from '../ui/Button'
 import { Badge } from '../ui/Badge'
+import { getCategoryIcon, getCategoryIconByName } from '../../utils/categoryIcons'
 
-export function ProductCard({ product, categoryName, brands = [], compact = false }) {
+export function ProductCard({ product, categoryName, category, brands = [], compact = false }) {
   const { isAuthenticated, session } = useAuth()
   const { cart, openAuthModal, dispatch } = useAppContext()
   const addToCartMutation = useAddToCart()
@@ -74,6 +75,8 @@ export function ProductCard({ product, categoryName, brands = [], compact = fals
     )
   }
 
+  const CategoryIcon = category ? getCategoryIcon(category) : (categoryName ? getCategoryIconByName(categoryName) : getCategoryIconByName('mice'));
+
   if (compact) {
     return (
       <Link to={`/products/${product.id}`} className="flex gap-4 p-3 card hover:border-[rgb(var(--accent-primary))/0.5] transition-colors">
@@ -83,7 +86,12 @@ export function ProductCard({ product, categoryName, brands = [], compact = fals
           <p className="text-sm text-[rgb(var(--accent-primary))] font-semibold">{formatCurrency(product.price_cents)}</p>
           <div className="flex items-center gap-2 mt-1">
             <span className={`badge ${stockInfo.class}`}>{stockInfo.text}</span>
-            {categoryName && <span className="text-xs text-[rgb(var(--text-muted))]">{categoryName}</span>}
+            {categoryName && (
+              <span className="inline-flex items-center gap-1 text-xs text-[rgb(var(--text-muted))]">
+                <CategoryIcon className="w-3 h-3" />
+                {categoryName}
+              </span>
+            )}
             {renderBrand()}
           </div>
         </div>
@@ -111,7 +119,12 @@ export function ProductCard({ product, categoryName, brands = [], compact = fals
             <p className="text-xl font-bold text-[rgb(var(--accent-primary))]">{formatCurrency(product.price_cents)}</p>
             <div className="flex items-center gap-2 mt-1">
               <span className={`badge ${stockInfo.class}`}>{stockInfo.text}</span>
-              {categoryName && <span className="text-xs text-[rgb(var(--text-muted))]">{categoryName}</span>}
+              {categoryName && (
+                <span className="inline-flex items-center gap-1 text-xs text-[rgb(var(--text-muted))]">
+                  <CategoryIcon className="w-3 h-3" />
+                  {categoryName}
+                </span>
+              )}
             </div>
           </div>
           <div className="flex gap-2">

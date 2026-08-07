@@ -37,26 +37,20 @@ export function AuthProvider({ children }) {
     if (!userId || guestCart.length === 0) return
 
     try {
-      for (const item of guestCart) {
-        const { data: existing } = await supabase
-          .from('cart_items')
-          .select('quantity')
-          .eq('user_id', userId)
-          .eq('product_id', item.productId)
-          .single()
+      // Convert guest cart items to format expected by RPC
+      const rpcItems = guestCart.map(item => ({
+        product_id: item.productId,
+        quantity: item.quantity,
+      }))
 
-        if (existing) {
-          await supabase
-            .from('cart_items')
-            .update({ quantity: existing.quantity + item.quantity })
-            .eq('user_id', userId)
-            .eq('product_id', item.productId)
-        } else {
-          await supabase
-            .from('cart_items')
-            .insert({ user_id: userId, product_id: item.productId, quantity: item.quantity })
-        }
-      }
+      const { data, error } = await supabase.rpc('merge_guest_cart', {
+        p_user_id: userId,
+        p_items: rpcItems,
+      })
+
+      if (error) throw error
+
+      console.log('Guest cart merged:', data)
       // Clear localStorage cart after successful merge
       clearGuestCart()
     } catch (error) {

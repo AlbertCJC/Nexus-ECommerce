@@ -13,13 +13,13 @@ export const seedBrands = [
 ]
 
 export const seedCategories = [
-  { id: 'cat-mice', name: 'Gaming Mice', description: 'High-precision gaming mice for every grip style' },
-  { id: 'cat-keyboards', name: 'Gaming Keyboards', description: 'Mechanical & optical keyboards with RGB' },
-  { id: 'cat-headsets', name: 'Gaming Headsets', description: 'Immersive audio with crystal-clear mics' },
-  { id: 'cat-monitors', name: 'Gaming Monitors', description: 'High refresh rate, low latency displays' },
-  { id: 'cat-laptops', name: 'Laptops & PCs', description: 'Gaming laptops and pre-built systems' },
-  { id: 'cat-components', name: 'Components', description: 'GPUs, RAM, SSDs, PSUs & cooling' },
-  { id: 'cat-accessories', name: 'Accessories', description: 'Mousepads, cables, stands & more' }
+  { id: 'cat-mice', name: 'Gaming Mice', description: 'High-precision gaming mice for every grip style', icon_key: 'mouse' },
+  { id: 'cat-keyboards', name: 'Gaming Keyboards', description: 'Mechanical & optical keyboards with RGB', icon_key: 'keyboard' },
+  { id: 'cat-headsets', name: 'Gaming Headsets', description: 'Immersive audio with crystal-clear mics', icon_key: 'headphones' },
+  { id: 'cat-monitors', name: 'Gaming Monitors', description: 'High refresh rate, low latency displays', icon_key: 'monitor' },
+  { id: 'cat-laptops', name: 'Laptops & PCs', description: 'Gaming laptops and pre-built systems', icon_key: 'laptop' },
+  { id: 'cat-components', name: 'Components', description: 'GPUs, RAM, SSDs, PSUs & cooling', icon_key: 'cpu' },
+  { id: 'cat-accessories', name: 'Accessories', description: 'Mousepads, cables, stands & more', icon_key: 'mouse-pointer-2' }
 ]
 
 export const seedProducts = [

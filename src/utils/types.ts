@@ -9,6 +9,7 @@ export interface Category {
   id: string
   name: string
   description: string | null
+  icon_key: string | null
   created_at: string
   updated_at: string
 }
@@ -74,6 +75,7 @@ export interface Order {
   created_at: string
   updated_at: string
   items?: OrderItem[]
+  idempotency_key?: string
 }
 
 export interface OrderItem {
@@ -117,6 +119,7 @@ export interface UpdateProductInput extends Partial<CreateProductInput> {
 export interface CreateCategoryInput {
   name: string
   description?: string
+  icon_key?: string
 }
 
 export interface UpdateCategoryInput extends Partial<CreateCategoryInput> {

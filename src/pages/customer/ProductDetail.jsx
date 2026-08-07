@@ -6,6 +6,7 @@ import { formatCurrency, formatStock, formatProductStatus } from '../../utils/fo
 import { RelatedProducts } from '../../components/products/RelatedProducts'
 import { useState } from 'react'
 import Button from '../../components/ui/Button'
+import { getCategoryIcon, getCategoryIconByName } from '../../utils/categoryIcons'
 
 const features = [
   { icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" /></svg>, title: 'Free Shipping', desc: 'On orders over ₱5,000' },
@@ -62,6 +63,8 @@ export default function ProductDetail() {
 
   const images = [product.image_url].filter(Boolean)
 
+  const CategoryIcon = category ? getCategoryIcon(category) : getCategoryIconByName('mice');
+
   return (
     <div className="min-h-screen bg-[rgb(var(--bg-base))]">
       <div className="bg-[rgb(var(--bg-card))] border-b border-[rgb(var(--border-subtle))]">
@@ -89,7 +92,10 @@ export default function ProductDetail() {
           {/* Product Info */}
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <p className="text-sm text-[rgb(var(--accent-primary))] font-medium">{category?.name || 'Uncategorized'}</p>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[rgb(var(--accent-primary))/0.1] text-[rgb(var(--accent-primary))] text-sm font-medium">
+                <CategoryIcon className="w-4 h-4" />
+                {category?.name || 'Uncategorized'}
+              </span>
               {brand && (
                 <Link to={`/products?brand=${brand.id}`} className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[rgb(var(--accent-primary))/0.1] text-[rgb(var(--accent-primary))] text-xs font-medium hover:bg-[rgb(var(--accent-primary))/0.2] transition-colors">
                   {brand.logo_url && <img src={brand.logo_url} alt="" className="w-3 h-3 object-contain" onError={(e) => { e.currentTarget.style.display = 'none'; }} />}

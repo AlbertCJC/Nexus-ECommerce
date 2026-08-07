@@ -12,6 +12,7 @@ import Select from '../../components/ui/Select'
 import { useState, useMemo } from 'react'
 import { useProducts, useCategories, useBrands, useCreateProduct, useUpdateProduct, useDeleteProduct, useUploadImage, useInvalidateQueries } from '../../hooks'
 import { useAppContext } from '../../context/AppContext'
+import { getCategoryIcon, getCategoryIconByName } from '../../utils/categoryIcons'
 
 export default function AdminProducts() {
   const { data: products = [], isLoading: productsLoading } = useProducts({ status: 'all' })
@@ -130,7 +131,11 @@ export default function AdminProducts() {
   const columns = [
     { key: 'image_url', header: 'Image', render: (v) => <img src={v} alt="" className="w-12 h-12 object-cover rounded" onError={(e) => { e.currentTarget.src = '/images/placeholder-product.svg' }} /> },
     { key: 'name', header: 'Name' },
-    { key: 'category_id', header: 'Category', render: (v) => getCategoryName(categories, v) },
+    { key: 'category_id', header: 'Category', render: (v) => {
+      const cat = categories.find(c => c.id === v);
+      const IconComponent = cat ? getCategoryIcon(cat) : getCategoryIconByName('mice');
+      return <span className="flex items-center gap-2"><IconComponent className="w-4 h-4 text-[rgb(var(--text-muted))]" />{getCategoryName(categories, v)}</span>;
+    }},
     { key: 'brand_id', header: 'Brand', render: (v) => getBrandName(brands, v) },
     { key: 'price_cents', header: 'Price', render: (v) => formatCurrency(v / 100) },
     { key: 'stock', header: 'Stock' },

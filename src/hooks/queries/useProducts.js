@@ -8,10 +8,18 @@ export const queryKeys = {
   categories: () => ['categories'],
   brands: () => ['brands'],
   relatedProducts: (currentProductId, categoryId) => ['related-products', currentProductId, categoryId],
+  searchProducts: (query, filters) => ['search-products', query, JSON.stringify(filters || {})],
 }
 
 // Products
 export function useProducts(filters) {
+  const { search, ...otherFilters } = filters || {}
+
+  // If search query provided, use full-text search RPC (Risk 3)
+  if (search && search.trim()) {
+    return useSearchProducts(search.trim(), otherFilters)
+  }
+
   return useQuery({
     queryKey: queryKeys.products(filters),
     queryFn: async () => {
@@ -24,28 +32,24 @@ export function useProducts(filters) {
         `)
 
       // Apply filters
-      if (filters?.status && filters.status !== 'all') {
-        query = query.eq('status', filters.status)
-      } else if (!filters?.status) {
+      if (otherFilters?.status && otherFilters.status !== 'all') {
+        query = query.eq('status', otherFilters.status)
+      } else if (!otherFilters?.status) {
         // Default to active products for public views
         query = query.eq('status', 'active')
       }
       // If status === 'all', don't apply any status filter
 
-      if (filters?.categoryId) {
-        query = query.eq('category_id', filters.categoryId)
+      if (otherFilters?.categoryId) {
+        query = query.eq('category_id', otherFilters.categoryId)
       }
 
-      if (filters?.brandIds && filters.brandIds.length > 0) {
-        query = query.in('brand_id', filters.brandIds)
-      }
-
-      if (filters?.search) {
-        query = query.ilike('name', `%${filters.search}%`)
+      if (otherFilters?.brandIds && otherFilters.brandIds.length > 0) {
+        query = query.in('brand_id', otherFilters.brandIds)
       }
 
       // Sorting
-      const sortBy = filters?.sortBy || 'newest'
+      const sortBy = otherFilters?.sortBy || 'newest'
       switch (sortBy) {
         case 'price-asc':
           query = query.order('price_cents', { ascending: true })
@@ -65,12 +69,12 @@ export function useProducts(filters) {
           break
       }
 
-      if (filters?.limit) {
-        query = query.limit(filters.limit)
+      if (otherFilters?.limit) {
+        query = query.limit(otherFilters.limit)
       }
 
-      if (filters?.offset) {
-        query = query.range(filters.offset, filters.offset + (filters.limit || 20) - 1)
+      if (otherFilters?.offset) {
+        query = query.range(otherFilters.offset, otherFilters.offset + (otherFilters.limit || 20) - 1)
       }
 
       const { data, error } = await query
@@ -131,6 +135,94 @@ export function useRelatedProducts(currentProductId, categoryId, limit = 4) {
     },
     enabled: !!currentProductId && !!categoryId,
   })
+}
+
+// Full-text search using search_products RPC (Risk 3)
+export function useSearchProducts(query, filters = {}) {
+  return useQuery({
+    queryKey: queryKeys.searchProducts(query, filters),
+    queryFn: async () => {
+      const { data, error } = await supabase.rpc('search_products', {
+        p_query: query,
+        p_limit: filters.limit || 20,
+        p_offset: filters.offset || 0,
+        p_category_id: filters.categoryId || null,
+        p_brand_ids: filters.brandIds || null,
+        p_status: filters.status || 'active',
+      })
+
+      if (error) {
+        // Fallback to ILIKE if RPC doesn't exist (migration not applied yet)
+        if (error.code === '42883' || error.message?.includes('function') || error.message?.includes('does not exist')) {
+          console.warn('search_products RPC not available, falling back to ILIKE')
+          return fallbackSearch(query, filters)
+        }
+        throw error
+      }
+      return data
+    },
+    enabled: !!query && query.trim().length > 0,
+  })
+}
+
+// Fallback search using ILIKE (for backward compatibility)
+async function fallbackSearch(query, filters) {
+  let q = supabase
+    .from('products')
+    .select(`
+      *,
+      category:categories(*),
+      brand:brands(*)
+    `)
+
+  if (filters?.status && filters.status !== 'all') {
+    q = q.eq('status', filters.status)
+  } else if (!filters?.status) {
+    q = q.eq('status', 'active')
+  }
+
+  if (filters?.categoryId) {
+    q = q.eq('category_id', filters.categoryId)
+  }
+
+  if (filters?.brandIds && filters.brandIds.length > 0) {
+    q = q.in('brand_id', filters.brandIds)
+  }
+
+  // Use ILIKE with trigram index (if available)
+  q = q.or(`name.ilike.%${query}%,description.ilike.%${query}%`)
+
+  const sortBy = filters?.sortBy || 'newest'
+  switch (sortBy) {
+    case 'price-asc':
+      q = q.order('price_cents', { ascending: true })
+      break
+    case 'price-desc':
+      q = q.order('price_cents', { ascending: false })
+      break
+    case 'name-asc':
+      q = q.order('name', { ascending: true })
+      break
+    case 'name-desc':
+      q = q.order('name', { ascending: false })
+      break
+    case 'newest':
+    default:
+      q = q.order('created_at', { ascending: false })
+      break
+  }
+
+  if (filters?.limit) {
+    q = q.limit(filters.limit)
+  }
+
+  if (filters?.offset) {
+    q = q.range(filters.offset, filters.offset + (filters.limit || 20) - 1)
+  }
+
+  const { data, error } = await q
+  if (error) throw error
+  return data
 }
 
 // Categories

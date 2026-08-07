@@ -9,6 +9,7 @@ import Input from '../../components/ui/Input'
 import { useState, useMemo } from 'react'
 import { useCategories, useProducts, useCreateCategory, useUpdateCategory, useDeleteCategory, useInvalidateQueries } from '../../hooks'
 import { useAppContext } from '../../context/AppContext'
+import { getAvailableIcons, getCategoryIcon } from '../../utils/categoryIcons'
 
 export default function AdminCategories() {
   const { data: categories = [], isLoading } = useCategories()
@@ -24,9 +25,9 @@ export default function AdminCategories() {
   const [editingCategory, setEditingCategory] = useState(null)
   const [deleteConfirm, setDeleteConfirm] = useState(null)
 
-  const { register, handleSubmit, reset, formState: { errors } } = useForm({
+  const { register, handleSubmit, reset, watch, formState: { errors } } = useForm({
     resolver: zodResolver(categorySchema),
-    defaultValues: { name: '', description: '' }
+    defaultValues: { name: '', description: '', icon_key: '' }
   })
 
   const categoryProductCounts = useMemo(() => {
@@ -80,8 +81,13 @@ export default function AdminCategories() {
   }
 
   const columns = [
+    { key: 'icon', header: 'Icon', render: (_, row) => {
+      const IconComponent = getCategoryIcon(row);
+      return <IconComponent className="w-6 h-6 text-[rgb(var(--accent-primary))]" />;
+    }},
     { key: 'name', header: 'Name' },
     { key: 'description', header: 'Description', render: (v) => v || '—' },
+    { key: 'icon_key', header: 'Icon Key', render: (v) => v || '—' },
     { key: 'productCount', header: 'Products', render: (_, row) => categoryProductCounts[row.id] || 0 },
     { key: 'actions', header: 'Actions', render: (_, row) => {
       const count = categoryProductCounts[row.id] || 0
@@ -120,6 +126,16 @@ export default function AdminCategories() {
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <Input label="Name *" {...register('name')} error={errors.name?.message} />
           <div><label className="label">Description</label><textarea {...register('description')} rows={3} className="input" placeholder="Category description..." /></div>
+          <div>
+            <label className="label">Icon</label>
+            <select {...register('icon_key')} className="input">
+              <option value="">— Auto (based on name) —</option>
+              {getAvailableIcons().map(iconName => (
+                <option key={iconName} value={iconName}>{iconName}</option>
+              ))}
+            </select>
+            <p className="text-sm text-[rgb(var(--text-muted))] mt-1">Leave empty to auto-assign based on category name</p>
+          </div>
           <div className="flex justify-end gap-3 pt-4 border-t border-[rgb(var(--border-subtle))]">
             <Button type="button" variant="secondary" onClick={() => setModalOpen(false)}>Cancel</Button>
             <Button type="submit" loading={createCategoryMutation.isPending || updateCategoryMutation.isPending}>{editingCategory ? 'Update' : 'Create'}</Button>

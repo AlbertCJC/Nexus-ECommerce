@@ -33,7 +33,8 @@ export const productSchema = z.object({
 
 export const categorySchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
-  description: z.string().optional()
+  description: z.string().optional(),
+  icon_key: z.string().optional()
 })
 
 export const brandSchema = z.object({

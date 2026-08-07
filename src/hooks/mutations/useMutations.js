@@ -153,63 +153,41 @@ export function useCreateOrder() {
   const queryClient = useQueryClient()
 
   return useMutation({
-    mutationFn: async ({ userId, checkoutData, cartItems }) => {
-      // Calculate totals
-      const subtotal_cents = cartItems.reduce((sum, item) => sum + item.product.price_cents * item.quantity, 0)
-      const shipping_cents = subtotal_cents >= 10000 ? 0 : 999 // Free shipping over 100 PHP
-      const tax_cents = Math.round(subtotal_cents * 0.1) // 10% tax
-      const total_cents = subtotal_cents + shipping_cents + tax_cents
-
-      // Create order
-      const { data: order, error: orderError } = await supabase
-        .from('orders')
-        .insert({
-          user_id: userId,
-          customer_name: checkoutData.name,
-          customer_email: checkoutData.email,
-          customer_phone: checkoutData.phone,
-          shipping_address: checkoutData.address,
-          subtotal_cents,
-          shipping_cents,
-          tax_cents,
-          total_cents,
-          payment_method: checkoutData.payment_method,
-          notes: checkoutData.notes,
-        })
-        .select()
-        .single()
-
-      if (orderError) throw orderError
-
-      // Create order items
-      const orderItems = cartItems.map(item => ({
-        order_id: order.id,
-        product_id: item.product_id,
-        product_name: item.product.name,
-        product_image: item.product.image_url,
-        unit_price_cents: item.product.price_cents,
-        quantity: item.quantity,
+    mutationFn: async ({ userId, checkoutData, cartItems, idempotencyKey }) => {
+      // Prepare cart items for RPC
+      // Checkout.jsx passes: { product_id, product, quantity }
+      const rpcCartItems = cartItems.map(({ product_id, product, quantity }) => ({
+        product_id,
+        product_name: product.name,
+        product_image: product.image_url,
+        unit_price_cents: product.price_cents,
+        quantity,
+        product: {
+          price_cents: product.price_cents,
+        },
       }))
 
-      const { error: itemsError } = await supabase
-        .from('order_items')
-        .insert(orderItems)
+      const { data, error } = await supabase.rpc('create_order', {
+        p_user_id: userId,
+        p_checkout_data: checkoutData,
+        p_cart_items: rpcCartItems,
+        p_idempotency_key: idempotencyKey,
+      })
 
-      if (itemsError) throw itemsError
+      if (error) throw error
 
-      // Clear cart
-      const { error: cartError } = await supabase
-        .from('cart_items')
-        .delete()
-        .eq('user_id', userId)
+      // Handle idempotent response (order already exists)
+      if (data?.already_exists) {
+        return { id: data.id, alreadyExists: true }
+      }
 
-      if (cartError) throw cartError
-
-      return order
+      return { id: data.id, alreadyExists: false }
     },
     onSuccess: (_, vars) => {
       queryClient.invalidateQueries({ queryKey: orderQueryKeys.orders(vars.userId) })
       queryClient.invalidateQueries({ queryKey: cartQueryKeys.cart(vars.userId) })
+      // Also invalidate products since stock may have changed
+      queryClient.invalidateQueries({ queryKey: productQueryKeys.products() })
     },
   })
 }
@@ -218,7 +196,19 @@ export function useUpdateOrderStatus() {
   const queryClient = useQueryClient()
 
   return useMutation({
-    mutationFn: async ({ orderId, status }) => {
+    mutationFn: async ({ orderId, status, userId }) => {
+      // If cancelling, use cancel_order RPC to restore stock
+      if (status === 'cancelled') {
+        const { data, error } = await supabase.rpc('cancel_order', {
+          p_order_id: orderId,
+          p_user_id: userId,
+        })
+
+        if (error) throw error
+        return data
+      }
+
+      // Otherwise, just update the status
       const { data, error } = await supabase
         .from('orders')
         .update({ status })
@@ -233,6 +223,8 @@ export function useUpdateOrderStatus() {
       queryClient.invalidateQueries({ queryKey: orderQueryKeys.orders() })
       queryClient.invalidateQueries({ queryKey: orderQueryKeys.order(vars.orderId) })
       queryClient.invalidateQueries({ queryKey: adminQueryKeys.adminStats() })
+      // Invalidate products in case stock was restored
+      queryClient.invalidateQueries({ queryKey: ['products'] })
     },
     onError: (error) => ensurePermissionError(error),
   })

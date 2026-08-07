@@ -7,6 +7,7 @@ import { formatCurrency } from '../../utils/formatters'
 import { Link, useNavigate } from 'react-router-dom'
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { useProducts, useCart as useCartQuery, useCreateOrder } from '../../hooks'
+import { v4 as uuidv4 } from 'uuid'
 import Button from '../../components/ui/Button'
 import Input from '../../components/ui/Input'
 import Select from '../../components/ui/Select'
@@ -97,6 +98,13 @@ export default function Checkout() {
       return
     }
 
+    // Generate or retrieve idempotency key from sessionStorage (Risk 4)
+    let idempotencyKey = sessionStorage.getItem('checkout_idempotency_key')
+    if (!idempotencyKey) {
+      idempotencyKey = uuidv4()
+      sessionStorage.setItem('checkout_idempotency_key', idempotencyKey)
+    }
+
     setSubmitting(true)
     try {
       const userId = isAuthenticated ? session.user.id : null
@@ -110,7 +118,7 @@ export default function Checkout() {
         return
       }
 
-      const order = await createOrderMutation.mutateAsync({
+      const result = await createOrderMutation.mutateAsync({
         userId,
         checkoutData: {
           name: data.name,
@@ -125,7 +133,13 @@ export default function Checkout() {
           product: product,
           quantity: item.quantity,
         })),
+        idempotencyKey,
       })
+
+      // Clear idempotency key after successful order (only if new order created)
+      if (!result.alreadyExists) {
+        sessionStorage.removeItem('checkout_idempotency_key')
+      }
 
       // Clear guest cart if needed
       if (!isAuthenticated) {
@@ -133,7 +147,7 @@ export default function Checkout() {
       }
 
       addToast({ type: 'success', message: 'Order placed successfully!' })
-      navigate(`/order/${order.id}/confirmation`)
+      navigate(`/order/${result.id}/confirmation`)
     } catch (error) {
       console.error('Checkout error:', error)
       addToast({ type: 'error', message: 'Failed to place order. Please try again.' })

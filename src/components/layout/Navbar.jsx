@@ -5,6 +5,7 @@ import { useState, useEffect, useRef } from 'react'
 import { AuthModal } from '../ui/AuthModal'
 import { ArrowRightOnRectangleIcon, UserCircleIcon, ShoppingBagIcon, Cog6ToothIcon } from '@heroicons/react/24/outline'
 import { useCart, useBrands, useCategories } from '../../hooks'
+import { getCategoryIcon } from '../../utils/categoryIcons'
 
 export function Navbar() {
   const location = useLocation()
@@ -105,11 +106,15 @@ export function Navbar() {
                         <div className="px-4 py-2 text-sm text-[rgb(var(--text-muted))]">No categories available</div>
                       ) : (
                         <>
-                          {categories.map(category => (
-                            <Link key={category.id} to={`/products?category=${category.id}`} onClick={() => setCategoryMenuOpen(false)} className="block px-4 py-2 text-sm text-[rgb(var(--text-secondary))] hover:bg-[rgb(var(--bg-hover))] hover:text-[rgb(var(--accent-primary))] transition-colors">
-                              {category.name}
-                            </Link>
-                          ))}
+                          {categories.map(category => {
+                            const IconComponent = getCategoryIcon(category)
+                            return (
+                              <Link key={category.id} to={`/products?category=${category.id}`} onClick={() => setCategoryMenuOpen(false)} className="flex items-center gap-3 px-4 py-2 text-sm text-[rgb(var(--text-secondary))] hover:bg-[rgb(var(--bg-hover))] hover:text-[rgb(var(--accent-primary))] transition-colors">
+                                <IconComponent className="w-5 h-5 text-[rgb(var(--text-muted))] flex-shrink-0" />
+                                {category.name}
+                              </Link>
+                            )
+                          })}
                         </>
                       )}
                     </div>
