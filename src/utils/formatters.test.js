@@ -112,16 +112,16 @@ describe('formatters', () => {
 
   describe('formatOrderStatus', () => {
     it('returns correct status for all order statuses', () => {
-      expect(formatOrderStatus('pending')).toEqual({ text: 'Pending', class: 'bg-amber-100 text-amber-700' })
-      expect(formatOrderStatus('confirmed')).toEqual({ text: 'Confirmed', class: 'bg-blue-100 text-blue-700' })
-      expect(formatOrderStatus('preparing')).toEqual({ text: 'Preparing', class: 'bg-purple-100 text-purple-700' })
-      expect(formatOrderStatus('shipped')).toEqual({ text: 'Shipped', class: 'bg-indigo-100 text-indigo-700' })
-      expect(formatOrderStatus('completed')).toEqual({ text: 'Completed', class: 'bg-green-100 text-green-700' })
-      expect(formatOrderStatus('cancelled')).toEqual({ text: 'Cancelled', class: 'bg-red-100 text-red-700' })
+      expect(formatOrderStatus('pending')).toEqual({ text: 'Pending', class: 'bg-[rgb(var(--accent-warning))/0.1] text-[rgb(var(--accent-warning))] border border-[rgb(var(--accent-warning))/0.3]' })
+      expect(formatOrderStatus('confirmed')).toEqual({ text: 'Confirmed', class: 'bg-[rgb(var(--accent-primary))/0.1] text-[rgb(var(--accent-primary))] border border-[rgb(var(--accent-primary))/0.3]' })
+      expect(formatOrderStatus('preparing')).toEqual({ text: 'Preparing', class: 'bg-[rgb(var(--accent-secondary))/0.1] text-[rgb(var(--accent-secondary))] border border-[rgb(var(--accent-secondary))/0.3]' })
+      expect(formatOrderStatus('shipped')).toEqual({ text: 'Shipped', class: 'bg-[rgb(var(--accent-info))/0.1] text-[rgb(var(--accent-info))] border border-[rgb(var(--accent-info))/0.3]' })
+      expect(formatOrderStatus('completed')).toEqual({ text: 'Completed', class: 'bg-[rgb(var(--accent-success))/0.1] text-[rgb(var(--accent-success))] border border-[rgb(var(--accent-success))/0.3]' })
+      expect(formatOrderStatus('cancelled')).toEqual({ text: 'Cancelled', class: 'bg-[rgb(var(--accent-danger))/0.1] text-[rgb(var(--accent-danger))] border border-[rgb(var(--accent-danger))/0.3]' })
     })
 
     it('returns fallback for unknown status', () => {
-      expect(formatOrderStatus('unknown')).toEqual({ text: 'unknown', class: 'bg-slate-100 text-slate-700' })
+      expect(formatOrderStatus('unknown')).toEqual({ text: 'unknown', class: 'bg-[rgb(var(--bg-hover))] text-[rgb(var(--text-muted))] border border-[rgb(var(--border-subtle))]' })
     })
   })
 })

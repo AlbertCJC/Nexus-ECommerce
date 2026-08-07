@@ -35,12 +35,12 @@ export const formatProductStatus = (status) => {
 
 export const formatOrderStatus = (status) => {
   const statuses = {
-    pending: { text: 'Pending', class: 'bg-amber-100 text-amber-700' },
-    confirmed: { text: 'Confirmed', class: 'bg-blue-100 text-blue-700' },
-    preparing: { text: 'Preparing', class: 'bg-purple-100 text-purple-700' },
-    shipped: { text: 'Shipped', class: 'bg-indigo-100 text-indigo-700' },
-    completed: { text: 'Completed', class: 'bg-green-100 text-green-700' },
-    cancelled: { text: 'Cancelled', class: 'bg-red-100 text-red-700' }
+    pending: { text: 'Pending', class: 'bg-[rgb(var(--accent-warning))/0.1] text-[rgb(var(--accent-warning))] border border-[rgb(var(--accent-warning))/0.3]' },
+    confirmed: { text: 'Confirmed', class: 'bg-[rgb(var(--accent-primary))/0.1] text-[rgb(var(--accent-primary))] border border-[rgb(var(--accent-primary))/0.3]' },
+    preparing: { text: 'Preparing', class: 'bg-[rgb(var(--accent-secondary))/0.1] text-[rgb(var(--accent-secondary))] border border-[rgb(var(--accent-secondary))/0.3]' },
+    shipped: { text: 'Shipped', class: 'bg-[rgb(var(--accent-info))/0.1] text-[rgb(var(--accent-info))] border border-[rgb(var(--accent-info))/0.3]' },
+    completed: { text: 'Completed', class: 'bg-[rgb(var(--accent-success))/0.1] text-[rgb(var(--accent-success))] border border-[rgb(var(--accent-success))/0.3]' },
+    cancelled: { text: 'Cancelled', class: 'bg-[rgb(var(--accent-danger))/0.1] text-[rgb(var(--accent-danger))] border border-[rgb(var(--accent-danger))/0.3]' }
   }
-  return statuses[status] || { text: status, class: 'bg-slate-100 text-slate-700' }
+  return statuses[status] || { text: status, class: 'bg-[rgb(var(--bg-hover))] text-[rgb(var(--text-muted))] border border-[rgb(var(--border-subtle))]' }
 }

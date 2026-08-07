@@ -1,2 +1,11 @@
  M .claude/last-git-status.txt
  M .claude/session-log.txt
+ M src/components/layout/Navbar.jsx
+ M src/pages/admin/AdminLogin.jsx
+ M src/pages/customer/Home.jsx
+ M src/styles/index.css
+ M src/utils/categoryIcons.js
+ M src/utils/formatters.js
+ M src/utils/formatters.test.js
+ M tailwind.config.js
+?? technical_presentation.html

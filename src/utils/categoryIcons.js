@@ -277,14 +277,14 @@ const iconComponentMap = {
 };
 
 const categoryGradients = {
-  'cat-mice': 'from-cyan-500 to-blue-600',
-  'cat-keyboards': 'from-purple-500 to-pink-600',
-  'cat-headsets': 'from-green-500 to-emerald-600',
-  'cat-monitors': 'from-orange-500 to-red-600',
-  'cat-laptops': 'from-indigo-500 to-purple-600',
-  'cat-components': 'from-red-500 to-rose-600',
-  'cat-accessories': 'from-teal-500 to-cyan-600',
-  default: 'from-gray-500 to-gray-600',
+  'cat-mice': 'grad-cat-mice',
+  'cat-keyboards': 'grad-cat-keyboards',
+  'cat-headsets': 'grad-cat-headsets',
+  'cat-monitors': 'grad-cat-monitors',
+  'cat-laptops': 'grad-cat-laptops',
+  'cat-components': 'grad-cat-components',
+  'cat-accessories': 'grad-cat-accessories',
+  default: 'grad-cat-default',
 };
 
 function getCategoryIcon(category) {
@@ -296,9 +296,9 @@ function getCategoryIcon(category) {
 }
 
 function getCategoryGradient(category) {
-  if (!category) return categoryGradients.default;
+  if (!category) return `bg-${categoryGradients.default}`;
 
-  return categoryGradients[category.id] || categoryGradients[category.name?.toLowerCase().replace(/\s+/g, '-')] || categoryGradients.default;
+  return `bg-${categoryGradients[category.id] || categoryGradients[category.name?.toLowerCase().replace(/\s+/g, '-')] || categoryGradients.default}`;
 }
 
 function getAvailableIcons() {

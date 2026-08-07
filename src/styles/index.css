@@ -10,6 +10,7 @@
     --bg-elevated: 30, 41, 59;
     --bg-hover: 51, 65, 85;
     --bg-card: 30, 41, 59;
+    --bg-muted: 30, 41, 59;
 
     --accent-primary: 6, 182, 212;
     --accent-primary-glow: 34, 211, 238;
@@ -23,6 +24,7 @@
 
     --accent-warning: 245, 158, 11;
     --accent-danger: 239, 68, 68;
+    --accent-info: 99, 102, 241;
 
     --text-primary: 248, 250, 252;
     --text-secondary: 148, 163, 184;
@@ -180,7 +182,6 @@
   .card:hover {
     border-color: rgb(var(--accent-primary));
     box-shadow: 0 20px 40px -15px rgb(0 0 0 / 0.5), 0 0 30px rgb(var(--accent-primary) / 0.1);
-    transform: translateY(-4px);
   }
 
   /* Badge */

@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technical Architecture — E-Commerce Platform (Cube Tech)</title>
+  <!-- Reveal.js CSS (UMD) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css" id="theme">
+  <!-- Mermaid.js UMD -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.min.js"></script>
+  <style>
+    .reveal { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+    .reveal h1 { font-weight: 700; letter-spacing: -0.02em; }
+    .reveal h2 { font-weight: 600; color: var(--r-heading-color); }
+    .reveal .slides { text-align: left; }
+    .reveal ul { line-height: 1.8; }
+    .reveal li { margin: 0.5rem 0; }
+    .reveal code { background: rgba(255,255,255,0.1); padding: 0.15em 0.4em; border-radius: 4px; font-size: 0.9em; }
+    .reveal pre { background: #1e1e1e; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+    .reveal pre code { background: transparent; padding: 0; font-size: 0.8rem; line-height: 1.6; }
+    .mermaid { text-align: center; }
+    .highlight { color: #ff79c6; font-weight: 600; }
+    .badge { display: inline-block; padding: 0.15rem 0.5rem; background: rgba(255,121,198,0.15); border: 1px solid #ff79c6; border-radius: 999px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #ff79c6; margin-left: 0.5rem; }
+    .complexity { display: inline-block; padding: 0.1rem 0.4rem; background: rgba(98, 114, 164, 0.2); border: 1px solid #6272a4; border-radius: 4px; font-size: 0.7rem; font-family: monospace; color: #6272a4; }
+    .question { border-left: 3px solid #ff5555; padding-left: 1rem; margin: 1rem 0; font-style: italic; color: #ff5555; }
+    .answer { border-left: 3px solid #50fa7b; padding-left: 1rem; margin: 1rem 0; color: #50fa7b; }
+    .notes-header { font-weight: 700; color: #ff79c6; font-size: 1.2rem; margin-bottom: 1rem; border-bottom: 2px solid #ff79c6; padding-bottom: 0.5rem; }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- SLIDE 1: High-Level System Architecture & Infrastructure -->
+      <section data-markdown data-background-gradient="linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)">
+        <textarea data-template>
+          ## High-Level System Architecture & Infrastructure
+
+          <div class="mermaid">
+          graph TB
+            subgraph Client["🖥️ Client (React 18 + Vite)"]
+              UI["UI Layer<br/>React Router v6<br/>Lazy-loaded Routes"]
+              State["State Layer<br/>AuthContext + AppContext<br/>useReducer + useDebouncedLocalStorage"]
+              Query["Data Layer<br/>@tanstack/react-query v5<br/>QueryClientProvider"]
+              Hooks["Custom Hooks<br/>useProducts, useCart, useOrders<br/>useCreateOrder, useAuth"]
+            end
+
+            subgraph Edge["⚡ Supabase Edge Functions"]
+              RateLimit["rate-limit-auth<br/>Fixed-window counter<br/>Per-email/IP throttle"]
+            end
+
+            subgraph Backend["☁️ Supabase (PostgreSQL + Auth)"]
+              Auth["PostgREST Auth<br/>JWT + Refresh Tokens<br/>OAuth (Google/GitHub)<br/>Row Level Security"]
+              DB["PostgreSQL 15<br/>Tables: users, products,<br/>cart_items, orders, order_items<br/>categories, brands"]
+              RPC["PL/pgSQL Functions<br/>create_order, cancel_order<br/>merge_guest_cart, search_products<br/>SECURITY DEFINER"]
+              Storage["Object Storage<br/>Product images<br/>Public buckets"]
+              Realtime["Realtime Subscriptions<br/>Auth state changes"]
+            end
+
+            UI --> State
+            UI --> Query
+            State --> Hooks
+            Query --> Hooks
+            Hooks --> Auth
+            Hooks --> DB
+            Hooks --> RPC
+            Hooks --> Storage
+            Auth --> RateLimit
+            RateLimit -.->|Fail-open| Auth
+          </div>
+
+          <ul>
+            <li><strong>Frontend:</strong> React 18, Vite 5, React Router v6 (lazy routes), Tailwind CSS, TypeScript-ready via JSDoc</li>
+            <li><strong>State & Data:</strong> Dual-context architecture (<code>AuthContext</code> for server state, <code>AppContext</code> for guest UI state) + TanStack Query v5 (5-min staleTime, 10-min gcTime)</li>
+            <li><strong>Backend:</strong> Supabase (PostgreSQL + PostgREST + Auth + Storage + Edge Functions) — zero custom API servers</li>
+            <li><strong>Security:</strong> RLS policies on all tables, <code>SECURITY DEFINER</code> RPCs for atomic operations, rate-limited auth via Edge Function (<span class="badge">fail-open</span>)</li>
+          </ul>
+        </textarea>
+      </section>
+
+      <aside class="notes">
+        <div class="notes-header">🎤 Speaker Notes — Slide 1: Architecture & Infrastructure</div>
+
+        <h3>Design Decisions & Trade-offs</h3>
+        <ul>
+          <li><strong>Supabase-as-Backend:</strong> Eliminated custom Node/Go API layer. Trade-off: vendor lock-in to PostgREST semantics, but gained auth, realtime, storage, and edge functions with zero ops overhead. <span class="complexity">O(1) infra complexity</span>.</li>
+          <li><strong>Dual Context Pattern:</strong> <code>AuthContext</code> owns server-derived state (user, session, profile); <code>AppContext</code> owns ephemeral guest state (cart in localStorage, toasts, auth modal). Separation prevents auth hydration race conditions. <code>AppContext</code> uses <code>useDebouncedLocalStorage</code> (300ms debounce) to avoid write storms.</li>
+          <li><strong>TanStack Query as Server State Cache:</strong> 5-min <code>staleTime</code> means repeated navigations don't refetch. <code>gcTime: 10min</code> keeps cache warm for back-button UX. <code>refetchOnWindowFocus: false</code> prevents disruptive reloads on tab switch.</li>
+          <li><strong>Edge Function Rate Limiting:</strong> Fixed-window counter in <code>rate-limit-auth</code> Edge Function. <strong>Fail-open design:</strong> if Edge Function is down, requests proceed (availability > strict throttling). Limits: 3 signup/15min, 5 login/15min, 2 reset/hr per email.</li>
+        </ul>
+
+        <h3>Complexity Analysis</h3>
+        <ul>
+          <li><strong>Auth flow:</strong> <span class="complexity">O(1)</span> — Supabase handles JWT validation in PostgREST middleware; client only stores/refreshes tokens.</li>
+          <li><strong>Query invalidation:</strong> <span class="complexity">O(k)</span> where <code>k</code> = number of query keys matching prefix (broadcast via <code>queryClient.invalidateQueries</code>).</li>
+          <li><strong>Cart merge on login:</strong> <span class="complexity">O(n)</span> RPC call with <code>n</code> guest items — single round-trip, atomic upsert via <code>ON CONFLICT</code>.</li>
+        </ul>
+
+        <h3>The Hiring Manager Interruption</h3>
+
+        <div class="question">
+          <strong>Q1:</strong> "Your Edge Function rate limiter is fail-open. What happens if an attacker DDoSes the rate limiter itself, causing it to return 500s? Do you actually get <em>better</em> protection or <em>worse</em>?"
+        </div>
+        <div class="answer">
+          <strong>A:</strong> Worse — fail-open means a downed rate limiter = zero protection. Mitigation: (1) Deploy Edge Function in multiple regions (Supabase does this automatically), (2) Add client-side exponential backoff on 429/500, (3) Supabase Auth has built-in rate limits as a second line of defense (their 429 on <code>/token</code> endpoint). The client-side <code>withRateLimit</code> wrapper also handles Supabase's native 429 responses independently.
+        </div>
+
+        <div class="question">
+          <strong>Q2:</strong> "You're using <code>SECURITY DEFINER</code> RPCs for <code>create_order</code> and <code>cancel_order</code>. What's the attack surface if a malicious user discovers they can call these directly via PostgREST?"
+        </div>
+        <div class="answer">
+          <strong>A:</strong> <code>SECURITY DEFINER</code> runs as the function owner (typically <code>postgres</code> or a service role), bypassing RLS. The protection is: (1) <code>GRANT EXECUTE ... TO authenticated</code> — anon key cannot call them, (2) Internal authorization checks: <code>cancel_order</code> verifies <code>p_user_id</code> owns the order OR is admin via <code>user_profiles</code> lookup, (3) <code>create_order</code> requires valid <code>p_user_id</code> (FK to <code>auth.users</code>). However, a compromised user JWT could still call these — defense-in-depth requires short JWT expiry (default 1hr) and refresh token rotation.
+        </div>
+
+        <div class="question">
+          <strong>Q3:</strong> "Why lazy-load every route with <code>Suspense</code>? What's the actual bundle size savings vs. the UX cost of spinners?"
+        </div>
+        <div class="answer">
+          <strong>A:</strong> Code-splitting reduces initial JS from ~400KB to ~120KB (gzipped) — critical for mobile 3G. The <code>LoadingFallback</code> only shows on <em>first</em> visit to a route; subsequent visits hit browser cache. <code>Suspense</code> boundary at <code>AppRoutes</code> level means one spinner for the whole route transition, not per-component. Trade-off accepted: slightly slower perceived navigation for significantly faster TTI on cold start.
+        </div>
+      </aside>
+
+      <!-- SLIDE 2: Database Schema & Data Modeling -->
+      <section data-markdown data-background-gradient="linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)">
+        <textarea data-template>
+          ## Database Schema & Data Modeling
+
+          <div class="mermaid">
+          erDiagram
+            USER_PROFILES ||--o{ ORDERS : places
+            USER_PROFILES ||--o{ CART_ITEMS : owns
+            USER_PROFILES {
+              uuid id PK "FK → auth.users"
+              text email UK
+              text first_name
+              text last_name
+              text role "customer|admin"
+              jsonb address
+              text phone
+              timestamptz created_at
+              timestamptz updated_at
+            }
+
+            CATEGORIES ||--o{ PRODUCTS : contains
+            BRANDS ||--o{ PRODUCTS : manufactures
+            CATEGORIES {
+              uuid id PK
+              text name UK
+              text description
+              text icon_key "lucide icon name"
+              timestamptz created_at
+            }
+            BRANDS {
+              uuid id PK
+              text name UK
+              text logo_url
+              text description
+              timestamptz created_at
+            }
+
+            PRODUCTS {
+              uuid id PK
+              text name
+              text description
+              text image_url
+              int price_cents "≥0"
+              int stock "≥0"
+              text status "active|inactive|out_of_stock"
+              uuid category_id FK
+              uuid brand_id FK
+              timestamptz created_at
+              timestamptz updated_at
+            }
+
+            CART_ITEMS {
+              uuid user_id FK "→ user_profiles"
+              uuid product_id FK
+              int quantity "≥1"
+              timestamptz created_at
+              timestamptz updated_at
+              PK(user_id, product_id)
+            }
+
+            ORDERS ||--o{ ORDER_ITEMS : contains
+            ORDERS {
+              uuid id PK
+              uuid user_id FK "→ auth.users"
+              text customer_name
+              text customer_email
+              text customer_phone
+              jsonb shipping_address
+              int subtotal_cents
+              int shipping_cents
+              int tax_cents
+              int total_cents
+              text payment_method "cod|ewallet|bank"
+              text notes
+              uuid idempotency_key UK "Risk 4"
+              text status "pending|confirmed|shipped|delivered|cancelled"
+              timestamptz created_at
+              timestamptz updated_at
+            }
+
+            ORDER_ITEMS {
+              uuid id PK
+              uuid order_id FK
+              uuid product_id FK
+              text product_name "denormalized"
+              text product_image
+              int unit_price_cents "snapshot at order time"
+              int quantity
+            }
+          </div>
+
+          <ul>
+            <li><strong>Prices in cents (int)</strong> — avoids floating-point errors; <code>price_cents</code>, <code>subtotal_cents</code>, <code>total_cents</code> everywhere</li>
+            <li><strong>Soft deletes on products</strong> — <code>status: 'inactive'</code> preserves order history & admin visibility; cascades delete <code>cart_items</code> via mutation</li>
+            <li><strong>Denormalized order snapshots</strong> — <code>ORDER_ITEMS</code> stores <code>product_name</code>, <code>product_image</code>, <code>unit_price_cents</code> at purchase time</li>
+            <li><strong>Idempotency key on orders</strong> — <code>UNIQUE</code> column + index enables exactly-once checkout (Risk 4 fix)</li>
+            <li><strong>pg_trgm GIN indexes</strong> on <code>products.name</code>, <code>description</code> + <code>to_tsvector</code> FTS index for <code>search_products</code> RPC</li>
+          </ul>
+        </textarea>
+      </section>
+
+      <aside class="notes">
+        <div class="notes-header">🎤 Speaker Notes — Slide 2: Database Schema & Data Modeling</div>
+
+        <h3>Design Decisions & Trade-offs</h3>
+        <ul>
+          <li><strong>Integer cents everywhere:</strong> Eliminates JS <code>0.1 + 0.2 = 0.30000000000000004</code> bugs. All math (tax 10%, shipping ₱9.99 threshold) done in SQL RPCs using integers. <span class="complexity">O(1)</span> precision, zero rounding drift.</li>
+          <li><strong>Soft delete vs hard delete:</strong> <code>useDeleteProduct</code> sets <code>status = 'inactive'</code> + cascades <code>DELETE FROM cart_items WHERE product_id = ?</code>. Preserves <code>order_items</code> FK integrity (no <code>ON DELETE SET NULL</code> needed). Admin UI still shows inactive products for audit. Trade-off: storage bloat over time; mitigated by partition/archive job (future).</li>
+          <li><strong>Denormalized order_items:</strong> Snapshots <code>product_name</code>, <code>product_image</code>, <code>unit_price_cents</code> at order creation. If product later changes price/image, historical orders remain accurate. Cost: ~200 bytes/item duplication; negligible at scale.</li>
+          <li><strong>Composite PK on cart_items:</strong> <code>(user_id, product_id)</code> enforces one row per product per cart. Enables <code>ON CONFLICT</code> upsert in <code>merge_guest_cart</code> and <code>useAddToCart</code>.</li>
+          <li><strong>Search indexes:</strong> Three indexes: (1) <code>gin_trgm_ops</code> on name for <code>ILIKE '%query%'</code>, (2) <code>gin_trgm_ops</code> on description, (3) <code>to_tsvector</code> GIN for ranked FTS. <code>search_products</code> RPC combines all three with <code>CASE WHEN exact match THEN 0 ELSE 1 END</code> + <code>ts_rank_cd</code> ordering.</li>
+        </ul>
+
+        <h3>Complexity Analysis</h3>
+        <ul>
+          <li><strong>Product listing (filtered):</strong> <span class="complexity">O(log n + k)</span> where <code>n</code> = products, <code>k</code> = page size (20). B-tree on <code>category_id</code>, <code>brand_id</code>, <code>status</code> + sort column index.</li>
+          <li><strong>Full-text search:</strong> <span class="complexity">O(log n + k log k)</span> — GIN index scan + rank sort of <code>k</code> candidates.</li>
+          <li><strong>Cart merge:</strong> <span class="complexity">O(m log n)</span> for <code>m</code> guest items — each upsert is index lookup; single transaction.</li>
+        </ul>
+
+        <h3>The Hiring Manager Interruption</h3>
+
+        <div class="question">
+          <strong>Q1:</strong> "You store <code>shipping_address</code> as <code>jsonb</code> in orders. What if you need to query 'all orders shipped to Manila'? How does that perform vs. normalized columns?"
+        </div>
+        <div class="answer">
+          <strong>A:</strong> <code>jsonb</code> with GIN index: <code>CREATE INDEX idx_orders_shipping_city ON orders USING GIN ((shipping_address ->> 'city'));</code> enables <code>WHERE shipping_address ->> 'city' = 'Manila'</code> at <span class="complexity">O(log n)</span>. Trade-off: slightly larger index than normalized column, but schema flexibility for international addresses (different fields per country). If query volume grows, extract <code>city</code>/<code>country</code> to generated columns + B-tree.
+        </div>
+
+        <div class="question">
+          <strong>Q2:</strong> "Your <code>idempotency_key</code> is <code>UUID</code> with <code>UNIQUE</code> constraint. What happens if a user double-clicks 'Place Order' 50ms apart — two RPC calls with different keys?"
+        </div>
+        <div class="answer">
+          <strong>A:</strong> The <strong>client generates ONE key per checkout session</strong> and stores it in <code>sessionStorage</code> (<code>checkout_idempotency_key</code>). <code>Checkout.jsx:102-106</code> — key is generated on first render, reused on retries. Only cleared on <code>!result.alreadyExists</code> (success). If user refreshes page, new session = new key = new order (correct behavior). The UUID uniqueness is a safety net, not the primary deduplication mechanism.
+        </div>
+
+        <div class="question">
+          <strong>Q3:</strong> "Why <code>SECURITY DEFINER</code> for <code>search_products</code>? It's a read-only function — what's the privilege escalation risk?"
+        </div>
+        <div class="answer">
+          <strong>A:</strong> Valid concern. <code>SECURITY DEFINER</code> is only needed for <code>create_order</code>/<code>cancel_order</code>/<code>merge_guest_cart</code> (write operations bypassing RLS). <code>search_products</code> is <code>LANGUAGE sql STABLE</code> — it runs with caller's privileges. The <code>GRANT EXECUTE ... TO anon, authenticated</code> allows public search. No escalation risk because it only reads <code>products</code> (already readable by anon via RLS). I should drop <code>SECURITY DEFINER</code> from that function — good catch.
+        </div>
+      </aside>
+
+      <!-- SLIDE 3: State Management & Authentication Flow -->
+      <section data-markdown data-background-gradient="linear-gradient(135deg, #1d2b64 0%, #f8cdda 100%)">
+        <textarea data-template>
+          ## State Management & Authentication Flow
+
+          <div class="mermaid">
+          stateDiagram-v2
+            [*] --> Unauthenticated: App Load
+            Unauthenticated --> CheckingSession: supabase.auth.getSession()
+            CheckingSession --> Authenticated: Session Valid
+            CheckingSession --> Unauthenticated: No Session / Expired
+
+            Authenticated --> TokenRefreshed: TOKEN_REFRESHED event
+            TokenRefreshed --> Authenticated: fetchProfile()
+
+            Authenticated --> SignedOut: SIGNED_OUT / USER_DELETED
+            SignedOut --> Unauthenticated: Clear state
+
+            Unauthenticated --> SigningUp: signUp(email, pw)
+            SigningUp --> EmailSent: Supabase returns user (unconfirmed)
+            EmailSent --> Unauthenticated: Wait for email verify
+
+            Unauthenticated --> SigningIn: signIn(email, pw)
+            SigningIn --> Authenticated: Session created
+            SigningIn --> RateLimited: 429 / "Too many requests"
+            RateLimited --> Unauthenticated: Show retry-after toast
+
+            Authenticated --> MergingCart: SIGNED_IN event
+            MergingCart --> Authenticated: merge_guest_cart() RPC
+            MergingCart --> Authenticated: clearGuestCart() on success
+
+            note right of Authenticated
+              Context Values:
+              - user: user_profiles row
+              - session: Supabase session
+              - isAuthenticated: !!session?.user
+              - isAdmin: user?.role === 'admin'
+              - signUp, signIn, signOut, resetPassword
+              - updateProfile, refreshProfile
+            end note
+
+            note right of Unauthenticated
+              Guest State (AppContext):
+              - cart[] in localStorage
+              - debounced 300ms writes
+              - toasts, authModalState
+            end note
+          </div>
+
+          <ul>
+            <li><strong>AuthContext:</strong> Single source of truth for server auth state — <code>onAuthStateChange</code> subscription handles all transitions (SIGNED_IN, TOKEN_REFRESHED, SIGNED_OUT)</li>
+            <li><strong>Rate-limited auth:</strong> <code>withRateLimit</code> wrapper (3 signup/15min, 5 login/15min, 2 reset/hr) calls Edge Function <em>before</em> Supabase; fail-open on Edge failure</li>
+            <li><strong>Guest cart merge:</strong> On <code>SIGNED_IN</code>, <code>merge_guest_cart</code> RPC atomically upserts localStorage items → <code>cart_items</code> via <code>ON CONFLICT</code></li>
+            <li><strong>Profile sync:</strong> <code>user_profiles</code> row created on signup; <code>updateProfile</code> syncs <code>first_name</code>/<code>last_name</code>/<code>phone</code> to auth metadata</li>
+            <li><strong>AppContext (UI state):</strong> <code>useReducer</code> + <code>useDebouncedLocalStorage</code> for guest cart; standalone <code>addToast/removeToast</code> via module-level <code>dispatch</code> ref</li>
+          </ul>
+        </textarea>
+      </section>
+
+      <aside class="notes">
+        <div class="notes-header">🎤 Speaker Notes — Slide 3: State Management & Authentication Flow</div>
+
+        <h3>Design Decisions & Trade-offs</h3>
+        <ul>
+          <li><strong>Single <code>onAuthStateChange</code> subscription:</strong> Handles <code>INITIAL_SESSION</code>, <code>SIGNED_IN</code>, <code>TOKEN_REFRESHED</code>, <code>SIGNED_OUT</code>, <code>USER_DELETED</code>, <code>PASSWORD_RECOVERY</code> in one place. Avoids scattered <code>useEffect</code> listeners. The <code>mounted</code> flag prevents state updates after unmount.</li>
+          <li><strong>Token refresh error suppression:</strong> <code>supabase.js:18-24</code> wraps <code>window.fetch</code> to suppress 400 on <code>/auth/v1/token</code> — expected when refresh token expires. Lets <code>onAuthStateChange</code> fire <code>SIGNED_OUT</code> naturally.</li>
+          <li><strong>Rate limiting strategy:</strong> Edge Function (<code>rate-limit-auth</code>) is first line; Supabase built-in is second. Client-side <code>withRateLimit</code> throws enriched error with <code>retryAfter</code> for toast UI. Fail-open protects availability.</li>
+          <li><strong>Guest cart merge atomicity:</strong> <code>merge_guest_cart</code> RPC uses <code>ON CONFLICT (user_id, product_id) DO UPDATE SET quantity = cart_items.quantity + EXCLUDED.quantity</code>. Single transaction — no partial merge state. Clears localStorage <em>only after RPC success</em>.</li>
+          <li><strong>AppContext standalone toasts:</strong> Module-level <code>_dispatch</code> ref allows <code>addToast()</code> import anywhere without context wrapper. Used by <code>useMutations.js</code> callbacks. Trade-off: slight impurity (side effect outside React tree); mitigated by <code>useEffect</code> sync on mount.</li>
+        </ul>
+
+        <h3>Complexity Analysis</h3>
+        <ul>
+          <li><strong>Auth initialization:</strong> <span class="complexity">O(1)</span> — single <code>getSession()</code> call + subscription setup.</li>
+          <li><strong>Guest cart merge:</strong> <span class="complexity">O(m)</span> for <code>m</code> items — single RPC round-trip, each item upsert is index lookup.</li>
+          <li><strong>Profile fetch:</strong> <span class="complexity">O(1)</span> — PK lookup on <code>user_profiles</code>.</li>
+          <li><strong>Debounced localStorage:</strong> <span class="complexity">O(1)</span> amortized — 300ms debounce batches rapid <code>dispatch</code> calls.</li>
+        </ul>
+
+        <h3>The Hiring Manager Interruption</h3>
+
+        <div class="question">
+          <strong>Q1:</strong> "Your <code>AuthContext</code> sets <code>isAdmin = user?.role === 'admin'</code> from <code>user_profiles</code>. What if an admin is demoted in the database but their JWT hasn't expired? They still have <code>isAdmin: true</code> client-side for up to 1 hour."
+        </div>
+        <div class="answer">
+          <strong>A:</strong> Correct — JWT statelessness means role changes propagate on next token refresh (1hr default) or manual logout/login. Mitigations: (1) Admin mutations (<code>useCreateProduct</code>, etc.) have <code>onError</code> calling <code>ensurePermissionError</code> which checks for <code>42501</code>/<code>403</code> from RLS — server is source of truth, (2) <code>refreshProfile</code> can be called manually, (3) For high-security ops, shorten JWT expiry (<code>exp</code> claim) or use Supabase's <code>session_timebox</code> feature. Acceptable risk for e-commerce admin panel.
+        </div>
+
+        <div class="question">
+          <strong>Q2:</strong> "The <code>window.fetch</code> monkey-patch in <code>supabase.js</code> suppresses 400 on token refresh. What if a <em>real</em> 400 occurs on a different auth endpoint (e.g., <code>/signup</code>)? You'd silently swallow it."
+        </div>
+        <div class="answer">
+          <strong>A:</strong> The patch checks <code>url?.includes('/auth/v1/token')</code> — only the token refresh endpoint. <code>/signup</code>, <code>/token?grant_type=password</code>, etc. are different paths. However, this is fragile: if Supabase changes URL structure, it breaks. Better: let Supabase client handle refresh errors via <code>onAuthStateChange</code> (which it does — fires <code>SIGNED_OUT</code>). The patch exists only to reduce console noise. Should be removed in favor of clean error handling.
+        </div>
+
+        <div class="question">
+          <strong>Q3:</strong> "You use <code>useReducer</code> in <code>AppContext</code> but <code>useState</code> in <code>AuthContext</code>. Why the inconsistency?"
+        </div>
+        <div class="answer">
+          <strong>A:</strong> <code>AuthContext</code> state is <em>derived from external source</em> (Supabase events) — <code>user</code>, <code>session</code>, <code>loading</code> are set by callbacks, not user actions. <code>useState</code> + <code>useCallback</code> is simpler. <code>AppContext</code> has complex <em>user-driven</em> transitions (cart add/update/remove/clear, toast queue) — <code>useReducer</code> centralizes logic, enables <code>dispatch</code> ref for standalone <code>addToast</code>, and makes state transitions testable. Right tool per context.
+        </div>
+      </aside>
+
+      <!-- SLIDE 4: The Checkout Flow -->
+      <section data-markdown data-background-gradient="linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%)">
+        <textarea data-template>
+          ## The Checkout Flow — Concurrency & Payment States
+
+          <div class="mermaid">
+          flowchart TD
+            A[User lands on /checkout] --> B{isAuthenticated?}
+            B -->|No| C[Guest Cart<br/>localStorage + useProducts]
+            B -->|Yes| D[Server Cart<br/>useCartQuery(session.user.id)]
+            C --> E[Merge cartItems[] with product data]
+            D --> E
+            E --> F[Calculate totals in cents<br/>subtotal, shipping, tax, total]
+            F --> G[Zod validated form<br/>checkoutSchema]
+            G --> H[User clicks Place Order]
+            H --> I{acquireLock()?}
+            I -->|False| J[Toast: "Order already\nbeing processed..."]
+            I -->|True| K[Get/Create idempotencyKey\nsessionStorage]
+            K --> L[useCreateOrder.mutateAsync\n{userId, checkoutData, cartItems, idempotencyKey}]
+            L --> M[POST → supabase.rpc create_order]
+            M --> N{create_order RPC}
+            N --> O[SELECT FOR UPDATE\nproducts.stock]
+            O --> P{stock ≥ quantity?}
+            P -->|No| Q[RAISE EXCEPTION\nInsufficient stock]
+            P -->|Yes| R[UPDATE products\nstock = stock - qty]
+            R --> S[INSERT order\n+ order_items\n+ DELETE cart_items]
+            S --> T[RETURN {id, alreadyExists}]
+            T --> U{alreadyExists?}
+            U -->|Yes| V[Navigate to /order/:id/confirmation]
+            U -->|No| W[Clear idempotencyKey\nClear guest cart if needed]
+            W --> V
+            Q -.-> X[Catch error → Toast]
+
+            style N fill:#f0f,stroke:#333,stroke-width:2px
+            style O fill:#ff9,stroke:#333,stroke-width:2px
+            style X fill:#f99,stroke:#333,stroke-width:2px
+          </div>
+
+          <ul>
+            <li><strong>Submission lock (Risk 1):</strong> <code>useRef</code> boolean prevents rapid double-clicks — client-side dedup before network call</li>
+            <li><strong>Idempotency key (Risk 4):</strong> UUID in <code>sessionStorage</code> generated once per checkout session; passed to <code>create_order</code> RPC; cleared only on <code>!alreadyExists</code></li>
+            <li><strong>Row-level locking (Risk 2):</strong> <code>SELECT ... FOR UPDATE</code> inside RPC serializes concurrent checkouts on same product — prevents oversell</li>
+            <li><strong>Stock atomicity:</strong> Decrement + order insert + cart clear in single PL/pgSQL transaction — all-or-nothing</li>
+            <li><strong>Guest → auth redirect:</strong> Unauthenticated users blocked at submit; <code>sessionStorage.setItem('postLoginRedirect', '/checkout')</code> + <code>openAuthModal('login')</code></li>
+            <li><strong>Payment methods:</strong> COD, E-Wallet, Bank Transfer — stored as <code>payment_method</code> enum; no payment gateway integration yet</li>
+          </ul>
+        </textarea>
+      </section>
+
+      <aside class="notes">
+        <div class="notes-header">🎤 Speaker Notes — Slide 4: The Checkout Flow</div>
+
+        <h3>Design Decisions & Trade-offs</h3>
+        <ul>
+          <li><strong>All monetary math in cents (integers):</strong> <code>subtotal_cents</code>, <code>shipping_cents</code> (₱0 if ≥₱100 else ₱9.99), <code>tax_cents = ROUND(subtotal * 0.1)</code>, <code>total_cents</code>. Done in both <code>Checkout.jsx</code> (display) and <code>create_order</code> RPC (authoritative). Zero FP drift.</li>
+          <li><strong>Submission lock = <code>useRef</code>:</strong> Not <code>useState</code> — avoids re-render on lock acquire/release. Purely client-side guard; server idempotency is source of truth.</li>
+          <li><strong>Idempotency key in <code>sessionStorage</code>:</strong> Survives page refresh within tab, cleared on new tab (correct — new session = new order). <code>uuidv4()</code> from <code>uuid</code> package.</li>
+          <li><strong><code>SELECT ... FOR UPDATE</code> in RPC:</strong> Takes row-level lock on <code>products</code> for each item. Concurrent checkouts for same product queue at database level. <span class="complexity">O(m)</span> lock acquisitions for <code>m</code> items; held for transaction duration (~10-50ms). Prevents lost-update oversell.</li>
+          <li><strong>Guest checkout flow:</strong> User fills form → clicks Place Order → <code>!isAuthenticated</code> triggers auth modal + redirect storage. After login, <code>CustomerProtectedRoute</code> reads <code>postLoginRedirect</code> and navigates back. Cart merge happens on <code>SIGNED_IN</code> (see Slide 3).</li>
+          <li><strong>Payment enum only:</strong> No Stripe/PayPal integration. <code>cod</code>/<code>ewallet</code>/<code>bank</code> stored for fulfillment workflow. Extensible: add <code>payment_intent_id</code> column + webhook handler later.</li>
+        </ul>
+
+        <h3>Complexity Analysis</h3>
+        <ul>
+          <li><strong>Checkout submission:</strong> <span class="complexity">O(1)</span> client-side (lock + form validation) + <span class="complexity">O(m log n)</span> server (RPC: <code>m</code> items × <code>FOR UPDATE</code> index lookup on <code>products</code>).</li>
+          <li><strong>Concurrent checkout contention:</strong> Worst-case <span class="complexity">O(m × t_lock)</span> where <code>t_lock</code> = lock wait time. Under high contention (flash sale), serialized by DB. Consider advisory locks for cart-level queuing if needed.</li>
+          <li><strong>Cart calculation:</strong> <span class="complexity">O(m)</span> reduce over <code>cartItems</code> — trivial.</li>
+        </ul>
+
+        <h3>The Hiring Manager Interruption</h3>
+
+        <div class="question">
+          <strong>Q1:</strong> "Your <code>create_order</code> RPC does <code>SELECT ... FOR UPDATE</code> on each product sequentially in a loop. If a cart has 50 items, that's 50 round-trips inside the transaction. What's the lock hold time, and can this cause deadlocks?"
+        </div>
+        <div class="answer">
+          <strong>A:</strong> It's a single PL/pgSQL function — <em>no network round-trips</em>. The loop runs inside the postgres backend; <code>FOR UPDATE</code> acquires locks sequentially in the same transaction. Deadlock risk: YES if two transactions lock products in different orders. Mitigation: <strong>sort cart items by <code>product_id</code> before looping</strong> (add <code>ORDER BY (v_item ->> 'product_id')::UUID</code> to <code>jsonb_array_elements</code>). Currently not done — this is a bug. Should fix by sorting in RPC or client.
+        </div>
+
+        <div class="question">
+          <strong>Q2:</strong> "The idempotency key lives in <code>sessionStorage</code>. What if the user opens checkout in two tabs, fills both, and submits Tab A then Tab B?"
+        </div>
+        <div class="answer">
+          <strong>A:</strong> Each tab gets its own <code>sessionStorage</code> → different UUID keys → <strong>two orders created</strong>. This is <em>intentional</em> — separate browser tabs = separate user intents. If you want cross-tab dedup, move key to <code>localStorage</code> keyed by cart hash. Current behavior: Tab A succeeds, clears key; Tab B submits with its own key → new order. Correct for "user deliberately opened two tabs".
+        </div>
+
+        <div class="question">
+          <strong>Q3:</strong> "What happens if <code>create_order</code> succeeds (order inserted, stock decremented) but the <em>client</em> crashes before receiving the response? The idempotency key is still in <code>sessionStorage</code> — user retries, gets <code>alreadyExists: true</code>. But what if they <em>clear storage</em> and retry?"
+        </div>
+        <div class="answer">
+          <strong>A:</strong> If they clear <code>sessionStorage</code>, new key → new RPC call. The RPC checks <code>WHERE idempotency_key = p_idempotency_key</code> — no match → creates <em>duplicate order</em> with same items (stock already decremented!). This is a hole. Fix: add <strong>unique constraint on (user_id, cart_item_hash)</strong> or compute a server-side idempotency key from <code>user_id + items hash</code> in RPC. Current UUID-only approach only protects against <em>client-side</em> retries, not storage loss.
+        </div>
+      </aside>
+
+      <!-- SLIDE 5: Search, Filtering, & Performance Optimization -->
+      <section data-markdown data-background-gradient="linear-gradient(135deg, #0d0d0d 0%, #1a1a2e 100%)">
+        <textarea data-template>
+          ## Search, Filtering, & Performance Optimization
+
+          <div class="mermaid">
+          flowchart LR
+            subgraph Client["Client (ProductFilters.jsx)"]
+              A1[Search Input<br/>useDebounce 300ms]
+              A2[Category Select<br/>URL param: ?category=uuid]
+              A3[Brand Checkboxes<br/>URL param: ?brand=uuid&brand=uuid]
+              A4[Sort Select<br/>URL param: ?sort=price-asc]
+              A5[Pagination<br/>URL param: ?page=2]
+            end
+
+            subgraph URL["URL State Management"]
+              B[useSearchParams<br/>react-router-dom]
+              B1[Debounced search\n→ onSearchChange\n→ navigate(search)]
+              B2[Category/Brand/Sort/Page\n→ onFilterChange\n→ navigate({search})]
+            end
+
+            subgraph Query["TanStack Query"]
+              C1[useProducts(filters)\nqueryKey: ['products', JSON.stringify(filters)]]
+              C2[useSearchProducts(query, filters)\nqueryKey: ['search-products', query, JSON.stringify(filters)]]
+              C3[StaleTime: 5min\nGCTim: 10min\nRetry: 1]
+            end
+
+            subgraph Server["Supabase / PostgreSQL"]
+              D1[products table\n+ categories + brands JOIN]
+              D2[search_products RPC\npg_trgm + FTS]
+              D3[GIN idx: name_trgm\nGIN idx: fts_tsvector\nGIN idx: desc_trgm]
+              D4[B-tree: category_id\nB-tree: brand_id\nB-tree: status\nB-tree: created_at/price]
+            end
+
+            A1 --> B1
+            A2 --> B2
+            A3 --> B2
+            A4 --> B2
+            A5 --> B2
+            B1 --> C1
+            B2 --> C1
+            C1 -->|search present| C2
+            C1 -->|no search| D1
+            C2 --> D2
+            D2 --> D3
+            D1 --> D4
+          </div>
+
+          <ul>
+            <li><strong>URL-driven filter state:</strong> All filters (search, category, brands[], sort, page) in URL — shareable, bookmarkable, SSR-ready</li>
+            <li><strong>Debounced search (300ms):</strong> <code>useDebounce</code> hook prevents keystroke storms; <code>onSearchChange</code> updates URL only after debounce</li>
+            <li><strong>Dual search strategy:</strong> <code>useProducts</code> → if <code>search</code> present, delegates to <code>useSearchProducts</code> (RPC); else direct PostgREST with filters</li>
+            <li><strong>pg_trgm + FTS indexes:</strong> <code>gin_trgm_ops</code> on name/description for <code>ILIKE</code>; <code>to_tsvector</code> GIN for ranked <code>websearch_to_tsquery</code></li>
+            <li><strong>Fallback ILIKE:</strong> If <code>search_products</code> RPC missing (migration not applied), client falls back to <code>.or('name.ilike.%q%,description.ilike.%q%')</code></li>
+            <li><strong>TanStack Query caching:</strong> 5-min <code>staleTime</code>, 10-min <code>gcTime</code>, <code>refetchOnWindowFocus: false</code> — instant back-navigation</li>
+          </ul>
+        </textarea>
+      </section>
+
+      <aside class="notes">
+        <div class="notes-header">🎤 Speaker Notes — Slide 5: Search, Filtering, & Performance Optimization</div>
+
+        <h3>Design Decisions & Trade-offs</h3>
+        <ul>
+          <li><strong>URL as source of truth:</strong> <code>ProductFilters</code> reads <code>useSearchParams()</code> on mount; all filter changes call <code>navigate({ search: params.toString() })</code>. Enables deep-linking, browser history, and SSR. <code>page</code> param auto-resets on filter change (line 54, 66, 74).</li>
+          <li><strong>Debounce at component level:</strong> <code>useDebounce(localSearch, 300)</code> — local state updates instantly (responsive UI), URL updates only after debounce. Prevents 300+ history entries per query. <code>onBlur</code> and <code>Enter</code> force immediate sync.</li>
+          <li><strong>Search delegation pattern:</strong> <code>useProducts</code> checks <code>if (search && search.trim()) return useSearchProducts(...)</code>. Single hook API, two implementations. Fallback ILIKE in <code>fallbackSearch()</code> handles migration lag gracefully.</li>
+          <li><strong>Ranked search results:</strong> <code>search_products</code> RPC orders by: (1) exact name match first, (2) <code>ts_rank_cd</code> (cover density ranking), (3) <code>created_at DESC</code>. Better relevance than pure <code>ILIKE</code>.</li>
+          <li><strong>Index strategy:</strong> Three GIN indexes (~50MB each at 1M products): trigram on name, trigram on description, FTS on tsvector. B-trees on filter columns. <code>status</code> partial index (<code>WHERE status = 'active'</code>) would help but not yet added.</li>
+          <li><strong>Query deduplication:</strong> TanStack Query key includes <code>JSON.stringify(filters)</code> — different filter combos = different cache entries. <code>staleTime: 5min</code> means filter toggles within 5min hit cache.</li>
+        </ul>
+
+        <h3>Complexity Analysis</h3>
+        <ul>
+          <li><strong>Filtered product list (no search):</strong> <span class="complexity">O(log n + k)</span> — B-tree index scan on <code>category_id</code>/<code>brand_id</code>/<code>status</code> + sort column, limit <code>k</code> (20).</li>
+          <li><strong>Full-text search:</strong> <span class="complexity">O(log n + k log k)</span> — GIN index scan candidates + rank sort of <code>k</code> results.</li>
+          <li><strong>Trigram ILIKE fallback:</strong> <span class="complexity">O(log n + k)</span> — GIN trigram index scan, no ranking overhead.</li>
+          <li><strong>Debounce overhead:</strong> <span class="complexity">O(1)</span> per keystroke — timer management only.</li>
+        </ul>
+
+        <h3>The Hiring Manager Interruption</h3>
+
+        <div class="question">
+          <strong>Q1:</strong> "Your <code>search_products</code> RPC uses <code>websearch_to_tsquery</code> which parses Google-style syntax (quotes, minus, OR). What if a user searches for 'iPhone 15' — does it match 'iPhone 15 Pro'?"
+        </div>
+        <div class="answer">
+          <strong>A:</strong> <code>websearch_to_tsquery('english', 'iPhone 15')</code> → <code>'iphone' & '15'</code> (AND). <code>to_tsvector</code> on <code>'iPhone 15 Pro'</code> → <code>'iphone' '15' 'pro'</code>. Match: YES (both tokens present). But 'iPhone 15' won't match 'iPhone15' (no word boundary). Trigram <code>ILIKE '%iPhone 15%'</code> would match 'iPhone15'. The RPC combines both: <code>ILIKE</code> OR <code>tsvector @@ tsquery</code> — so partial matches still work via trigram path. Good hybrid approach.
+        </div>
+
+        <div class="question">
+          <strong>Q2:</strong> "The <code>ProductFilters</code> computes <code>brandCounts</code> by reducing over the <code>products</code> prop. If I have 10,000 products and paginate (20/page), the brand counts only reflect the current page — not the full filtered set."
+        </div>
+        <div class="answer">
+          <strong>A:</strong> Correct — <code>brandCounts</code> is computed from <code>products</code> prop which is the <em>current page</em> from <code>useProducts</code>. This is a bug: facet counts should reflect total matches, not page. Fix: (1) Add <code>brand_facets</code> column to RPC return, or (2) Separate <code>useBrandFacets(filters)</code> query that aggregates <code>GROUP BY brand_id</code> on filtered set. Current UX shows misleading counts — e.g., "Sony (0)" on page 2 even if Sony has 50 products total.
+        </div>
+
+        <div class="question">
+          <strong>Q3:</strong> "You're using <code>JSON.stringify(filters)</code> in query keys. What if <code>filters</code> contains a <code>Date</code> object or <code>Set</code>? Keys become inconsistent, cache misses."
+        </div>
+        <div class="answer">
+          <strong>A:</strong> <code>filters</code> in this app only contains primitives: <code>search</code> (string), <code>categoryId</code> (uuid string), <code>brandIds</code> (string[]), <code>sortBy</code> (enum string), <code>limit/offset</code> (numbers). No Dates/Sets/Objects with non-deterministic key order. However, <code>brandIds</code> array order matters — <code>['a','b']</code> ≠ <code>['b','a']</code> in JSON. Fix: sort <code>brandIds</code> before stringify: <code>brandIds: [...filters.brandIds].sort()</code>. Currently not done — could cause duplicate cache entries.
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- Reveal.js UMD (global) -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script>
+    // Initialize Mermaid (UMD global)
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'dark',
+      themeVariables: {
+        primaryColor: '#1a1a2e',
+        primaryTextColor: '#f8f8f2',
+        primaryBorderColor: '#6272a4',
+        lineColor: '#6272a4',
+        secondaryColor: '#16213e',
+        tertiaryColor: '#0f3460'
+      },
+      flowchart: { curve: 'basis' },
+      er: { useMaxWidth: true }
+    });
+
+    // Initialize Reveal.js (global Reveal)
+    Reveal.initialize({
+      hash: true,
+      slideNumber: 'c/t',
+      showNotes: false,
+      controls: true,
+      progress: true,
+      center: false,
+      width: 1280,
+      height: 720,
+      margin: 0.1,
+      minScale: 0.2,
+      maxScale: 2.0,
+      transition: 'slide',
+      backgroundTransition: 'fade',
+      pdf: {
+        format: 'A4',
+        orientation: 'landscape',
+        margin: '0.5in'
+      }
+    });
+
+    // Keyboard shortcut to toggle speaker notes view (press 'N')
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'N' && !e.ctrlKey && !e.metaKey) {
+        const notes = document.querySelectorAll('.reveal .notes');
+        notes.forEach(n => n.style.display = n.style.display === 'block' ? 'none' : 'block');
+      }
+    });
+  </script>
+</body>
+</html>
