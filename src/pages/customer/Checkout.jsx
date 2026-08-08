@@ -25,6 +25,14 @@ export default function Checkout() {
   const [submitting, setSubmitting] = useState(false)
   const [guestCart, setGuestCart] = useState([])
 
+  // Redirect guests to login
+  useEffect(() => {
+    if (!isAuthenticated) {
+      openAuthModal('login')
+      navigate('/cart')
+    }
+  }, [isAuthenticated, openAuthModal, navigate])
+
   // Submission lock to prevent duplicate orders on rapid clicks
   const submissionLock = useRef(false)
 

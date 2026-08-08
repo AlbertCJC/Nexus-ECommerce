@@ -24,16 +24,16 @@ npm test
 npx playwright test
 ```
 
-The app runs at `http://localhost:3000`
+The app runs at `http://localhost:5173`
 
 ## 🔐 Authentication & Roles
 
 | Role | Email | Password | Access |
 |------|-------|----------|--------|
-| Admin | `admin@example.com` | `admin123` | Full admin panel at `/admin/*` |
-| Customer | Sign up at `/auth/register` | Your password | Customer storefront |
+| **Admin** | `admin@nexus.com` | `admin123` | Full admin panel at `/admin/*` |
+| **Customer** | `user@nexus.com` | `user123` | Customer storefront |
 
-**Admin access is database-driven**: Set `role = 'admin'` in `user_profiles` table and `auth.users.raw_user_meta_data.role = 'admin'`
+> **Note:** Demo credentials are seeded on first run. In production, use the registration flow or configure via Supabase Auth.
 
 ## 🛠 Tech Stack
 
@@ -203,17 +203,120 @@ npm run build
 # Deploy dist/ folder - vercel.json handles SPA routing, headers, caching
 ```
 
-## 📝 Key Files to Modify
+## 🔄 System Flow
 
-| File | Purpose |
-|------|---------|
-| `supabase/migration.sql` | Database schema changes |
-| `supabase/functions/rate-limit-auth/index.ts` | Rate limit adjustments |
-| `src/utils/validations.js` | Form rules |
-| `src/styles/index.css` | Theme tokens (CSS variables) |
-| `src/hooks/queries/*.js` | Query logic |
-| `src/hooks/mutations/useMutations.js` | Mutation logic |
-| `vercel.json` | Deployment config |
+### Customer Journey
+
+```
+1. LANDING (Home)
+   ├── Hero section with CTA → Products
+   ├── Featured categories (from DB)
+   └── Featured products (quick access)
+
+2. PRODUCT DISCOVERY (Products Page)
+   ├── URL-synced filters (search, category, brand, sort)
+   ├── Debounced search (300ms, no page refresh)
+   ├── Skeleton loaders during fetch
+   └── Responsive grid (1/2/3/4 columns)
+
+3. PRODUCT DETAIL (/products/:id)
+   ├── Image gallery with thumbnails
+   ├── Full description + specs
+   ├── Stock status badge
+   ├── Add to Cart (toast confirmation)
+   └── Related products
+
+4. CART (/cart)
+   ├── Quantity adjustment (+/-)
+   ├── Persistent guest cart (localStorage)
+   ├── Authenticated cart (Supabase synced)
+   └── Proceed to Checkout
+
+5. CHECKOUT (/checkout)
+   ├── Shipping form (validated)
+   ├── Order summary with totals
+   ├── Payment methods: COD / E-Wallet / Bank Transfer
+   └── Order confirmation page
+
+6. ACCOUNT
+   ├── /orders — Order history with status tracking
+   ├── /profile — Edit info, change password
+   └── Protected routes (require auth)
+```
+
+### Admin Journey
+
+```
+1. /admin/login → Auth gate (admin role required)
+
+2. ADMIN DASHBOARD
+   ├── Sales overview (Recharts area chart)
+   ├── Revenue metrics cards
+   ├── Recent orders table
+   └── Quick actions
+
+3. PRODUCT MANAGEMENT (/admin/products)
+   ├── Full CRUD: Create, Read, Update, Delete
+   ├── Image upload (Supabase Storage)
+   ├── Stock management
+   └── Category/Brand assignment
+
+4. ORDER MANAGEMENT (/admin/orders)
+   ├── All orders with filters
+   ├── Status transitions (pending → processing → shipped → delivered)
+   └── Order detail modal
+
+5. CATEGORY & BRAND MANAGEMENT
+   ├── Category CRUD with icons
+   ├── Brand CRUD with logos
+   └── Delete blocked if products exist
+```
+
+### Data Flow
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                      SUPABASE (PostgreSQL)                  │
+├─────────────────────────────────────────────────────────────┤
+│  Tables: users, products, categories, brands, orders,       │
+│  order_items, cart_items (authenticated only)               │
+│  RLS Policies: admin full access, customer own data only    │
+└─────────────────────────────────────────────────────────────┘
+                              ▲
+                              │ Supabase JS Client
+                              │ (REST + Realtime)
+              ┌───────────────┴───────────────┐
+              ▼                               ▼
+    ┌─────────────────────┐         ┌─────────────────────┐
+    │  Guest (localStorage)│       │  Authenticated User   │
+    │  Cart persisted     │         │  Cart from DB       │
+    │  Synced on login    │         │  Realtime updates   │
+    └─────────────────────┘         └─────────────────────┘
+              │                               │
+              └───────────────┬───────────────┘
+                              ▼
+              ┌─────────────────────────────┐
+              │      React + TanStack Query │
+              │  - Optimistic updates       │
+              │  - Auto-refetch on mutate   │
+              │  - Cache invalidation       │
+              └─────────────────────────────┘
+```
+
+### Key Architectural Decisions
+
+| Decision | Rationale |
+|----------|-----------|
+| **Guest-first cart** | Immediate shopping without signup friction; merges on auth |
+| **URL-synced filters** | Shareable, bookmarkable product views; browser back/forward works |
+| **Debounced search (300ms)** | Reduces API load; no full-page reloads |
+| **TanStack Query** | Eliminates manual loading/error states; handles race conditions |
+| **Supabase RLS** | Security at database level; no backend API to maintain |
+| **CSS Variables + Tailwind** | Theming without runtime overhead; design tokens in one place |
+| **Syne font** | Distinctive gaming/tech identity; variable weights for hierarchy |
+| **44×44px touch targets** | Mobile accessibility compliance |
+
+---
 
 ## 📄 License
 

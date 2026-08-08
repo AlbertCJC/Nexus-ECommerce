@@ -1,13 +1,25 @@
 import { formatCurrency } from '../../utils/formatters'
 import { Link } from 'react-router-dom'
+import { useAuth } from '../../context/AuthContext'
+import { useAppContext } from '../../context/AppContext'
 
 export function CartSummary({ subtotal }) {
+  const { isAuthenticated } = useAuth()
+  const { openAuthModal } = useAppContext()
   // subtotal is in cents
   const subtotalPesos = subtotal / 100
   const shippingThreshold = 100 // 100 PHP = 10000 cents
   const shipping = subtotal >= 10000 ? 0 : 999 // 999 cents = 9.99 PHP
   const tax = Math.round(subtotal * 0.1) // 10% tax in cents
   const total = subtotal + shipping + tax
+
+  const handleCheckout = () => {
+    if (!isAuthenticated) {
+      openAuthModal('login')
+      return
+    }
+    // Navigate to checkout - handled by Link
+  }
 
   return (
     <div className="card p-6 sticky top-24">
@@ -29,9 +41,20 @@ export function CartSummary({ subtotal }) {
         <span>Total</span>
         <span>{formatCurrency(total / 100)}</span>
       </div>
-      <Link to="/checkout" className="block mt-4">
-        <button className="w-full btn-primary py-3 text-lg" disabled={subtotal === 0}>Proceed to Checkout</button>
-      </Link>
+      {isAuthenticated ? (
+        <Link to="/checkout" className="block mt-4">
+          <button className="w-full btn-primary py-3 text-lg" disabled={subtotal === 0}>Proceed to Checkout</button>
+        </Link>
+      ) : (
+        <button onClick={handleCheckout} className="w-full btn-primary py-3 text-lg mt-4">
+          Sign In to Checkout
+        </button>
+      )}
+      {!isAuthenticated && (
+        <p className="mt-3 text-xs text-center text-[rgb(var(--text-muted))]">
+          Please sign in or create an account to complete your purchase.
+        </p>
+      )}
       <p className="mt-4 text-xs text-center text-[rgb(var(--text-muted))]">Secure checkout. No payment info stored.</p>
     </div>
   )

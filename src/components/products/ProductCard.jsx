@@ -12,18 +12,13 @@ import { getCategoryIcon, getCategoryIconByName } from '../../utils/categoryIcon
 
 export function ProductCard({ product, categoryName, category, brands = [], compact = false }) {
   const { isAuthenticated, session } = useAuth()
-  const { cart, openAuthModal, dispatch } = useAppContext()
+  const { cart, openAuthModal, dispatch, addToast } = useAppContext()
   const addToCartMutation = useAddToCart()
-  const updateQtyMutation = useUpdateCartQuantity()
-  const removeItemMutation = useRemoveFromCart()
 
   const isInCart = cart.some(item => item.productId === product.id)
-  const cartItem = cart.find(item => item.productId === product.id)
   const stockInfo = formatStock(product.stock)
   const statusInfo = formatProductStatus(product.status)
   const canAddToCart = product.status === 'active' && product.stock > 0
-  const quantityInCart = cartItem?.quantity || 0
-  const availableStock = product.stock - quantityInCart
   const brand = brands.find(b => b.id === product.brand_id)
   const brandName = brand ? brand.name : getBrandName(brands, product.brand_id)
 
@@ -38,8 +33,10 @@ export function ProductCard({ product, categoryName, category, brands = [], comp
           // Guest user: use localStorage cart via AppContext dispatch
           await addToCartMutation.mutateAsync({ productId: product.id, quantity: 1, guestCartDispatcher: (payload) => dispatch({ type: 'ADD_TO_CART', payload }) })
         }
+        addToast({ type: 'success', message: `${product.name} added to cart` })
       } catch (error) {
         console.error('Failed to add to cart:', error)
+        addToast({ type: 'error', message: 'Failed to add to cart' })
       }
     }
   }
@@ -126,17 +123,9 @@ export function ProductCard({ product, categoryName, category, brands = [], comp
           </div>
           <div className="flex gap-2">
             {canAddToCart ? (
-              quantityInCart > 0 ? (
-                <div className="flex items-center border border-[rgb(var(--border-subtle))] rounded-lg">
-                  <button onClick={(e) => { e.stopPropagation(); }} className="min-w-[44px] min-h-[44px] flex items-center justify-center text-[rgb(var(--text-secondary))] hover:bg-[rgb(var(--bg-hover))] rounded-l-lg disabled:opacity-50" aria-label="Decrease quantity" disabled>−</button>
-                  <span className="px-3 py-1 text-sm font-medium w-10 text-center">{quantityInCart}</span>
-                  <button onClick={(e) => { e.stopPropagation(); }} disabled={quantityInCart >= availableStock} className="min-w-[44px] min-h-[44px] flex items-center justify-center text-[rgb(var(--text-secondary))] hover:bg-[rgb(var(--bg-hover))] rounded-r-lg disabled:opacity-50" aria-label="Increase quantity">+</button>
-                </div>
-              ) : (
-                <button onClick={handleAddToCart} className="btn-primary px-3 py-1.5 text-sm" aria-label={`Add ${product.name} to cart`}>
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>
-                </button>
-              )
+              <button onClick={handleAddToCart} className="btn-primary px-3 py-1.5 text-sm" aria-label={`Add ${product.name} to cart`}>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>
+              </button>
             ) : (
               <button disabled className="btn-secondary px-3 py-1.5 text-sm opacity-50 cursor-not-allowed">Unavailable</button>
             )}
