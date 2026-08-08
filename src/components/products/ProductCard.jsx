@@ -7,6 +7,7 @@ import { getBrandName } from '../../utils/helpers'
 import { Card } from '../ui/Card'
 import Button from '../ui/Button'
 import { Badge } from '../ui/Badge'
+import { Tooltip } from '../ui/Tooltip'
 import { getCategoryIcon, getCategoryIconByName } from '../../utils/categoryIcons'
 
 export function ProductCard({ product, categoryName, category, brands = [], compact = false }) {
@@ -101,39 +102,35 @@ export function ProductCard({ product, categoryName, category, brands = [], comp
 
   return (
     <Card className="flex flex-col h-full group" hover>
-      <Link to={`/products/${product.id}`} className="block aspect-square relative overflow-hidden">
+      <Link to={`/products/${product.id}`} className="block aspect-square relative overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[rgb(var(--accent-primary))] focus-visible:ring-offset-2 focus-visible:ring-offset-[rgb(var(--bg-base))]">
         <img src={product.image_url} alt={product.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onError={(e) => { e.currentTarget.src = '/images/placeholder-product.svg'; e.currentTarget.onerror = null; }} />
         {product.status !== 'active' && <div className="absolute inset-0 bg-black/50 flex items-center justify-center"><span className="bg-[rgb(var(--bg-elevated))/0.9] px-3 py-1 rounded text-sm font-medium text-[rgb(var(--text-muted))]">{statusInfo.text}</span></div>}
         {product.stock === 0 && product.status === 'active' && <div className="absolute inset-0 bg-black/50 flex items-center justify-center"><span className="bg-[rgb(var(--bg-elevated))/0.9] px-3 py-1 rounded text-sm font-medium text-[rgb(var(--accent-danger))]">Out of Stock</span></div>}
         <div className="absolute top-4 left-4 z-10 group-hover:scale-105 transition-transform duration-300">{renderBrand()}</div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </Link>
-      <div className="p-4 flex flex-col flex-1">
-        <div className="flex items-start justify-between gap-2 mb-2">
-          <h3 className="font-semibold text-[rgb(var(--text-primary))] line-clamp-1 flex-1 group-hover:line-clamp-none group-hover:max-h-[3rem] transition-all duration-300">{product.name}</h3>
+      <div className="p-6 flex flex-col flex-1">
+        <div className="flex items-start justify-between gap-3 mb-3">
+          <Tooltip content={product.name} position="top">
+            <h3 className="font-semibold text-[rgb(var(--text-primary))] line-clamp-1 flex-1">{product.name}</h3>
+          </Tooltip>
           <span className={`badge ${statusInfo.class} flex-shrink-0`}>{statusInfo.text}</span>
         </div>
-        <p className="text-sm text-[rgb(var(--text-muted))] line-clamp-2 mb-3 flex-1 group-hover:line-clamp-none group-hover:max-h-[6rem] transition-all duration-300 overflow-hidden">{product.description}</p>
-        <div className="flex items-center justify-between">
+        <Tooltip content={product.description} position="bottom">
+          <p className="text-sm text-[rgb(var(--text-muted))] line-clamp-2 mb-6 flex-1 overflow-hidden">{product.description}</p>
+        </Tooltip>
+        <div className="flex items-center justify-between gap-4">
           <div>
             <p className="text-xl font-bold text-[rgb(var(--accent-primary))]">{formatCurrency(product.price_cents)}</p>
-            <div className="flex items-center gap-2 mt-1">
-              <span className={`badge ${stockInfo.class}`}>{stockInfo.text}</span>
-              {categoryName && (
-                <span className="inline-flex items-center gap-1 text-xs text-[rgb(var(--text-muted))]">
-                  <CategoryIcon className="w-3 h-3" />
-                  {categoryName}
-                </span>
-              )}
-            </div>
+            <span className={`badge ${stockInfo.class} mt-2 inline-block`}>{stockInfo.text}</span>
           </div>
           <div className="flex gap-2">
             {canAddToCart ? (
               quantityInCart > 0 ? (
                 <div className="flex items-center border border-[rgb(var(--border-subtle))] rounded-lg">
-                  <button onClick={(e) => { e.stopPropagation(); }} className="px-2 py-1 text-[rgb(var(--text-secondary))] hover:bg-[rgb(var(--bg-hover))] rounded-l-lg disabled:opacity-50" aria-label="Decrease quantity" disabled>−</button>
-                  <span className="px-3 py-1 text-sm font-medium w-8 text-center">{quantityInCart}</span>
-                  <button onClick={(e) => { e.stopPropagation(); }} disabled={quantityInCart >= availableStock} className="px-2 py-1 text-[rgb(var(--text-secondary))] hover:bg-[rgb(var(--bg-hover))] rounded-r-lg disabled:opacity-50" aria-label="Increase quantity">+</button>
+                  <button onClick={(e) => { e.stopPropagation(); }} className="min-w-[44px] min-h-[44px] flex items-center justify-center text-[rgb(var(--text-secondary))] hover:bg-[rgb(var(--bg-hover))] rounded-l-lg disabled:opacity-50" aria-label="Decrease quantity" disabled>−</button>
+                  <span className="px-3 py-1 text-sm font-medium w-10 text-center">{quantityInCart}</span>
+                  <button onClick={(e) => { e.stopPropagation(); }} disabled={quantityInCart >= availableStock} className="min-w-[44px] min-h-[44px] flex items-center justify-center text-[rgb(var(--text-secondary))] hover:bg-[rgb(var(--bg-hover))] rounded-r-lg disabled:opacity-50" aria-label="Increase quantity">+</button>
                 </div>
               ) : (
                 <button onClick={handleAddToCart} className="btn-primary px-3 py-1.5 text-sm" aria-label={`Add ${product.name} to cart`}>
@@ -143,7 +140,7 @@ export function ProductCard({ product, categoryName, category, brands = [], comp
             ) : (
               <button disabled className="btn-secondary px-3 py-1.5 text-sm opacity-50 cursor-not-allowed">Unavailable</button>
             )}
-            <Link to={`/products/${product.id}`} className="btn-outline p-2" aria-label={`View ${product.name} details`}><svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg></Link>
+            <Link to={`/products/${product.id}`} className="btn-outline min-w-[44px] min-h-[44px] p-2" aria-label={`View ${product.name} details`}><svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg></Link>
           </div>
         </div>
       </div>

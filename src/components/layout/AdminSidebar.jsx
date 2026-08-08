@@ -23,7 +23,7 @@ export function AdminSidebar({ onClose, isOpen }) {
   return (
     <aside className={`fixed inset-y-0 left-0 z-40 w-64 bg-[rgb(var(--bg-card))] border-r border-[rgb(var(--border-subtle))] transform transition-transform duration-200 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`} aria-label="Admin navigation">
       <div className="flex h-16 items-center justify-between px-6 border-b border-[rgb(var(--border-subtle))]">
-        <span className="text-xl font-bold text-gradient-cyan">Admin Panel</span>
+        <span className="text-xl font-bold text-[rgb(var(--accent-primary))]">Admin Panel</span>
         <button onClick={onClose} className="lg:hidden p-1 rounded-lg text-[rgb(var(--text-muted))] hover:text-[rgb(var(--text-primary))]" aria-label="Close sidebar">
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
         </button>

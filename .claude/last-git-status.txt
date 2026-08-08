@@ -1,11 +1,25 @@
  M .claude/last-git-status.txt
  M .claude/session-log.txt
+ M index.html
+ M src/components/cart/CartItem.jsx
+ M src/components/layout/AdminSidebar.jsx
+ M src/components/layout/Footer.jsx
  M src/components/layout/Navbar.jsx
- M src/pages/admin/AdminLogin.jsx
+ M src/components/products/ProductCard.jsx
+ M src/components/products/ProductFilters.jsx
+ M src/components/ui/AuthModal.jsx
+ M src/components/ui/Button.jsx
+ M src/components/ui/Checkbox.jsx
+ M src/components/ui/Select.jsx
  M src/pages/customer/Home.jsx
+ M src/pages/customer/ProductDetail.jsx
  M src/styles/index.css
- M src/utils/categoryIcons.js
- M src/utils/formatters.js
- M src/utils/formatters.test.js
  M tailwind.config.js
-?? technical_presentation.html
+ D test-migrations.mjs
+?? DESIGN_SYSTEM.md
+?? PROJECT_OVERVIEW.md
+?? TECHNICAL_ARCHITECTURE.md
+?? presentation/
+?? screenshots/
+?? skills-lock.json
+?? src/components/ui/Tooltip.jsx

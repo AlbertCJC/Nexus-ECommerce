@@ -1,0 +1,4501 @@
+{
+  "home": [
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "Mousepads, cables, stands & more",
+      "selector": ".text-[rgb(var(--text-muted))].text-xs.mt-1.line-clamp-1",
+      "scrollWidth": 118,
+      "clientWidth": 118,
+      "scrollHeight": 32,
+      "clientHeight": 16
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "GPUs, RAM, SSDs, PSUs & cooling",
+      "selector": ".text-[rgb(var(--text-muted))].text-xs.mt-1.line-clamp-1",
+      "scrollWidth": 118,
+      "clientWidth": 118,
+      "scrollHeight": 32,
+      "clientHeight": 16
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "Mousepads, cables, stands & more",
+      "selector": ".text-[rgb(var(--text-muted))].text-xs.mt-1.line-clamp-1",
+      "scrollWidth": 118,
+      "clientWidth": 118,
+      "scrollHeight": 32,
+      "clientHeight": 16
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "Immersive audio with crystal-clear mics",
+      "selector": ".text-[rgb(var(--text-muted))].text-xs.mt-1.line-clamp-1",
+      "scrollWidth": 118,
+      "clientWidth": 118,
+      "scrollHeight": 32,
+      "clientHeight": 16
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "Mechanical & optical keyboards with RGB",
+      "selector": ".text-[rgb(var(--text-muted))].text-xs.mt-1.line-clamp-1",
+      "scrollWidth": 118,
+      "clientWidth": 118,
+      "scrollHeight": 32,
+      "clientHeight": 16
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "High-precision gaming mice for every grip style",
+      "selector": ".text-[rgb(var(--text-muted))].text-xs.mt-1.line-clamp-1",
+      "scrollWidth": 118,
+      "clientWidth": 118,
+      "scrollHeight": 48,
+      "clientHeight": 16
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "High refresh rate, low latency displays",
+      "selector": ".text-[rgb(var(--text-muted))].text-xs.mt-1.line-clamp-1",
+      "scrollWidth": 118,
+      "clientWidth": 118,
+      "scrollHeight": 32,
+      "clientHeight": 16
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "Gaming laptops and pre-built systems",
+      "selector": ".text-[rgb(var(--text-muted))].text-xs.mt-1.line-clamp-1",
+      "scrollWidth": 118,
+      "clientWidth": 118,
+      "scrollHeight": 32,
+      "clientHeight": 16
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "MSI GeForce RTX 4070 Ti SUPER 16G GAMING X SLIM",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 157,
+      "clientWidth": 157,
+      "scrollHeight": 72,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "NVIDIA Ada Lovelace GPU with 16GB GDDR6X, TRI FROZ",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 236,
+      "clientWidth": 236,
+      "scrollHeight": 60,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "ASUS ROG Swift PG27AQDP",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 157,
+      "clientWidth": 157,
+      "scrollHeight": 48,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "27\" 1440p 480Hz OLED gaming monitor with 0.03ms re",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 236,
+      "clientWidth": 236,
+      "scrollHeight": 80,
+      "clientHeight": 56
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "GIGABYTE AORUS FO27Q3",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 157,
+      "clientWidth": 157,
+      "scrollHeight": 48,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "27\" 1440p 360Hz QD-OLED with tactical features, 0.",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 236,
+      "clientWidth": 236,
+      "scrollHeight": 60,
+      "clientHeight": 56
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "MSI MPG 271QRX QD-OLED",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 157,
+      "clientWidth": 157,
+      "scrollHeight": 48,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "27\" 1440p 360Hz QD-OLED with 0.03ms GTG, VESA Disp",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 236,
+      "clientWidth": 236,
+      "scrollHeight": 60,
+      "clientHeight": 56
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "75% DIY wireless keyboard with gasket mount, ROG N",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 236,
+      "clientWidth": 236,
+      "scrollHeight": 80,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "ASUS ROG Delta S Wireless",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 157,
+      "clientWidth": 157,
+      "scrollHeight": 48,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "Dual-mode wireless headset with MQA audio, ESS 928",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 236,
+      "clientWidth": 236,
+      "scrollHeight": 80,
+      "clientHeight": 40
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-[url('data:image/svg+xml,%3Csvg.width=%2260%22.height=%2260%22.viewBox=%220.0.60.60%22.xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg.fill=%22none%22.fill-rule=%22evenodd%22%3E%3Cg.fill=%22rgb(var(--accent-primary))%22.fill-opacity=%220.03%22%3E%3Cpath.d=%22M36.34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6.34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6.4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%2E')].opacity-50.animate-pulse-slow",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "New RGB Collection Just Droppe",
+        "selector": ".relative.mx-auto.max-w-7xl.px-4.sm:px-6.lg:px-8.py-20.sm:py-32",
+        "zIndex": 0
+      },
+      "overlapArea": 721920,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-[url('data:image/svg+xml,%3Csvg.width=%2260%22.height=%2260%22.viewBox=%220.0.60.60%22.xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg.fill=%22none%22.fill-rule=%22evenodd%22%3E%3Cg.fill=%22rgb(var(--accent-primary))%22.fill-opacity=%220.03%22%3E%3Cpath.d=%22M36.34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6.34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6.4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%2E')].opacity-50.animate-pulse-slow",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "New RGB Collection Just Droppe",
+        "selector": ".max-w-3xl",
+        "zIndex": 0
+      },
+      "overlapArea": 236544,
+      "overlapPercent1": "32.8",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.top-1/4.left-1/4.w-96.h-96.bg-[rgb(var(--accent-primary))/0.2].rounded-full.blur-3xl.animate-float.will-change-transform-opacity",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.top-1/2.left-1/2.-translate-x-1/2.-translate-y-1/2.w-72.h-72.bg-[rgb(var(--accent-success))/0.15].rounded-full.blur-3xl.animate-pulse.will-change-opacity",
+        "zIndex": 0
+      },
+      "overlapArea": 60626.970703125,
+      "overlapPercent1": "40.1",
+      "overlapPercent2": "73.1"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.top-1/4.left-1/4.w-96.h-96.bg-[rgb(var(--accent-primary))/0.2].rounded-full.blur-3xl.animate-float.will-change-transform-opacity",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "New RGB Collection Just Droppe",
+        "selector": ".max-w-3xl",
+        "zIndex": 0
+      },
+      "overlapArea": 118671.24295558222,
+      "overlapPercent1": "78.4",
+      "overlapPercent2": "50.2"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.bottom-1/4.right-1/4.w-96.h-96.bg-[rgb(var(--accent-secondary))/0.2].rounded-full.blur-3xl.animate-float-delayed.will-change-transform-opacity",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.top-1/2.left-1/2.-translate-x-1/2.-translate-y-1/2.w-72.h-72.bg-[rgb(var(--accent-success))/0.15].rounded-full.blur-3xl.animate-pulse.will-change-opacity",
+        "zIndex": 0
+      },
+      "overlapArea": 59280,
+      "overlapPercent1": "40.2",
+      "overlapPercent2": "71.5"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.top-1/2.left-1/2.-translate-x-1/2.-translate-y-1/2.w-72.h-72.bg-[rgb(var(--accent-success))/0.15].rounded-full.blur-3xl.animate-pulse.will-change-opacity",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "New RGB Collection Just Droppe",
+        "selector": ".max-w-3xl",
+        "zIndex": 0
+      },
+      "overlapArea": 82944,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "35.1"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "overlapArea": 24964,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "Accessories1 productsMousepads",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "overlapArea": 17064,
+      "overlapPercent1": "68.4",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 24964,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "Accessories1 productsMousepads",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "overlapArea": 17064,
+      "overlapPercent1": "68.4",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 24964,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "Accessories1 productsMousepads",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 17064,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "68.4"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "overlapArea": 24964,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "Components3 productsGPUs, RAM,",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "overlapArea": 17064,
+      "overlapPercent1": "68.4",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 24964,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "Components3 productsGPUs, RAM,",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "overlapArea": 17064,
+      "overlapPercent1": "68.4",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 24964,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "Components3 productsGPUs, RAM,",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 17064,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "68.4"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "overlapArea": 24964,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "Freebies0 productsMousepads, c",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "overlapArea": 17064,
+      "overlapPercent1": "68.4",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 24964,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "Freebies0 productsMousepads, c",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "overlapArea": 17064,
+      "overlapPercent1": "68.4",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 24964,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "Freebies0 productsMousepads, c",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 17064,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "68.4"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "overlapArea": 24964,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "Gaming Headsets5 productsImmer",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "overlapArea": 21488,
+      "overlapPercent1": "86.1",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 24964,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "Gaming Headsets5 productsImmer",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "overlapArea": 21488,
+      "overlapPercent1": "86.1",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 24964,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "Gaming Headsets5 productsImmer",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 21488,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "86.1"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "overlapArea": 24964,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "Gaming Keyboards6 productsMech",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "overlapArea": 21488,
+      "overlapPercent1": "86.1",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 24964,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "Gaming Keyboards6 productsMech",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "overlapArea": 21488,
+      "overlapPercent1": "86.1",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 24964,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "Gaming Keyboards6 productsMech",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 21488,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "86.1"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "overlapArea": 24964,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "Gaming Mice7 productsHigh-prec",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "overlapArea": 21488,
+      "overlapPercent1": "86.1",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 24964,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "Gaming Mice7 productsHigh-prec",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "overlapArea": 21488,
+      "overlapPercent1": "86.1",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 24964,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "Gaming Mice7 productsHigh-prec",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 21488,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "86.1"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "overlapArea": 24964,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "Gaming Monitors3 productsHigh ",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "overlapArea": 21488,
+      "overlapPercent1": "86.1",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 24964,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "Gaming Monitors3 productsHigh ",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "overlapArea": 21488,
+      "overlapPercent1": "86.1",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 24964,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "Gaming Monitors3 productsHigh ",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 21488,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "86.1"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "overlapArea": 24964,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "Laptops & PCs0 productsGaming ",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "overlapArea": 21488,
+      "overlapPercent1": "86.1",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 24964,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "Laptops & PCs0 productsGaming ",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "overlapArea": 21488,
+      "overlapPercent1": "86.1",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 24964,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "Laptops & PCs0 productsGaming ",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 21488,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "86.1"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 80656,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 80656,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 80656,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 80656,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 80656,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 80656,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    }
+  ],
+  "products": [
+    {
+      "type": "text-clipped",
+      "tag": "LABEL",
+      "text": "Search products",
+      "selector": ".sr-only",
+      "scrollWidth": 116,
+      "clientWidth": 1,
+      "scrollHeight": 24,
+      "clientHeight": 1
+    },
+    {
+      "type": "text-clipped",
+      "tag": "SPAN",
+      "text": "Checkbox",
+      "selector": ".sr-only",
+      "scrollWidth": 72,
+      "clientWidth": 1,
+      "scrollHeight": 24,
+      "clientHeight": 1
+    },
+    {
+      "type": "text-clipped",
+      "tag": "SPAN",
+      "text": "Checkbox",
+      "selector": ".sr-only",
+      "scrollWidth": 72,
+      "clientWidth": 1,
+      "scrollHeight": 24,
+      "clientHeight": 1
+    },
+    {
+      "type": "text-clipped",
+      "tag": "SPAN",
+      "text": "Checkbox",
+      "selector": ".sr-only",
+      "scrollWidth": 72,
+      "clientWidth": 1,
+      "scrollHeight": 24,
+      "clientHeight": 1
+    },
+    {
+      "type": "text-clipped",
+      "tag": "SPAN",
+      "text": "Checkbox",
+      "selector": ".sr-only",
+      "scrollWidth": 72,
+      "clientWidth": 1,
+      "scrollHeight": 24,
+      "clientHeight": 1
+    },
+    {
+      "type": "text-clipped",
+      "tag": "SPAN",
+      "text": "Checkbox",
+      "selector": ".sr-only",
+      "scrollWidth": 72,
+      "clientWidth": 1,
+      "scrollHeight": 24,
+      "clientHeight": 1
+    },
+    {
+      "type": "text-clipped",
+      "tag": "SPAN",
+      "text": "Checkbox",
+      "selector": ".sr-only",
+      "scrollWidth": 72,
+      "clientWidth": 1,
+      "scrollHeight": 24,
+      "clientHeight": 1
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "MSI GeForce RTX 4070 Ti SUPER 16G GAMING X SLIM",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 85,
+      "clientWidth": 85,
+      "scrollHeight": 168,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "NVIDIA Ada Lovelace GPU with 16GB GDDR6X, TRI FROZ",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 164,
+      "clientWidth": 164,
+      "scrollHeight": 100,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "ASUS ROG Swift PG27AQDP",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 92,
+      "clientWidth": 85,
+      "scrollHeight": 96,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "27\" 1440p 480Hz OLED gaming monitor with 0.03ms re",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 164,
+      "clientWidth": 164,
+      "scrollHeight": 100,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "GIGABYTE AORUS FO27Q3",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 88,
+      "clientWidth": 85,
+      "scrollHeight": 72,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "27\" 1440p 360Hz QD-OLED with tactical features, 0.",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 164,
+      "clientWidth": 164,
+      "scrollHeight": 80,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "MSI MPG 271QRX QD-OLED",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 85,
+      "clientWidth": 85,
+      "scrollHeight": 72,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "27\" 1440p 360Hz QD-OLED with 0.03ms GTG, VESA Disp",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 164,
+      "clientWidth": 164,
+      "scrollHeight": 80,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "ASUS ROG Azoth",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 85,
+      "clientWidth": 85,
+      "scrollHeight": 72,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "75% DIY wireless keyboard with gasket mount, ROG N",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 164,
+      "clientWidth": 164,
+      "scrollHeight": 100,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "ASUS ROG Delta S Wireless",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 85,
+      "clientWidth": 85,
+      "scrollHeight": 96,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "Dual-mode wireless headset with MQA audio, ESS 928",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 164,
+      "clientWidth": 164,
+      "scrollHeight": 100,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "ASUS ROG Keris II Ace",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 85,
+      "clientWidth": 85,
+      "scrollHeight": 72,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "54g ultralight wireless gaming mouse with ROG AimP",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 164,
+      "clientWidth": 164,
+      "scrollHeight": 100,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "GIGABYTE AORUS Gen5 10000 2TB SSD",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 88,
+      "clientWidth": 85,
+      "scrollHeight": 120,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "PCIe 5.0 NVMe SSD with 10,000 MB/s read, 9,500 MB/",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 164,
+      "clientWidth": 164,
+      "scrollHeight": 100,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "Logitech G Pro X TKL LIGHTSPEED",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 110,
+      "clientWidth": 85,
+      "scrollHeight": 96,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "Tenkeyless pro gaming keyboard with GX optical swi",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 164,
+      "clientWidth": 164,
+      "scrollHeight": 100,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "Logitech G Pro X 2 LIGHTSPEED",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 110,
+      "clientWidth": 85,
+      "scrollHeight": 72,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "Pro-grade wireless headset with 50mm Graphene driv",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 164,
+      "clientWidth": 164,
+      "scrollHeight": 120,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "Logitech G Pro X Superlight 2",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 85,
+      "clientWidth": 85,
+      "scrollHeight": 96,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "Sub-60g wireless gaming mouse with HERO 2 sensor (",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 164,
+      "clientWidth": 164,
+      "scrollHeight": 120,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "Corsair VENGEANCE RGB DDR5 32GB (2x16GB) 6000MHz",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 110,
+      "clientWidth": 85,
+      "scrollHeight": 168,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "High-performance DDR5 memory with dynamic 10-zone ",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 164,
+      "clientWidth": 164,
+      "scrollHeight": 100,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "Corsair K70 RGB PRO",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 85,
+      "clientWidth": 85,
+      "scrollHeight": 72,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "Full-size mechanical keyboard with CHERRY MX switc",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 164,
+      "clientWidth": 164,
+      "scrollHeight": 120,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "Logitech G502 X PLUS",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 85,
+      "clientWidth": 85,
+      "scrollHeight": 72,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "Iconic shape evolved with LIGHTFORCE hybrid switch",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 164,
+      "clientWidth": 164,
+      "scrollHeight": 120,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "HyperX Cloud III Wireless",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 85,
+      "clientWidth": 85,
+      "scrollHeight": 72,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "Wireless gaming headset with 53mm drivers, DTS Hea",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 164,
+      "clientWidth": 164,
+      "scrollHeight": 100,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "Razer Strider Large Chroma",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 85,
+      "clientWidth": 85,
+      "scrollHeight": 96,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "Large hybrid mouse mat with Chroma RGB (19 zones),",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 164,
+      "clientWidth": 164,
+      "scrollHeight": 120,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "SteelSeries Arctis Nova Pro Wireless",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 89,
+      "clientWidth": 85,
+      "scrollHeight": 96,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "Premium wireless with 360° spatial audio, active n",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 164,
+      "clientWidth": 164,
+      "scrollHeight": 100,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "SteelSeries Aerox 9 Wireless",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 89,
+      "clientWidth": 85,
+      "scrollHeight": 72,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "Multi-genre MMO mouse with 18 programmable TrueMov",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 164,
+      "clientWidth": 164,
+      "scrollHeight": 100,
+      "clientHeight": 56
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "SteelSeries Apex Pro TKL (2023)",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 89,
+      "clientWidth": 85,
+      "scrollHeight": 96,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "Tenkeyless with OmniPoint 2.0 adjustable actuation",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 164,
+      "clientWidth": 164,
+      "scrollHeight": 100,
+      "clientHeight": 56
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "Razer Viper V3 Pro",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 85,
+      "clientWidth": 85,
+      "scrollHeight": 72,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "Symmetrical ultra-lightweight 54g esports gaming m",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 164,
+      "clientWidth": 164,
+      "scrollHeight": 140,
+      "clientHeight": 56
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "Razer Huntsman V3 Pro TKL",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 86,
+      "clientWidth": 85,
+      "scrollHeight": 96,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "Tenkeyless analog optical gaming keyboard with Raz",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 164,
+      "clientWidth": 164,
+      "scrollHeight": 120,
+      "clientHeight": 56
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "Cooler Master MM720",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 85,
+      "clientWidth": 85,
+      "scrollHeight": 72,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "Ultra-light 49g honeycomb shell mouse with PixArt ",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 164,
+      "clientWidth": 164,
+      "scrollHeight": 100,
+      "clientHeight": 56
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "Razer Kraken V4 Pro",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 85,
+      "clientWidth": 85,
+      "scrollHeight": 72,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "Wireless gaming headset with OLED control hub, Raz",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 164,
+      "clientWidth": 164,
+      "scrollHeight": 140,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "Razer BlackWidow V4 Pro",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 105,
+      "clientWidth": 85,
+      "scrollHeight": 72,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "Full-size mechanical gaming keyboard with Razer Gr",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 164,
+      "clientWidth": 164,
+      "scrollHeight": 140,
+      "clientHeight": 56
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "Razer DeathAdder V3 Pro",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 100,
+      "clientWidth": 85,
+      "scrollHeight": 72,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "Ultra-lightweight 63g ergonomic gaming mouse with ",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 164,
+      "clientWidth": 164,
+      "scrollHeight": 140,
+      "clientHeight": 40
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "LABEL",
+        "text": "CheckboxLogitech G(4)",
+        "selector": ".flex.items-center.gap-2.cursor-pointer",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "Sort ByNewestPrice: Low to Hig",
+        "selector": ".w-full",
+        "zIndex": 0
+      },
+      "overlapArea": 7920,
+      "overlapPercent1": "90.9",
+      "overlapPercent2": "50.6"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "LABEL",
+        "text": "CheckboxLogitech G(4)",
+        "selector": ".flex.items-center.gap-2.cursor-pointer",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "LABEL",
+        "text": "Sort By",
+        "selector": ".label",
+        "zIndex": 0
+      },
+      "overlapArea": 3960,
+      "overlapPercent1": "45.5",
+      "overlapPercent2": "96.1"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 44944,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 44944,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 44944,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 44944,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 44944,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 44944,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 44944,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 44944,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 44944,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 44944,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 44944,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 44944,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 44944,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 44944,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 44944,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 44944,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 44944,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 44944,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 44944,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 44944,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 44944,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 44944,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 44944,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 44944,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 44944,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    }
+  ],
+  "product-detail": [],
+  "home-mobile": [
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "MSI GeForce RTX 4070 Ti SUPER 16G GAMING X SLIM",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 214,
+      "clientWidth": 214,
+      "scrollHeight": 72,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "NVIDIA Ada Lovelace GPU with 16GB GDDR6X, TRI FROZ",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 293,
+      "clientWidth": 293,
+      "scrollHeight": 60,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "ASUS ROG Swift PG27AQDP",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 214,
+      "clientWidth": 214,
+      "scrollHeight": 48,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "27\" 1440p 480Hz OLED gaming monitor with 0.03ms re",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 293,
+      "clientWidth": 293,
+      "scrollHeight": 60,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "GIGABYTE AORUS FO27Q3",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 214,
+      "clientWidth": 214,
+      "scrollHeight": 48,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "MSI MPG 271QRX QD-OLED",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 214,
+      "clientWidth": 214,
+      "scrollHeight": 48,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "27\" 1440p 360Hz QD-OLED with 0.03ms GTG, VESA Disp",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 293,
+      "clientWidth": 293,
+      "scrollHeight": 60,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "75% DIY wireless keyboard with gasket mount, ROG N",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 293,
+      "clientWidth": 293,
+      "scrollHeight": 60,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "ASUS ROG Delta S Wireless",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 214,
+      "clientWidth": 214,
+      "scrollHeight": 48,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "Dual-mode wireless headset with MQA audio, ESS 928",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 293,
+      "clientWidth": 293,
+      "scrollHeight": 60,
+      "clientHeight": 40
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-[url('data:image/svg+xml,%3Csvg.width=%2260%22.height=%2260%22.viewBox=%220.0.60.60%22.xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg.fill=%22none%22.fill-rule=%22evenodd%22%3E%3Cg.fill=%22rgb(var(--accent-primary))%22.fill-opacity=%220.03%22%3E%3Cpath.d=%22M36.34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6.34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6.4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%2E')].opacity-50.animate-pulse-slow",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.top-1/4.left-1/4.w-96.h-96.bg-[rgb(var(--accent-primary))/0.2].rounded-full.blur-3xl.animate-float.will-change-transform-opacity",
+        "zIndex": 0
+      },
+      "overlapArea": 112282.8613767121,
+      "overlapPercent1": "54.2",
+      "overlapPercent2": "72.7"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-[url('data:image/svg+xml,%3Csvg.width=%2260%22.height=%2260%22.viewBox=%220.0.60.60%22.xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg.fill=%22none%22.fill-rule=%22evenodd%22%3E%3Cg.fill=%22rgb(var(--accent-primary))%22.fill-opacity=%220.03%22%3E%3Cpath.d=%22M36.34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6.34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6.4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%2E')].opacity-50.animate-pulse-slow",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.bottom-1/4.right-1/4.w-96.h-96.bg-[rgb(var(--accent-secondary))/0.2].rounded-full.blur-3xl.animate-float-delayed.will-change-transform-opacity",
+        "zIndex": 0
+      },
+      "overlapArea": 108000,
+      "overlapPercent1": "52.2",
+      "overlapPercent2": "73.2"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-[url('data:image/svg+xml,%3Csvg.width=%2260%22.height=%2260%22.viewBox=%220.0.60.60%22.xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg.fill=%22none%22.fill-rule=%22evenodd%22%3E%3Cg.fill=%22rgb(var(--accent-primary))%22.fill-opacity=%220.03%22%3E%3Cpath.d=%22M36.34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6.34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6.4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%2E')].opacity-50.animate-pulse-slow",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.top-1/2.left-1/2.-translate-x-1/2.-translate-y-1/2.w-72.h-72.bg-[rgb(var(--accent-success))/0.15].rounded-full.blur-3xl.animate-pulse.will-change-opacity",
+        "zIndex": 0
+      },
+      "overlapArea": 82944,
+      "overlapPercent1": "40.1",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-[url('data:image/svg+xml,%3Csvg.width=%2260%22.height=%2260%22.viewBox=%220.0.60.60%22.xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg.fill=%22none%22.fill-rule=%22evenodd%22%3E%3Cg.fill=%22rgb(var(--accent-primary))%22.fill-opacity=%220.03%22%3E%3Cpath.d=%22M36.34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6.34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6.4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%2E')].opacity-50.animate-pulse-slow",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "New RGB Collection Just Droppe",
+        "selector": ".relative.mx-auto.max-w-7xl.px-4.sm:px-6.lg:px-8.py-20.sm:py-32",
+        "zIndex": 0
+      },
+      "overlapArea": 207000,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-[url('data:image/svg+xml,%3Csvg.width=%2260%22.height=%2260%22.viewBox=%220.0.60.60%22.xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg.fill=%22none%22.fill-rule=%22evenodd%22%3E%3Cg.fill=%22rgb(var(--accent-primary))%22.fill-opacity=%220.03%22%3E%3Cpath.d=%22M36.34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6.34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6.4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%2E')].opacity-50.animate-pulse-slow",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "New RGB Collection Just Droppe",
+        "selector": ".max-w-3xl",
+        "zIndex": 0
+      },
+      "overlapArea": 134456,
+      "overlapPercent1": "65.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.top-1/4.left-1/4.w-96.h-96.bg-[rgb(var(--accent-primary))/0.2].rounded-full.blur-3xl.animate-float.will-change-transform-opacity",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.bottom-1/4.right-1/4.w-96.h-96.bg-[rgb(var(--accent-secondary))/0.2].rounded-full.blur-3xl.animate-float-delayed.will-change-transform-opacity",
+        "zIndex": 0
+      },
+      "overlapArea": 56446.72422607546,
+      "overlapPercent1": "36.6",
+      "overlapPercent2": "38.3"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.top-1/4.left-1/4.w-96.h-96.bg-[rgb(var(--accent-primary))/0.2].rounded-full.blur-3xl.animate-float.will-change-transform-opacity",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.top-1/2.left-1/2.-translate-x-1/2.-translate-y-1/2.w-72.h-72.bg-[rgb(var(--accent-success))/0.15].rounded-full.blur-3xl.animate-pulse.will-change-opacity",
+        "zIndex": 0
+      },
+      "overlapArea": 69762.95947265625,
+      "overlapPercent1": "45.2",
+      "overlapPercent2": "84.1"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.top-1/4.left-1/4.w-96.h-96.bg-[rgb(var(--accent-primary))/0.2].rounded-full.blur-3xl.animate-float.will-change-transform-opacity",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "New RGB Collection Just Droppe",
+        "selector": ".relative.mx-auto.max-w-7xl.px-4.sm:px-6.lg:px-8.py-20.sm:py-32",
+        "zIndex": 0
+      },
+      "overlapArea": 112282.8613767121,
+      "overlapPercent1": "72.7",
+      "overlapPercent2": "54.2"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.top-1/4.left-1/4.w-96.h-96.bg-[rgb(var(--accent-primary))/0.2].rounded-full.blur-3xl.animate-float.will-change-transform-opacity",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "New RGB Collection Just Droppe",
+        "selector": ".max-w-3xl",
+        "zIndex": 0
+      },
+      "overlapArea": 94951.27631576662,
+      "overlapPercent1": "61.5",
+      "overlapPercent2": "70.6"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.bottom-1/4.right-1/4.w-96.h-96.bg-[rgb(var(--accent-secondary))/0.2].rounded-full.blur-3xl.animate-float-delayed.will-change-transform-opacity",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.top-1/2.left-1/2.-translate-x-1/2.-translate-y-1/2.w-72.h-72.bg-[rgb(var(--accent-success))/0.15].rounded-full.blur-3xl.animate-pulse.will-change-opacity",
+        "zIndex": 0
+      },
+      "overlapArea": 67045.5,
+      "overlapPercent1": "45.5",
+      "overlapPercent2": "80.8"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.bottom-1/4.right-1/4.w-96.h-96.bg-[rgb(var(--accent-secondary))/0.2].rounded-full.blur-3xl.animate-float-delayed.will-change-transform-opacity",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "New RGB Collection Just Droppe",
+        "selector": ".relative.mx-auto.max-w-7xl.px-4.sm:px-6.lg:px-8.py-20.sm:py-32",
+        "zIndex": 0
+      },
+      "overlapArea": 108000,
+      "overlapPercent1": "73.2",
+      "overlapPercent2": "52.2"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.bottom-1/4.right-1/4.w-96.h-96.bg-[rgb(var(--accent-secondary))/0.2].rounded-full.blur-3xl.animate-float-delayed.will-change-transform-opacity",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "New RGB Collection Just Droppe",
+        "selector": ".max-w-3xl",
+        "zIndex": 0
+      },
+      "overlapArea": 88593.5,
+      "overlapPercent1": "60.1",
+      "overlapPercent2": "65.9"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.top-1/2.left-1/2.-translate-x-1/2.-translate-y-1/2.w-72.h-72.bg-[rgb(var(--accent-success))/0.15].rounded-full.blur-3xl.animate-pulse.will-change-opacity",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "New RGB Collection Just Droppe",
+        "selector": ".relative.mx-auto.max-w-7xl.px-4.sm:px-6.lg:px-8.py-20.sm:py-32",
+        "zIndex": 0
+      },
+      "overlapArea": 82944,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "40.1"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.top-1/2.left-1/2.-translate-x-1/2.-translate-y-1/2.w-72.h-72.bg-[rgb(var(--accent-success))/0.15].rounded-full.blur-3xl.animate-pulse.will-change-opacity",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "New RGB Collection Just Droppe",
+        "selector": ".max-w-3xl",
+        "zIndex": 0
+      },
+      "overlapArea": 82944,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "61.7"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "Accessories1 productsMousepads",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "overlapArea": 36828,
+      "overlapPercent1": "31.7",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "Accessories1 productsMousepads",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "overlapArea": 36828,
+      "overlapPercent1": "31.7",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "Accessories1 productsMousepads",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 36828,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "31.7"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "Components3 productsGPUs, RAM,",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "overlapArea": 36828,
+      "overlapPercent1": "31.7",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "Components3 productsGPUs, RAM,",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "overlapArea": 36828,
+      "overlapPercent1": "31.7",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "Components3 productsGPUs, RAM,",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 36828,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "31.7"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "Freebies0 productsMousepads, c",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "overlapArea": 36828,
+      "overlapPercent1": "31.7",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "Freebies0 productsMousepads, c",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "overlapArea": 36828,
+      "overlapPercent1": "31.7",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "Freebies0 productsMousepads, c",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 36828,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "31.7"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "Gaming Headsets5 productsImmer",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "overlapArea": 36828,
+      "overlapPercent1": "31.7",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "Gaming Headsets5 productsImmer",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "overlapArea": 36828,
+      "overlapPercent1": "31.7",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "Gaming Headsets5 productsImmer",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 36828,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "31.7"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "Gaming Keyboards6 productsMech",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "overlapArea": 36828,
+      "overlapPercent1": "31.7",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "Gaming Keyboards6 productsMech",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "overlapArea": 36828,
+      "overlapPercent1": "31.7",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "Gaming Keyboards6 productsMech",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 36828,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "31.7"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "Gaming Mice7 productsHigh-prec",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "overlapArea": 36828,
+      "overlapPercent1": "31.7",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "Gaming Mice7 productsHigh-prec",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "overlapArea": 36828,
+      "overlapPercent1": "31.7",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "Gaming Mice7 productsHigh-prec",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 36828,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "31.7"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "Gaming Monitors3 productsHigh ",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "overlapArea": 36828,
+      "overlapPercent1": "31.7",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "Gaming Monitors3 productsHigh ",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "overlapArea": 36828,
+      "overlapPercent1": "31.7",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "Gaming Monitors3 productsHigh ",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 36828,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "31.7"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "Laptops & PCs0 productsGaming ",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "overlapArea": 36828,
+      "overlapPercent1": "31.7",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-br.from-transparent.via-[rgb(var(--bg-base))/0.5].to-[rgb(var(--bg-deep))/0.8]",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "Laptops & PCs0 productsGaming ",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "overlapArea": 36828,
+      "overlapPercent1": "31.7",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--bg-deep))/0.8].via-transparent.to-transparent",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "DIV",
+        "text": "Laptops & PCs0 productsGaming ",
+        "selector": ".absolute.bottom-0.left-0.right-0.p-5.z-10",
+        "zIndex": 10
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-[rgb(var(--accent-primary))/0.2].to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-500.rounded-2xl",
+        "zIndex": 0
+      },
+      "overlapArea": 36828,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "31.7"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    }
+  ],
+  "products-mobile": [
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "MSI GeForce RTX 4070 Ti SUPER 16G GAMING X SLIM",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 214,
+      "clientWidth": 214,
+      "scrollHeight": 72,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "NVIDIA Ada Lovelace GPU with 16GB GDDR6X, TRI FROZ",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 293,
+      "clientWidth": 293,
+      "scrollHeight": 60,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "ASUS ROG Swift PG27AQDP",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 214,
+      "clientWidth": 214,
+      "scrollHeight": 48,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "27\" 1440p 480Hz OLED gaming monitor with 0.03ms re",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 293,
+      "clientWidth": 293,
+      "scrollHeight": 60,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "GIGABYTE AORUS FO27Q3",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 214,
+      "clientWidth": 214,
+      "scrollHeight": 48,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "MSI MPG 271QRX QD-OLED",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 214,
+      "clientWidth": 214,
+      "scrollHeight": 48,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "27\" 1440p 360Hz QD-OLED with 0.03ms GTG, VESA Disp",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 293,
+      "clientWidth": 293,
+      "scrollHeight": 60,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "75% DIY wireless keyboard with gasket mount, ROG N",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 293,
+      "clientWidth": 293,
+      "scrollHeight": 60,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "ASUS ROG Delta S Wireless",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 214,
+      "clientWidth": 214,
+      "scrollHeight": 48,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "Dual-mode wireless headset with MQA audio, ESS 928",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 293,
+      "clientWidth": 293,
+      "scrollHeight": 60,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "54g ultralight wireless gaming mouse with ROG AimP",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 293,
+      "clientWidth": 293,
+      "scrollHeight": 60,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "GIGABYTE AORUS Gen5 10000 2TB SSD",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 214,
+      "clientWidth": 214,
+      "scrollHeight": 48,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "PCIe 5.0 NVMe SSD with 10,000 MB/s read, 9,500 MB/",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 293,
+      "clientWidth": 293,
+      "scrollHeight": 60,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "Logitech G Pro X TKL LIGHTSPEED",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 214,
+      "clientWidth": 214,
+      "scrollHeight": 48,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "Tenkeyless pro gaming keyboard with GX optical swi",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 293,
+      "clientWidth": 293,
+      "scrollHeight": 60,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "Logitech G Pro X 2 LIGHTSPEED",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 214,
+      "clientWidth": 214,
+      "scrollHeight": 48,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "Pro-grade wireless headset with 50mm Graphene driv",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 293,
+      "clientWidth": 293,
+      "scrollHeight": 60,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "Logitech G Pro X Superlight 2",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 214,
+      "clientWidth": 214,
+      "scrollHeight": 48,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "Sub-60g wireless gaming mouse with HERO 2 sensor (",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 293,
+      "clientWidth": 293,
+      "scrollHeight": 60,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "Corsair VENGEANCE RGB DDR5 32GB (2x16GB) 6000MHz",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 214,
+      "clientWidth": 214,
+      "scrollHeight": 72,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "High-performance DDR5 memory with dynamic 10-zone ",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 293,
+      "clientWidth": 293,
+      "scrollHeight": 60,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "Full-size mechanical keyboard with CHERRY MX switc",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 293,
+      "clientWidth": 293,
+      "scrollHeight": 60,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "Iconic shape evolved with LIGHTFORCE hybrid switch",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 293,
+      "clientWidth": 293,
+      "scrollHeight": 60,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "Wireless gaming headset with 53mm drivers, DTS Hea",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 293,
+      "clientWidth": 293,
+      "scrollHeight": 60,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "Razer Strider Large Chroma",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 214,
+      "clientWidth": 214,
+      "scrollHeight": 48,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "Large hybrid mouse mat with Chroma RGB (19 zones),",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 293,
+      "clientWidth": 293,
+      "scrollHeight": 60,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "SteelSeries Arctis Nova Pro Wireless",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 214,
+      "clientWidth": 214,
+      "scrollHeight": 48,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "Premium wireless with 360° spatial audio, active n",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 293,
+      "clientWidth": 293,
+      "scrollHeight": 60,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "SteelSeries Aerox 9 Wireless",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 214,
+      "clientWidth": 214,
+      "scrollHeight": 48,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "Multi-genre MMO mouse with 18 programmable TrueMov",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 293,
+      "clientWidth": 293,
+      "scrollHeight": 60,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "SteelSeries Apex Pro TKL (2023)",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 214,
+      "clientWidth": 214,
+      "scrollHeight": 48,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "Tenkeyless with OmniPoint 2.0 adjustable actuation",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 293,
+      "clientWidth": 293,
+      "scrollHeight": 60,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "Symmetrical ultra-lightweight 54g esports gaming m",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 293,
+      "clientWidth": 293,
+      "scrollHeight": 80,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "H3",
+      "text": "Razer Huntsman V3 Pro TKL",
+      "selector": ".font-semibold.text-[rgb(var(--text-primary))].line-clamp-1.flex-1.group-hover:line-clamp-none.group-hover:max-h-[3rem].transition-all.duration-300",
+      "scrollWidth": 214,
+      "clientWidth": 214,
+      "scrollHeight": 48,
+      "clientHeight": 24
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "Tenkeyless analog optical gaming keyboard with Raz",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 293,
+      "clientWidth": 293,
+      "scrollHeight": 80,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "Ultra-light 49g honeycomb shell mouse with PixArt ",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 293,
+      "clientWidth": 293,
+      "scrollHeight": 60,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "Wireless gaming headset with OLED control hub, Raz",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 293,
+      "clientWidth": 293,
+      "scrollHeight": 80,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "Full-size mechanical gaming keyboard with Razer Gr",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 293,
+      "clientWidth": 293,
+      "scrollHeight": 80,
+      "clientHeight": 40
+    },
+    {
+      "type": "text-clipped",
+      "tag": "P",
+      "text": "Ultra-lightweight 63g ergonomic gaming mouse with ",
+      "selector": ".text-sm.text-[rgb(var(--text-muted))].line-clamp-2.mb-6.flex-1.group-hover:line-clamp-none.group-hover:max-h-[6rem].transition-all.duration-300.overflow-hidden",
+      "scrollWidth": 293,
+      "clientWidth": 293,
+      "scrollHeight": 80,
+      "clientHeight": 40
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    },
+    {
+      "type": "overlap",
+      "element1": {
+        "tag": "IMG",
+        "text": "",
+        "selector": ".w-full.h-full.object-cover.transition-transform.duration-500.group-hover:scale-105",
+        "zIndex": 0
+      },
+      "element2": {
+        "tag": "DIV",
+        "text": "",
+        "selector": ".absolute.inset-0.bg-gradient-to-t.from-black/60.via-transparent.to-transparent.opacity-0.group-hover:opacity-100.transition-opacity.duration-300",
+        "zIndex": 0
+      },
+      "overlapArea": 116281,
+      "overlapPercent1": "100.0",
+      "overlapPercent2": "100.0"
+    }
+  ]
+}

@@ -81,7 +81,7 @@ export function ProductFilters({ onFilterChange, onSearchChange, searchValue = '
   }
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-6">
       <div>
         <label htmlFor="search" className="sr-only">Search products</label>
         <div className="relative">
@@ -100,14 +100,14 @@ export function ProductFilters({ onFilterChange, onSearchChange, searchValue = '
       </div>
       <Select label="Category" id="category" options={[{ value: '', label: 'All Categories' }, ...categories.map(c => ({ value: c.id, label: c.name }))]} value={category} onChange={handleCategoryChange} placeholder="All Categories" />
 
-      <div>
+      <div className="mb-4 overflow-hidden">
         <div className="flex items-center justify-between mb-2">
           <label className="label">Brand</label>
           <button type="button" onClick={() => setExpandedBrands(!expandedBrands)} className="text-sm text-[rgb(var(--accent-primary))] hover:underline">
             {expandedBrands ? 'Show less' : `Show all (${brands.length})`}
           </button>
         </div>
-        <div className="space-y-2 max-h-60 overflow-y-auto">
+        <div className="space-y-2 max-h-60 overflow-y-auto pr-2" style={{ maxHeight: '240px' }}>
           {brands.slice(0, expandedBrands ? brands.length : 6).map(brand => (
             <label key={brand.id} className="flex items-center gap-2 cursor-pointer">
               <Checkbox value={brand.id} checked={brandParams.includes(brand.id)} onChange={() => handleBrandChange(brand.id)} />

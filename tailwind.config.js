@@ -45,7 +45,10 @@ export default {
         // Legacy primary (for compatibility)
         primary: { 50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd', 400: '#60a5fa', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af', 900: '#1e3a8a' },
       },
-      fontFamily: { sans: ['Inter', 'DM Sans', 'system-ui', 'sans-serif'] },
+      fontFamily: {
+        sans: ['Syne', 'system-ui', 'sans-serif'],
+        display: ['Syne', 'system-ui', 'sans-serif'],
+      },
 
       // Spacing scale
       spacing: {
@@ -71,15 +74,16 @@ export default {
         'container-lg': '1024px',
         'container-xl': '1280px',
         'container-2xl': '1440px',
+        'container-3xl': '1600px',
       },
 
       // Typography scale
       fontSize: {
-        'display': ['clamp(2.5rem, 5vw, 4rem)', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
-        'h1': ['clamp(2rem, 4vw, 3rem)', { lineHeight: '1.2', letterSpacing: '-0.01em' }],
-        'h2': ['clamp(1.5rem, 3vw, 2.25rem)', { lineHeight: '1.25' }],
-        'h3': ['clamp(1.25rem, 2.5vw, 1.5rem)', { lineHeight: '1.3' }],
-        'h4': ['clamp(1.125rem, 2vw, 1.25rem)', { lineHeight: '1.4' }],
+        'display': ['clamp(2.5rem, 5vw, 4rem)', { lineHeight: '1.1', letterSpacing: '-0.02em', fontFamily: 'Syne, Space Grotesk, system-ui, sans-serif', fontWeight: '700' }],
+        'h1': ['clamp(2rem, 4vw, 3rem)', { lineHeight: '1.2', letterSpacing: '-0.01em', fontFamily: 'Syne, Space Grotesk, system-ui, sans-serif', fontWeight: '700' }],
+        'h2': ['clamp(1.5rem, 3vw, 2.25rem)', { lineHeight: '1.25', fontFamily: 'Syne, Space Grotesk, system-ui, sans-serif', fontWeight: '600' }],
+        'h3': ['clamp(1.25rem, 2.5vw, 1.5rem)', { lineHeight: '1.3', fontFamily: 'Syne, Space Grotesk, system-ui, sans-serif', fontWeight: '600' }],
+        'h4': ['clamp(1.125rem, 2vw, 1.25rem)', { lineHeight: '1.4', fontFamily: 'Syne, Space Grotesk, system-ui, sans-serif', fontWeight: '600' }],
         'body-lg': ['1.125rem', { lineHeight: '1.6' }],
         'body': ['1rem', { lineHeight: '1.6' }],
         'body-sm': ['0.875rem', { lineHeight: '1.5' }],
@@ -94,7 +98,7 @@ export default {
       },
       transitionTimingFunction: {
         'smooth': 'cubic-bezier(0.16, 1, 0.3, 1)',
-        'spring': 'cubic-bezier(0.34, 1.56, 0.64, 1)',
+        'spring': 'cubic-bezier(0.16, 1, 0.3, 1)',
       },
 
       // Shadow scale

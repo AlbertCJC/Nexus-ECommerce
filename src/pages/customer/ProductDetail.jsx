@@ -80,7 +80,7 @@ export default function ProductDetail() {
             <div className="aspect-square rounded-xl overflow-hidden bg-[rgb(var(--bg-elevated))] mb-4">
               <img src={images[selectedImage] || '/images/placeholder-product.svg'} alt={product.name} className="w-full h-full object-cover" onError={(e) => { e.currentTarget.src = '/images/placeholder-product.svg'; e.currentTarget.onerror = null; }} />
             </div>
-            <div className="flex gap-2 overflow-x-auto pb-2">
+            <div className="flex gap-4 overflow-x-auto pb-2">
               {images.map((img, idx) => (
                 <button key={idx} onClick={() => setSelectedImage(idx)} className={`flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition-colors ${selectedImage === idx ? 'border-[rgb(var(--accent-primary))]' : 'border-transparent hover:border-[rgb(var(--border-hover))]'}`} aria-label={`View image ${idx + 1}`} aria-current={selectedImage === idx ? 'true' : 'false'}>
                   <img src={img} alt={`${product.name} - view ${idx + 1}`} className="w-full h-full object-cover" loading={idx === 0 ? 'eager' : 'lazy'} onError={(e) => { e.currentTarget.src = '/images/placeholder-product.svg'; e.currentTarget.onerror = null; }} />
@@ -103,7 +103,7 @@ export default function ProductDetail() {
                 </Link>
               )}
             </div>
-            <h1 className="mt-2 text-3xl font-bold text-[rgb(var(--text-primary))]">{product.name}</h1>
+            <h1 className="mt-6 text-3xl font-bold text-[rgb(var(--text-primary))]">{product.name}</h1>
             <div className="mt-4 flex items-center gap-4">
               <span className="text-3xl font-bold text-[rgb(var(--accent-primary))]">{formatCurrency(product.price_cents / 100)}</span>
               <span className={`badge ${statusInfo.class}`}>{statusInfo.text}</span>
@@ -126,9 +126,9 @@ export default function ProductDetail() {
                     <div className="flex items-center gap-4">
                       <label htmlFor="quantity" className="text-sm font-medium text-[rgb(var(--text-primary))]">Quantity:</label>
                       <div className="flex items-center border border-[rgb(var(--border-subtle))] rounded-lg">
-                        <button onClick={() => setQuantity(Math.max(1, quantity - 1))} disabled={quantity <= 1} className="px-4 py-2 text-[rgb(var(--text-secondary))] hover:bg-[rgb(var(--bg-hover))] disabled:opacity-50" aria-label="Decrease quantity">−</button>
+                        <button onClick={() => setQuantity(Math.max(1, quantity - 1))} disabled={quantity <= 1} className="min-w-[44px] min-h-[44px] px-4 py-2 text-[rgb(var(--text-secondary))] hover:bg-[rgb(var(--bg-hover))] disabled:opacity-50 flex items-center justify-center" aria-label="Decrease quantity">−</button>
                         <input type="number" id="quantity" value={quantity} onChange={e => setQuantity(Math.min(maxQty, Math.max(1, parseInt(e.target.value) || 1)))} min={1} max={maxQty} className="w-16 text-center border-x border-[rgb(var(--border-subtle))] bg-[rgb(var(--bg-elevated))] focus:outline-none" aria-label="Quantity" />
-                        <button onClick={() => setQuantity(Math.min(maxQty, quantity + 1))} disabled={quantity >= maxQty} className="px-4 py-2 text-[rgb(var(--text-secondary))] hover:bg-[rgb(var(--bg-hover))] disabled:opacity-50" aria-label="Increase quantity">+</button>
+                        <button onClick={() => setQuantity(Math.min(maxQty, quantity + 1))} disabled={quantity >= maxQty} className="min-w-[44px] min-h-[44px] px-4 py-2 text-[rgb(var(--text-secondary))] hover:bg-[rgb(var(--bg-hover))] disabled:opacity-50 flex items-center justify-center" aria-label="Increase quantity">+</button>
                       </div>
                     </div>
                     <p className="mt-4 sm:mt-0 sm:self-center text-sm text-[rgb(var(--text-muted))]">Available: <span className="font-medium text-[rgb(var(--text-primary))]">{availableStock}</span></p>
@@ -150,7 +150,7 @@ export default function ProductDetail() {
             </div>
 
             {/* Features */}
-            <div className="mt-8 grid grid-cols-3 gap-4">
+            <div className="mt-8 grid grid-cols-3 gap-6">
               {features.map(f => (
                 <div key={f.title} className="flex items-center gap-3 p-4 bg-[rgb(var(--bg-elevated))] rounded-lg">
                   <div className="w-10 h-10 bg-[rgb(var(--accent-primary))/0.1] rounded-lg flex items-center justify-center">{f.icon}</div>

@@ -1,9 +1,9 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../context/AuthContext'
 import { useAppContext } from '../../context/AppContext'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import { AuthModal } from '../ui/AuthModal'
-import { ArrowRightOnRectangleIcon, UserCircleIcon, ShoppingBagIcon, Cog6ToothIcon } from '@heroicons/react/24/outline'
+import { ArrowRightOnRectangleIcon, UserCircleIcon, ShoppingBagIcon, Cog6ToothIcon, ChevronDownIcon } from '@heroicons/react/24/outline'
 import { useCart, useBrands, useCategories } from '../../hooks'
 import { getCategoryIcon } from '../../utils/categoryIcons'
 
@@ -23,24 +23,55 @@ export function Navbar() {
   const headerRef = useRef(null)
   const categoryMenuRef = useRef(null)
   const brandMenuRef = useRef(null)
-  const categoryLeaveTimer = useRef(null)
-  const brandLeaveTimer = useRef(null)
+  const categoryButtonRef = useRef(null)
+  const brandButtonRef = useRef(null)
   const cartCount = isAuthenticated && session?.user ? cartItems.reduce((sum, item) => sum + item.quantity, 0) : cart.reduce((sum, item) => sum + item.quantity, 0)
 
-  const handleCategoryMouseEnter = () => {
-    if (categoryLeaveTimer.current) clearTimeout(categoryLeaveTimer.current)
-    setCategoryMenuOpen(true)
-  }
-  const handleCategoryMouseLeave = () => {
-    categoryLeaveTimer.current = setTimeout(() => setCategoryMenuOpen(false), 150)
-  }
-  const handleBrandMouseEnter = () => {
-    if (brandLeaveTimer.current) clearTimeout(brandLeaveTimer.current)
-    setBrandMenuOpen(true)
-  }
-  const handleBrandMouseLeave = () => {
-    brandLeaveTimer.current = setTimeout(() => setBrandMenuOpen(false), 150)
-  }
+  const closeAllMenus = useCallback(() => {
+    setCategoryMenuOpen(false)
+    setBrandMenuOpen(false)
+    setUserMenuOpen(false)
+  }, [])
+
+  const handleCategoryToggle = useCallback(() => {
+    setCategoryMenuOpen(prev => !prev)
+    if (!categoryMenuOpen) setBrandMenuOpen(false)
+  }, [categoryMenuOpen])
+
+  const handleBrandToggle = useCallback(() => {
+    setBrandMenuOpen(prev => !prev)
+    if (!brandMenuOpen) setCategoryMenuOpen(false)
+  }, [brandMenuOpen])
+
+  const handleKeyDown = useCallback((e, type) => {
+    if (e.key === 'Escape') {
+      closeAllMenus()
+    } else if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault()
+      if (type === 'category') handleCategoryToggle()
+      if (type === 'brand') handleBrandToggle()
+    }
+  }, [closeAllMenus, handleCategoryToggle, handleBrandToggle])
+
+  const handleItemClick = useCallback(() => {
+    closeAllMenus()
+  }, [closeAllMenus])
+
+  // Close dropdown menus when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      // Close category menu
+      if (categoryMenuOpen && categoryButtonRef.current && !categoryButtonRef.current.contains(event.target) && categoryMenuRef.current && !categoryMenuRef.current.contains(event.target)) {
+        setCategoryMenuOpen(false)
+      }
+      // Close brand menu
+      if (brandMenuOpen && brandButtonRef.current && !brandButtonRef.current.contains(event.target) && brandMenuRef.current && !brandMenuRef.current.contains(event.target)) {
+        setBrandMenuOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [categoryMenuOpen, brandMenuOpen])
 
   // Close user menu when clicking outside
   useEffect(() => {
@@ -86,30 +117,51 @@ export function Navbar() {
               </span>
             </Link>
             {!isAdmin && (
-              <div className="hidden md:flex md:gap-6">
+              <div className="hidden md:flex md:items-center md:gap-6">
                 {navLinks.map(link => (
-                  <Link key={link.path} to={link.path} className={`text-sm font-medium transition-colors ${location.pathname === link.path ? 'text-[rgb(var(--accent-primary))]' : 'text-[rgb(var(--text-secondary))] hover:text-[rgb(var(--accent-primary))]'}`}>
+                  <Link key={link.path} to={link.path} className={`flex items-center text-sm font-medium transition-colors h-10 px-2 ${location.pathname === link.path ? 'text-[rgb(var(--accent-primary))]' : 'text-[rgb(var(--text-secondary))] hover:text-[rgb(var(--accent-primary))]'}`}>
                     {link.label}
                   </Link>
                 ))}
                 {/* Shop by Category Dropdown */}
-                <div className="relative" onMouseEnter={handleCategoryMouseEnter} onMouseLeave={handleCategoryMouseLeave}>
-                  <button className="flex items-center gap-2 text-sm font-medium text-[rgb(var(--text-secondary))] hover:text-[rgb(var(--accent-primary))] transition-colors" aria-haspopup="true" aria-expanded={categoryMenuOpen}>
+                <div className="relative">
+                  <button
+                    ref={categoryButtonRef}
+                    onClick={handleCategoryToggle}
+                    onKeyDown={(e) => handleKeyDown(e, 'category')}
+                    className="flex items-center gap-2 text-sm font-medium text-[rgb(var(--text-secondary))] hover:text-[rgb(var(--accent-primary))] transition-colors px-3 py-2 rounded-lg touch-target"
+                    aria-haspopup="true"
+                    aria-expanded={categoryMenuOpen}
+                    aria-controls="category-menu"
+                    id="category-button"
+                  >
                     Shop by Category
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    <ChevronDownIcon className={`w-4 h-4 transition-transform ${categoryMenuOpen ? 'rotate-180' : ''}`} />
                   </button>
                   {categoryMenuOpen && (
-                    <div className="absolute left-0 top-full mt-2 w-56 rounded-xl border border-[rgb(var(--border-subtle))] shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] py-2 z-50 bg-[rgb(var(--bg-card))]" onMouseEnter={handleCategoryMouseEnter} onMouseLeave={handleCategoryMouseLeave}>
+                    <div
+                      id="category-menu"
+                      ref={categoryMenuRef}
+                      role="menu"
+                      className="absolute left-0 top-full mt-2 w-56 rounded-xl border border-[rgb(var(--border-subtle))] shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] py-2 z-50 bg-[rgb(var(--bg-card))] animate-slide-in"
+                      onKeyDown={(e) => handleKeyDown(e, 'category')}
+                    >
                       {categoriesLoading ? (
-                        <div className="px-4 py-2 text-sm text-[rgb(var(--text-muted))]">Loading categories...</div>
+                        <div className="px-4 py-2 text-sm text-[rgb(var(--text-muted))]" role="menuitem">Loading categories...</div>
                       ) : categories.length === 0 ? (
-                        <div className="px-4 py-2 text-sm text-[rgb(var(--text-muted))]">No categories available</div>
+                        <div className="px-4 py-2 text-sm text-[rgb(var(--text-muted))]" role="menuitem">No categories available</div>
                       ) : (
                         <>
                           {categories.map(category => {
                             const IconComponent = getCategoryIcon(category)
                             return (
-                              <Link key={category.id} to={`/products?category=${category.id}`} onClick={() => setCategoryMenuOpen(false)} className="flex items-center gap-3 px-4 py-2 text-sm text-[rgb(var(--text-secondary))] hover:bg-[rgb(var(--bg-hover))] hover:text-[rgb(var(--accent-primary))] transition-colors">
+                              <Link
+                                key={category.id}
+                                to={`/products?category=${category.id}`}
+                                onClick={handleItemClick}
+                                role="menuitem"
+                                className="flex items-center gap-3 px-4 py-3 text-sm text-[rgb(var(--text-secondary))] hover:bg-[rgb(var(--bg-hover))] hover:text-[rgb(var(--accent-primary))] transition-colors touch-target"
+                              >
                                 <IconComponent className="w-5 h-5 text-[rgb(var(--text-muted))] flex-shrink-0" />
                                 {category.name}
                               </Link>
@@ -122,21 +174,42 @@ export function Navbar() {
                 </div>
 
                 {/* Shop by Brand Dropdown */}
-                <div className="relative" onMouseEnter={handleBrandMouseEnter} onMouseLeave={handleBrandMouseLeave}>
-                  <button className="flex items-center gap-2 text-sm font-medium text-[rgb(var(--text-secondary))] hover:text-[rgb(var(--accent-primary))] transition-colors" aria-haspopup="true" aria-expanded={brandMenuOpen}>
+                <div className="relative">
+                  <button
+                    ref={brandButtonRef}
+                    onClick={handleBrandToggle}
+                    onKeyDown={(e) => handleKeyDown(e, 'brand')}
+                    className="flex items-center gap-2 text-sm font-medium text-[rgb(var(--text-secondary))] hover:text-[rgb(var(--accent-primary))] transition-colors px-3 py-2 rounded-lg touch-target"
+                    aria-haspopup="true"
+                    aria-expanded={brandMenuOpen}
+                    aria-controls="brand-menu"
+                    id="brand-button"
+                  >
                     Shop by Brand
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    <ChevronDownIcon className={`w-4 h-4 transition-transform ${brandMenuOpen ? 'rotate-180' : ''}`} />
                   </button>
                   {brandMenuOpen && (
-                    <div className="absolute left-0 top-full mt-2 w-56 rounded-xl border border-[rgb(var(--border-subtle))] shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] py-2 z-50 bg-[rgb(var(--bg-card))]" onMouseEnter={handleBrandMouseEnter} onMouseLeave={handleBrandMouseLeave}>
+                    <div
+                      id="brand-menu"
+                      ref={brandMenuRef}
+                      role="menu"
+                      className="absolute left-0 top-full mt-2 w-56 rounded-xl border border-[rgb(var(--border-subtle))] shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] py-2 z-50 bg-[rgb(var(--bg-card))] animate-slide-in"
+                      onKeyDown={(e) => handleKeyDown(e, 'brand')}
+                    >
                       {brandsLoading ? (
-                        <div className="px-4 py-2 text-sm text-[rgb(var(--text-muted))]">Loading brands...</div>
+                        <div className="px-4 py-2 text-sm text-[rgb(var(--text-muted))]" role="menuitem">Loading brands...</div>
                       ) : brands.length === 0 ? (
-                        <div className="px-4 py-2 text-sm text-[rgb(var(--text-muted))]">No brands available</div>
+                        <div className="px-4 py-2 text-sm text-[rgb(var(--text-muted))]" role="menuitem">No brands available</div>
                       ) : (
                         <>
                           {brands.map(brand => (
-                            <Link key={brand.id} to={`/products?brand=${brand.id}`} onClick={() => setBrandMenuOpen(false)} className="block px-4 py-2 text-sm text-[rgb(var(--text-secondary))] hover:bg-[rgb(var(--bg-hover))] hover:text-[rgb(var(--accent-primary))] transition-colors">
+                            <Link
+                              key={brand.id}
+                              to={`/products?brand=${brand.id}`}
+                              onClick={handleItemClick}
+                              role="menuitem"
+                              className="block px-4 py-3 text-sm text-[rgb(var(--text-secondary))] hover:bg-[rgb(var(--bg-hover))] hover:text-[rgb(var(--accent-primary))] transition-colors touch-target"
+                            >
                               {brand.name}
                             </Link>
                           ))}
@@ -243,7 +316,7 @@ export function Navbar() {
                 </button>
               </div>
             )}
-            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden p-2 text-[rgb(var(--text-secondary))]" aria-expanded={mobileMenuOpen} aria-controls="mobile-menu" aria-label="Toggle menu">
+            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden min-w-[44px] min-h-[44px] flex items-center justify-center text-[rgb(var(--text-secondary))] hover:bg-[rgb(var(--bg-hover))] rounded-xl" aria-expanded={mobileMenuOpen} aria-controls="mobile-menu" aria-label="Toggle menu">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={mobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} /></svg>
             </button>
           </div>

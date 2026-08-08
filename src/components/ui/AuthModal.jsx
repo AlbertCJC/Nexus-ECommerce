@@ -117,12 +117,12 @@ export function AuthModal({ isOpen, onClose, initialMode = 'login' }) {
     <div className="fixed inset-0 z-50 flex min-h-screen items-center justify-center p-4 bg-[rgb(var(--bg-deep))/0.9] backdrop-blur-sm animate-fade-in">
       <div className="modal-content w-full max-w-md max-h-[90vh] overflow-y-auto p-8">
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-2xl font-bold bg-gradient-to-r from-[rgb(var(--accent-primary))] to-[rgb(var(--accent-secondary))] bg-clip-text text-transparent">
+          <h2 className="text-2xl font-bold text-[rgb(var(--text-primary))]">
             {mode === 'login' ? 'Welcome Back' : mode === 'register' ? 'Create Account' : 'Reset Password'}
           </h2>
           <button
             onClick={onClose}
-            className="p-1 text-[rgb(var(--text-muted))] hover:text-[rgb(var(--text-primary))] transition-colors"
+            className="min-w-[44px] min-h-[44px] flex items-center justify-center text-[rgb(var(--text-muted))] hover:text-[rgb(var(--text-primary))] hover:bg-[rgb(var(--bg-hover))] transition-colors rounded-lg"
             aria-label="Close modal"
           >
             <XMarkIcon className="w-5 h-5" />

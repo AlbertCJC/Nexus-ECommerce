@@ -40,9 +40,9 @@ export default function Home() {
         {/* Animated grid background */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22rgb(var(--accent-primary))%22 fill-opacity=%220.03%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%2E')] opacity-50 animate-pulse-slow" />
         {/* Glow orbs */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[rgb(var(--accent-primary))/0.2] rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[rgb(var(--accent-secondary))/0.2] rounded-full blur-3xl animate-float-delayed" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-[rgb(var(--accent-success))/0.15] rounded-full blur-3xl animate-pulse" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[rgb(var(--accent-primary))/0.2] rounded-full blur-3xl animate-float will-change-transform-opacity" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[rgb(var(--accent-secondary))/0.2] rounded-full blur-3xl animate-float-delayed will-change-transform-opacity" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-[rgb(var(--accent-success))/0.15] rounded-full blur-3xl animate-pulse will-change-opacity" />
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-32">
           <div className="max-w-3xl">
@@ -50,10 +50,10 @@ export default function Home() {
               <span className="w-2 h-2 rounded-full bg-[rgb(var(--accent-primary))] animate-pulse" />
               New RGB Collection Just Dropped
             </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight bg-gradient-to-r from-[rgb(var(--text-primary))] via-[rgb(var(--accent-primary))] to-[rgb(var(--accent-secondary))] bg-clip-text text-transparent">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[rgb(var(--text-primary))] mb-6">
               NEXUS <span className="text-[rgb(var(--accent-primary))]">GAMING</span>
             </h1>
-            <p className="mt-6 text-lg sm:text-xl text-[rgb(var(--text-secondary))] max-w-xl">Premium gaming gear from Razer, Logitech G, ASUS ROG & more. Built for pros, priced for everyone.</p>
+            <p className="mt-8 text-lg sm:text-xl text-[rgb(var(--text-secondary))] max-w-xl">Premium gaming gear from Razer, Logitech G, ASUS ROG & more. Built for pros, priced for everyone.</p>
             <div className="mt-10 flex flex-wrap gap-4">
               <Link to="/products" className="btn-primary px-8 py-4 text-lg font-semibold shadow-glow hover:scale-[1.02]">
                 <ArrowRightIcon className="w-5 h-5 ml-2" />
@@ -91,13 +91,13 @@ export default function Home() {
             <h2 className="text-3xl sm:text-4xl font-bold text-[rgb(var(--text-primary))]">Shop by Category</h2>
             <p className="mt-3 text-lg text-[rgb(var(--text-secondary))] max-w-2xl mx-auto">Curated collections for every gamer's arsenal</p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
             {categories.map(category => {
               const count = categoryCounts[category.id] || 0
               const IconComponent = getCategoryIcon(category)
               const gradient = getCategoryGradient(category)
               return (
-                <Link key={category.id} to={`/products?category=${category.id}`} className="group relative aspect-square rounded-2xl overflow-hidden bg-[rgb(var(--bg-elevated))] border border-[rgb(var(--border-subtle))] hover:border-[rgb(var(--accent-primary))/0.5] transition-all duration-500">
+                <Link key={category.id} to={`/products?category=${category.id}`} className="group relative aspect-square rounded-2xl overflow-hidden bg-[rgb(var(--bg-elevated))] border border-[rgb(var(--border-subtle))] hover:border-[rgb(var(--accent-primary))/0.5] transition-all duration-500 min-w-0">
                   {/* Gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-br from-transparent via-[rgb(var(--bg-base))/0.5] to-[rgb(var(--bg-deep))/0.8]" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[rgb(var(--bg-deep))/0.8] via-transparent to-transparent" />
